@@ -1,0 +1,19 @@
+﻿Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BrackeysGameJam2026.2", "BrackeysGameJam2026.2.csproj", "{7C271684-BEAC-46BD-8C73-D7EFF0B8A592}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+	Debug|Any CPU = Debug|Any CPU
+	ExportDebug|Any CPU = ExportDebug|Any CPU
+	ExportRelease|Any CPU = ExportRelease|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7C271684-BEAC-46BD-8C73-D7EFF0B8A592}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7C271684-BEAC-46BD-8C73-D7EFF0B8A592}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7C271684-BEAC-46BD-8C73-D7EFF0B8A592}.ExportDebug|Any CPU.ActiveCfg = ExportDebug|Any CPU
+		{7C271684-BEAC-46BD-8C73-D7EFF0B8A592}.ExportDebug|Any CPU.Build.0 = ExportDebug|Any CPU
+		{7C271684-BEAC-46BD-8C73-D7EFF0B8A592}.ExportRelease|Any CPU.ActiveCfg = ExportRelease|Any CPU
+		{7C271684-BEAC-46BD-8C73-D7EFF0B8A592}.ExportRelease|Any CPU.Build.0 = ExportRelease|Any CPU
+	EndGlobalSection
+EndGlobal
