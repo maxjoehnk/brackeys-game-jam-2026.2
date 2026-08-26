@@ -1,0 +1,73 @@
+[gd_scene format=3 uid="uid://ibr4xtra5s7l"]
+
+[ext_resource type="Texture2D" uid="uid://c3qqhcbsar2j8" path="res://icon.svg" id="1_584jx"]
+[ext_resource type="Script" uid="uid://d26i37u5gh18j" path="res://Mob.cs" id="1_r6b5h"]
+[ext_resource type="PackedScene" uid="uid://tsqu2f2bj1gg" path="res://Tasks/DemolitionTask.tscn" id="3_gguu4"]
+[ext_resource type="PackedScene" uid="uid://bb5gp1x1swvx5" path="res://Tasks/RandomMoveAroundTask.tscn" id="4_wpg5f"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_v2ds7"]
+height = 20.0
+
+[sub_resource type="VisualShader" id="VisualShader_e4oet"]
+mode = 1
+flags/light_only = false
+nodes/vertex/0/position = Vector2(860, 120)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_y4dxj"]
+shader = SubResource("VisualShader_e4oet")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_v2ds7"]
+bg_color = Color(1, 1, 1, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="SystemFont" id="SystemFont_bdro6"]
+subpixel_positioning = 0
+
+[sub_resource type="LabelSettings" id="LabelSettings_fslth"]
+font = SubResource("SystemFont_bdro6")
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_r6b5h"]
+radius = 20.21
+
+[node name="Character1" type="CharacterBody2D" unique_id=1617888197 node_paths=PackedStringArray("Tasks")]
+script = ExtResource("1_r6b5h")
+Quotes = Array[String](["You shall not pass!", "Nice day for fishin', ain't it?", "Haha"])
+Tasks = [NodePath("Demolition"), NodePath("RandomMoveAroundTask")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=72806623]
+shape = SubResource("CapsuleShape2D_v2ds7")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=648603325]
+material = SubResource("ShaderMaterial_y4dxj")
+scale = Vector2(0.15, 0.15)
+texture = ExtResource("1_584jx")
+
+[node name="SpeechBubble" type="PanelContainer" parent="." unique_id=7083670]
+visible = false
+offset_left = -2.0
+offset_top = -35.0
+offset_right = 58.0
+offset_bottom = -15.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_v2ds7")
+
+[node name="Label" type="Label" parent="SpeechBubble" unique_id=921970741]
+layout_mode = 2
+label_settings = SubResource("LabelSettings_fslth")
+
+[node name="HitDetector" type="Area2D" parent="." unique_id=1769196247]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitDetector" unique_id=333035730]
+shape = SubResource("CircleShape2D_r6b5h")
+
+[node name="Demolition" parent="." unique_id=725256907 instance=ExtResource("3_gguu4")]
+
+[node name="RandomMoveAroundTask" parent="." unique_id=1361961681 instance=ExtResource("4_wpg5f")]
