@@ -1,0 +1,285 @@
+# Based on https://github.com/abarichello/godot-ci
+
+name: "Godot Export"
+on:
+  push:
+    branches:
+      - main
+
+env:
+  GODOT_VERSION: 4.7.2
+  EXPORT_NAME: Hell is not a Happy Place
+  PROJECT_PATH: "."
+  # Built by .github/workflows/web-toolchain.yml.
+  TOOLCHAIN_ARTIFACT: godot-web-toolchain-linux-x86_64
+  WEB_TOOLCHAIN_WORKFLOW: web-toolchain.yml
+
+jobs:
+  export-windows:
+    name: Windows Export
+    runs-on: ubuntu-22.04
+    container:
+      image: barichello/godot-ci:mono-4.7.2
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          lfs: true
+      - name: Setup
+        run: |
+          mkdir -v -p ~/.local/share/godot/export_templates/
+          mkdir -v -p ~/.config/
+          mv /root/.config/godot ~/.config/godot
+          mv /root/.local/share/godot/export_templates/${GODOT_VERSION}.stable.mono ~/.local/share/godot/export_templates/${GODOT_VERSION}.stable.mono
+      - name: Windows Build
+        run: |
+          mkdir -v -p build/windows
+          EXPORT_DIR="$(readlink -f build)"
+          cd $PROJECT_PATH
+          godot --headless --verbose --export-release "Windows Desktop" "$EXPORT_DIR/windows/$EXPORT_NAME.exe"
+      - name: Upload Artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: windows
+          path: build/windows
+
+  export-linux:
+    name: Linux Export
+    runs-on: ubuntu-22.04
+    container:
+      image: barichello/godot-ci:mono-4.7.2
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          lfs: true
+      - name: Setup
+        run: |
+          mkdir -v -p ~/.local/share/godot/export_templates/
+          mv /root/.local/share/godot/export_templates/${GODOT_VERSION}.stable.mono ~/.local/share/godot/export_templates/${GODOT_VERSION}.stable.mono
+      - name: Linux Build
+        run: |
+          mkdir -v -p build/linux
+          EXPORT_DIR="$(readlink -f build)"
+          cd $PROJECT_PATH
+          godot --headless --verbose --export-release "Linux/X11" "$EXPORT_DIR/linux/$EXPORT_NAME.x86_64"
+      - name: Upload Artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: linux
+          path: build/linux
+
+  export-mac:
+    name: Mac Export
+    runs-on: ubuntu-22.04
+    container:
+      image: barichello/godot-ci:mono-4.7.2
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          lfs: true
+      - name: Setup
+        run: |
+          mkdir -v -p ~/.local/share/godot/export_templates/
+          mv /root/.local/share/godot/export_templates/${GODOT_VERSION}.stable.mono ~/.local/share/godot/export_templates/${GODOT_VERSION}.stable.mono
+      - name: Mac Build
+        run: |
+          mkdir -v -p build/mac
+          EXPORT_DIR="$(readlink -f build)"
+          cd $PROJECT_PATH
+          godot --headless --verbose --export-release "macOS" "$EXPORT_DIR/mac/$EXPORT_NAME.zip"
+      - name: Upload Artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: mac
+          path: build/mac
+
+  export-web:
+    name: Web Export (experimental)
+    runs-on: ubuntu-22.04
+    # The C# web export is a draft upstream feature (godotengine/godot#106125);
+    # never let it break the desktop builds.
+    continue-on-error: true
+    permissions:
+      contents: read
+      actions: read
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          lfs: true
+
+      - name: Resolve toolchain build
+        id: toolchain
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          run_id=$(gh run list \
+            --repo "$GITHUB_REPOSITORY" \
+            --workflow "$WEB_TOOLCHAIN_WORKFLOW" \
+            --status success \
+            --limit 1 \
+            --json databaseId \
+            --jq '.[0].databaseId // empty')
+          if [ -z "$run_id" ]; then
+            echo "::error::No successful '$WEB_TOOLCHAIN_WORKFLOW' run found. Run that workflow once to build the export toolchain."
+            exit 1
+          fi
+          echo "Using toolchain from run $run_id"
+          echo "run_id=$run_id" >> "$GITHUB_OUTPUT"
+
+      - name: Restore cached toolchain
+        id: cache
+        uses: actions/cache@v4
+        with:
+          path: toolchain
+          key: web-toolchain-${{ steps.toolchain.outputs.run_id }}
+
+      - name: Download toolchain
+        if: steps.cache.outputs.cache-hit != 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          gh run download "${{ steps.toolchain.outputs.run_id }}" \
+            --repo "$GITHUB_REPOSITORY" \
+            --name "$TOOLCHAIN_ARTIFACT" \
+            --dir toolchain-archive
+          mkdir -p toolchain
+          tar -C toolchain -xzf "toolchain-archive/${TOOLCHAIN_ARTIFACT}.tar.gz"
+          chmod +x toolchain/godot
+
+      - name: Install editor runtime dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y --no-install-recommends \
+            libx11-6 libxcursor1 libxinerama1 libxi6 libxrandr2 \
+            libgl1 libglu1-mesa libasound2 libpulse0 libudev1
+
+      - name: Set up .NET
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: 9.0.x
+
+      # The wasm runtime pack is resolved for net9.0, so pin the SDK band.
+      - name: Pin .NET SDK
+        run: |
+          cat > global.json << 'EOF'
+          {
+            "sdk": {
+              "version": "9.0.100",
+              "rollForward": "latestFeature"
+            }
+          }
+          EOF
+
+      - name: Install wasm-tools
+        run: dotnet workload install wasm-tools
+
+      # The patched Godot.NET.Sdk / GodotSharp packages share their version number
+      # with the official ones on nuget.org, so map them explicitly to the local
+      # feed instead of relying on source probing order.
+      # Upstream traces "builds but misbehaves at runtime" to stale packages
+      # (ComplexRobot/godot-dotnet-web-export#8). The global packages folder is
+      # consulted ahead of every source, so source mapping alone cannot
+      # guarantee the patched GodotSharp is the one that gets linked.
+      - name: Clear NuGet caches
+        run: dotnet nuget locals all --clear
+
+      - name: Configure NuGet sources
+        run: |
+          set -euo pipefail
+          feed="$(readlink -f toolchain/nuget)"
+          cat > NuGet.config << EOF
+          <?xml version="1.0" encoding="utf-8"?>
+          <configuration>
+            <packageSources>
+              <clear />
+              <add key="godot-web-patched" value="${feed}" />
+              <add key="nuget.org" value="https://api.nuget.org/v3/index.json" protocolVersion="3" />
+            </packageSources>
+            <packageSourceMapping>
+              <packageSource key="godot-web-patched">
+                <package pattern="Godot.*" />
+                <package pattern="GodotSharp*" />
+              </packageSource>
+              <packageSource key="nuget.org">
+                <package pattern="*" />
+              </packageSource>
+            </packageSourceMapping>
+          </configuration>
+          EOF
+          ls "$feed"
+
+      # If the csproj and the toolchain disagree, restore silently falls back to
+      # the official package of that version and the game links against a
+      # GodotSharp that does not match the export template.
+      - name: Verify SDK version matches the toolchain
+        run: |
+          set -euo pipefail
+          toolchain_version="$(cut -d. -f1-3 toolchain/template_dir.txt)"
+          csproj_version="$(grep -o 'Godot.NET.Sdk/[0-9.]*' *.csproj | cut -d/ -f2)"
+          echo "toolchain=$toolchain_version csproj=$csproj_version"
+          if [ "$toolchain_version" != "$csproj_version" ]; then
+            echo "::error::csproj targets Godot.NET.Sdk/$csproj_version but the toolchain built $toolchain_version."
+            exit 1
+          fi
+          test -f "toolchain/nuget/Godot.NET.Sdk.${toolchain_version}.nupkg"
+          test -f "toolchain/nuget/GodotSharp.${toolchain_version}.nupkg"
+
+      - name: Install export templates
+        run: |
+          set -euo pipefail
+          template_dir="$HOME/.local/share/godot/export_templates/$(cat toolchain/template_dir.txt)"
+          mkdir -p "$template_dir"
+          cp toolchain/templates/*.zip "$template_dir/"
+          ls -l "$template_dir"
+
+      - name: Web Build
+        run: |
+          mkdir -v -p build/web
+          EXPORT_DIR="$(readlink -f build)"
+          cd $PROJECT_PATH
+          "$GITHUB_WORKSPACE/toolchain/godot" --headless --verbose --export-release "Web" "$EXPORT_DIR/web/index.html"
+
+      - name: Upload Artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: web
+          path: build/web
+  
+  itchio:
+    name: Deploy to itch.io
+    if: false
+    runs-on: ubuntu-22.04
+    container:
+      image: barichello/godot-ci:mono-4.7.2
+    needs:
+      - export-linux
+      - export-mac
+      - export-windows
+      - export-web
+    steps:
+      - uses: actions/download-artifact@v4
+      - run: butler push ./linux $ITCHIO_USERNAME/$ITCHIO_GAME:linux
+        env:
+          ITCHIO_USERNAME: ${{ vars.ITCHIO_USERNAME }}
+          ITCHIO_GAME: ${{ vars.ITCHIO_GAME }}
+          BUTLER_API_KEY: ${{ secrets.BUTLER_API_KEY }}
+      - run: butler push ./windows $ITCHIO_USERNAME/$ITCHIO_GAME:windows
+        env:
+          ITCHIO_USERNAME: ${{ vars.ITCHIO_USERNAME }}
+          ITCHIO_GAME: ${{ vars.ITCHIO_GAME }}
+          BUTLER_API_KEY: ${{ secrets.BUTLER_API_KEY }}
+      - run: butler push ./mac $ITCHIO_USERNAME/$ITCHIO_GAME:mac
+        env:
+          ITCHIO_USERNAME: ${{ vars.ITCHIO_USERNAME }}
+          ITCHIO_GAME: ${{ vars.ITCHIO_GAME }}
+          BUTLER_API_KEY: ${{ secrets.BUTLER_API_KEY }}
+      - run: butler push ./web $ITCHIO_USERNAME/$ITCHIO_GAME:web
+        env:
+          ITCHIO_USERNAME: ${{ vars.ITCHIO_USERNAME }}
+          ITCHIO_GAME: ${{ vars.ITCHIO_GAME }}
+          BUTLER_API_KEY: ${{ secrets.BUTLER_API_KEY }}
