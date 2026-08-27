@@ -252,7 +252,6 @@ jobs:
   
   itchio:
     name: Deploy to itch.io
-    if: false
     runs-on: ubuntu-22.04
     container:
       image: barichello/godot-ci:mono-4.7.2
