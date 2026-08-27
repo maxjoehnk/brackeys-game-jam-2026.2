@@ -5,6 +5,7 @@
     <TargetFramework Condition=" '$(GodotTargetPlatform)' == 'web' ">net9.0</TargetFramework>
     <EnableDynamicLoading>true</EnableDynamicLoading>
     <RootNamespace>BrackeysGameJam2026.Empty</RootNamespace>
+    <Nullable>enable</Nullable>
   </PropertyGroup>
 
   <PropertyGroup Condition=" '$(GodotTargetPlatform)' == 'web' ">
@@ -21,5 +22,9 @@
     <TrimmerRootAssembly Include="GodotSharp" />
     <TrimmerRootAssembly Include="System.Private.CoreLib" />
     <TrimmerRootAssembly Include="System.Runtime" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="WhoIsTheMurderer\README.md" />
   </ItemGroup>
 </Project>

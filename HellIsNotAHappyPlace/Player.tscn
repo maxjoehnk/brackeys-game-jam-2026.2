@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://d0ymtp4ag30a8"]
+
+[ext_resource type="Texture2D" uid="uid://c3qqhcbsar2j8" path="res://icon.svg" id="1_xhfnw"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_v2ds7"]
+radius = 35.0
+height = 70.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_uegmi"]
+radius = 84.05355
+
+[node name="Player" type="CharacterBody2D" unique_id=1488309992]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=740686774]
+shape = SubResource("CapsuleShape2D_v2ds7")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=873986561]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_xhfnw")
+
+[node name="HitDetector" type="Area2D" parent="." unique_id=1868366601]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitDetector" unique_id=790949086]
+shape = SubResource("CircleShape2D_uegmi")
+
+[node name="AudioListener2D" type="AudioListener2D" parent="." unique_id=1109200940]
+current = true
