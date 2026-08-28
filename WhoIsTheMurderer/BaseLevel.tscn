@@ -1,0 +1,121 @@
+[gd_scene format=3 uid="uid://ccx4ku0ldxtmc"]
+
+[ext_resource type="Script" uid="uid://k70lfnlgyous" path="res://WhoIsTheMurderer/WhoIsTheMurderer.cs" id="1_4w18o"]
+[ext_resource type="Texture2D" uid="uid://cmitio11bj4y3" path="res://WhoIsTheMurderer/Assets/background placeholder.jpg" id="2_ky2ar"]
+[ext_resource type="FontFile" uid="uid://cqiig8nw8xoui" path="res://WhoIsTheMurderer/Assets/UnscreenMK.ttf" id="14_w0avv"]
+[ext_resource type="PackedScene" uid="uid://d1psbeqtwx3e1" path="res://WhoIsTheMurderer/Heart.tscn" id="15_ui1hk"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_y5ufb"]
+content_margin_left = 16.0
+content_margin_top = 16.0
+content_margin_right = 16.0
+content_margin_bottom = 16.0
+bg_color = Color(0, 0, 0, 0.72156864)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(1, 1, 1, 0.5882353)
+
+[sub_resource type="LabelSettings" id="LabelSettings_v2ds7"]
+font = ExtResource("14_w0avv")
+font_size = 32
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_v2ds7"]
+bg_color = Color(0, 0, 0, 0.78039217)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(1, 1, 1, 0.5882353)
+
+[sub_resource type="SystemFont" id="SystemFont_v2ds7"]
+subpixel_positioning = 0
+
+[node name="Base Level" type="Node2D" unique_id=746051315]
+script = ExtResource("1_4w18o")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=2140475330]
+offset_right = 1920.0
+offset_bottom = 1080.0
+texture = ExtResource("2_ky2ar")
+
+[node name="CenterContainer" type="CenterContainer" parent="." unique_id=511141921]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 1920.0
+offset_bottom = 1080.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Characters" type="GridContainer" parent="CenterContainer" unique_id=1367262659]
+layout_mode = 2
+theme_override_constants/h_separation = 0
+theme_override_constants/v_separation = 0
+columns = 3
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=992373059]
+
+[node name="PanelContainer" type="PanelContainer" parent="CanvasLayer" unique_id=1907796086]
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 16.0
+offset_top = -200.0
+offset_right = -16.0
+offset_bottom = -16.0
+grow_horizontal = 2
+grow_vertical = 0
+pivot_offset_ratio = Vector2(0.5, 0)
+size_flags_horizontal = 3
+size_flags_vertical = 10
+theme_override_styles/panel = SubResource("StyleBoxFlat_y5ufb")
+
+[node name="Label" type="Label" parent="CanvasLayer/PanelContainer" unique_id=983648701]
+custom_maximum_size = Vector2(1920, 1080)
+layout_mode = 2
+size_flags_vertical = 1
+offset_transform_enabled = true
+label_settings = SubResource("LabelSettings_v2ds7")
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="Panel" type="PanelContainer" parent="CanvasLayer/PanelContainer" unique_id=247963193]
+custom_maximum_size = Vector2(160, 160)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_v2ds7")
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/PanelContainer/Panel" unique_id=1688845224]
+layout_mode = 2
+expand_mode = 5
+
+[node name="Button" type="Button" parent="CanvasLayer/PanelContainer" unique_id=608574212]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 8
+theme_override_fonts/font = SubResource("SystemFont_v2ds7")
+text = "Accuse"
+
+[node name="HFlowContainer" type="HFlowContainer" parent="CanvasLayer" unique_id=2009590393]
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 32.0
+offset_top = 32.0
+offset_right = 32.0
+offset_bottom = 520.0
+grow_horizontal = 2
+mouse_filter = 2
+
+[node name="Heart2" parent="CanvasLayer/HFlowContainer" unique_id=558054887 instance=ExtResource("15_ui1hk")]
+layout_mode = 2
+
+[node name="Heart3" parent="CanvasLayer/HFlowContainer" unique_id=943454011 instance=ExtResource("15_ui1hk")]
+layout_mode = 2
+
+[node name="Heart" parent="CanvasLayer/HFlowContainer" unique_id=31935835 instance=ExtResource("15_ui1hk")]
+layout_mode = 2

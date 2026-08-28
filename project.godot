@@ -11,9 +11,13 @@ config_version=5
 [application]
 
 config/name="BrackeysGameJam2026.2"
-run/main_scene="uid://b2t88n0w3sd4a"
+run/main_scene="uid://cx0grnu1ls3vh"
 config/features=PackedStringArray("4.7", "C#", "GL Compatibility")
 config/icon="res://icon.svg"
+
+[autoload]
+
+GameState="*uid://jhft8ebumata"
 
 [display]
 

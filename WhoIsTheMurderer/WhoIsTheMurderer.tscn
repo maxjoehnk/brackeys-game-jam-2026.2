@@ -1,14 +1,15 @@
-[gd_scene format=4 uid="uid://b2t88n0w3sd4a"]
+[gd_scene format=3 uid="uid://b2t88n0w3sd4a"]
 
 [ext_resource type="Script" uid="uid://k70lfnlgyous" path="res://WhoIsTheMurderer/WhoIsTheMurderer.cs" id="1_gl4sl"]
-[ext_resource type="TileSet" uid="uid://bdgcecybq4il1" path="res://WhoIsTheMurderer/Assets/Grid.tres" id="1_kaxeu"]
+[ext_resource type="Texture2D" uid="uid://cmitio11bj4y3" path="res://WhoIsTheMurderer/Assets/background placeholder.jpg" id="2_dt5qi"]
 [ext_resource type="PackedScene" uid="uid://ddo36lrfym8wx" path="res://WhoIsTheMurderer/Character.tscn" id="3_y5ufb"]
+[ext_resource type="PackedScene" uid="uid://d8ngoefluv66" path="res://WhoIsTheMurderer/CharacterSlot.tscn" id="4_0vybo"]
 [ext_resource type="Texture2D" uid="uid://cf8nc50b1i5i3" path="res://WhoIsTheMurderer/Assets/shade.png" id="4_6j2qa"]
 [ext_resource type="FontFile" uid="uid://cqiig8nw8xoui" path="res://WhoIsTheMurderer/Assets/UnscreenMK.ttf" id="4_vmmds"]
 [ext_resource type="Texture2D" uid="uid://d01iphn6wj18o" path="res://WhoIsTheMurderer/Assets/echsenimp.png" id="5_6j2qa"]
 [ext_resource type="Texture2D" uid="uid://d2gjmtx7wbleg" path="res://WhoIsTheMurderer/Assets/echsenimp-lilaa.png" id="6_6j2qa"]
-[ext_resource type="Texture2D" uid="uid://2mn0p35yh18b" path="res://WhoIsTheMurderer/Assets/fish.png" id="7_nc1di"]
-[ext_resource type="Texture2D" uid="uid://b0xbs5oofu2m6" path="res://WhoIsTheMurderer/Assets/bird.png" id="8_2a6rk"]
+[ext_resource type="Texture2D" uid="uid://bibnyfuhsy8t6" path="res://WhoIsTheMurderer/Assets/tentaclething.png" id="7_2a6rk"]
+[ext_resource type="Texture2D" uid="uid://dbih5puf4fcw8" path="res://WhoIsTheMurderer/Assets/kuhfrau.png" id="9_0vybo"]
 [ext_resource type="PackedScene" uid="uid://d1psbeqtwx3e1" path="res://WhoIsTheMurderer/Heart.tscn" id="9_bnemw"]
 [ext_resource type="Texture2D" uid="uid://gf85tdcxkqnq" path="res://WhoIsTheMurderer/Assets/bomb.png" id="9_dt5qi"]
 [ext_resource type="Texture2D" uid="uid://ckvokgithhg6g" path="res://WhoIsTheMurderer/Assets/gras.png" id="10_0vybo"]
@@ -16,102 +17,151 @@
 [ext_resource type="Texture2D" uid="uid://b5b48kdeb0aop" path="res://WhoIsTheMurderer/Assets/sheep.png" id="12_0dp3v"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_y5ufb"]
-bg_color = Color(0, 0, 0, 1)
+bg_color = Color(0, 0, 0, 0.72156864)
 border_width_left = 4
 border_width_top = 4
 border_width_right = 4
 border_width_bottom = 4
-border_color = Color(0.5, 0.5, 0.5, 1)
+border_color = Color(1, 1, 1, 0.5882353)
 
 [sub_resource type="LabelSettings" id="LabelSettings_v2ds7"]
 font = ExtResource("4_vmmds")
 font_size = 32
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_v2ds7"]
-bg_color = Color(0, 0, 0, 1)
+bg_color = Color(0, 0, 0, 0.78039217)
 border_width_left = 4
 border_width_top = 4
 border_width_right = 4
 border_width_bottom = 4
-border_color = Color(0.8, 0.6484319, 0.17684646, 1)
+border_color = Color(1, 1, 1, 0.5882353)
 
 [sub_resource type="SystemFont" id="SystemFont_v2ds7"]
 subpixel_positioning = 0
 
-[node name="WhoIsTheMurderer" type="Node2D" unique_id=746051315]
+[node name="WhoIsTheMurderer" type="Node2D" unique_id=746051315 node_paths=PackedStringArray("CharacterBoxes")]
 script = ExtResource("1_gl4sl")
-Columns = 3
-Rows = 3
+CharacterBoxes = [null]
 
-[node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=2125796665]
-texture_filter = 1
-texture_repeat = 1
-position = Vector2(566.99994, 170.99998)
-scale = Vector2(5, 5)
-tile_map_data = PackedByteArray("AAADAAAAAAABABoAAAADAAEAAAABABsAAAADAAIAAAABABwAAAAEAAAAAAACABoAAAAEAAEAAAACABsAAAAEAAIAAAACABwAAAAFAAAAAAADABoAAAAFAAEAAAADABsAAAAFAAIAAAADABwAAAAAAAMAAAABABoAAAAAAAQAAAABABsAAAAAAAUAAAABABwAAAABAAMAAAACABoAAAABAAQAAAACABsAAAABAAUAAAACABwAAAACAAMAAAADABoAAAACAAQAAAADABsAAAACAAUAAAADABwAAAADAAMAAAABABoAAAADAAQAAAABABsAAAADAAUAAAABABwAAAAEAAMAAAACABoAAAAEAAQAAAACABsAAAAEAAUAAAACABwAAAAFAAMAAAADABoAAAAFAAQAAAADABsAAAAFAAUAAAADABwAAAAGAAAAAAABABoAAAAGAAEAAAABABsAAAAGAAIAAAABABwAAAAHAAAAAAACABoAAAAHAAEAAAACABsAAAAHAAIAAAACABwAAAAIAAAAAAADABoAAAAIAAEAAAADABsAAAAIAAIAAAADABwAAAAGAAMAAAABABoAAAAGAAQAAAABABsAAAAGAAUAAAABABwAAAAHAAMAAAACABoAAAAHAAQAAAACABsAAAAHAAUAAAACABwAAAAIAAMAAAADABoAAAAIAAQAAAADABsAAAAIAAUAAAADABwAAAAGAAYAAAABABoAAAAGAAcAAAABABsAAAAGAAgAAAABABwAAAAHAAYAAAACABoAAAAHAAcAAAACABsAAAAHAAgAAAACABwAAAAIAAYAAAADABoAAAAIAAcAAAADABsAAAAIAAgAAAADABwAAAADAAYAAAABABoAAAADAAcAAAABABsAAAADAAgAAAABABwAAAAEAAYAAAACABoAAAAEAAcAAAACABsAAAAEAAgAAAACABwAAAAFAAYAAAADABoAAAAFAAcAAAADABsAAAAFAAgAAAADABwAAAAAAAYAAAABABoAAAAAAAcAAAABABsAAAAAAAgAAAABABwAAAABAAYAAAACABoAAAABAAcAAAACABsAAAABAAgAAAACABwAAAACAAYAAAADABoAAAACAAcAAAADABsAAAACAAgAAAADABwAAAAAAAAAAAABABoAAAAAAAEAAAABABsAAAAAAAIAAAABABwAAAABAAAAAAACABoAAAABAAEAAAACABsAAAABAAIAAAACABwAAAACAAAAAAADABoAAAACAAEAAAADABsAAAACAAIAAAADABwAAAA=")
-tile_set = ExtResource("1_kaxeu")
+[node name="TextureRect" type="TextureRect" parent="." unique_id=2140475330]
+offset_right = 1920.0
+offset_bottom = 1080.0
+texture = ExtResource("2_dt5qi")
 
-[node name="Characters" type="GridContainer" parent="." unique_id=1367262659]
-offset_left = 624.0
-offset_top = 240.0
-offset_right = 1320.0
-offset_bottom = 952.0
-theme_override_constants/h_separation = 112
-theme_override_constants/v_separation = 112
+[node name="CenterContainer" type="CenterContainer" parent="." unique_id=511141921]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 1920.0
+offset_bottom = 1080.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Characters" type="GridContainer" parent="CenterContainer" unique_id=1367262659]
+layout_mode = 2
+theme_override_constants/h_separation = 0
+theme_override_constants/v_separation = 0
 columns = 3
 
-[node name="Character" parent="Characters" unique_id=619005986 instance=ExtResource("3_y5ufb")]
+[node name="CharacterSlot" parent="CenterContainer/Characters" unique_id=2143017817 instance=ExtResource("4_0vybo")]
+layout_mode = 2
+
+[node name="Character" parent="CenterContainer/Characters/CharacterSlot" unique_id=619005986 instance=ExtResource("3_y5ufb")]
 custom_minimum_size = Vector2(128, 128)
 layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
 Hint = "Der Rechts wars"
 Texture = ExtResource("4_6j2qa")
 
-[node name="Character2" parent="Characters" unique_id=262681594 instance=ExtResource("3_y5ufb")]
+[node name="CharacterSlot2" parent="CenterContainer/Characters" unique_id=376473841 instance=ExtResource("4_0vybo")]
+layout_mode = 2
+
+[node name="Character" parent="CenterContainer/Characters/CharacterSlot2" unique_id=262681594 instance=ExtResource("3_y5ufb")]
 custom_minimum_size = Vector2(128, 128)
 layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
 Hint = "Ich war's nich"
 Murderer = true
 Texture = ExtResource("5_6j2qa")
 
-[node name="Character3" parent="Characters" unique_id=1489581476 instance=ExtResource("3_y5ufb")]
+[node name="CharacterSlot3" parent="CenterContainer/Characters" unique_id=734866682 instance=ExtResource("4_0vybo")]
+layout_mode = 2
+
+[node name="Character" parent="CenterContainer/Characters/CharacterSlot3" unique_id=1489581476 instance=ExtResource("3_y5ufb")]
 custom_minimum_size = Vector2(128, 128)
 layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
 Hint = "Der Links war's"
 Texture = ExtResource("6_6j2qa")
 
-[node name="Character4" parent="Characters" unique_id=517675599 instance=ExtResource("3_y5ufb")]
+[node name="CharacterSlot4" parent="CenterContainer/Characters" unique_id=600718571 instance=ExtResource("4_0vybo")]
+layout_mode = 2
+
+[node name="Character" parent="CenterContainer/Characters/CharacterSlot4" unique_id=517675599 instance=ExtResource("3_y5ufb")]
 custom_minimum_size = Vector2(128, 128)
 layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
 Hint = "Was für ein Mörder?"
-Texture = ExtResource("7_nc1di")
+Texture = ExtResource("7_2a6rk")
 
-[node name="Character5" parent="Characters" unique_id=1277722452 instance=ExtResource("3_y5ufb")]
+[node name="CharacterSlot5" parent="CenterContainer/Characters" unique_id=1821541818 instance=ExtResource("4_0vybo")]
+layout_mode = 2
+
+[node name="Character" parent="CenterContainer/Characters/CharacterSlot5" unique_id=1277722452 instance=ExtResource("3_y5ufb")]
 custom_minimum_size = Vector2(128, 128)
 layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
 Hint = "Ich mag Fische"
-Texture = ExtResource("8_2a6rk")
+Texture = ExtResource("9_0vybo")
 
-[node name="Character6" parent="Characters" unique_id=891276158 instance=ExtResource("3_y5ufb")]
+[node name="CharacterSlot6" parent="CenterContainer/Characters" unique_id=1085547431 instance=ExtResource("4_0vybo")]
+layout_mode = 2
+
+[node name="Character" parent="CenterContainer/Characters/CharacterSlot6" unique_id=891276158 instance=ExtResource("3_y5ufb")]
 custom_minimum_size = Vector2(128, 128)
 layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
 Hint = "Was ist eigentlich in Buchstabensuppe drin?"
 Texture = ExtResource("9_dt5qi")
 
-[node name="Character7" parent="Characters" unique_id=269229338 instance=ExtResource("3_y5ufb")]
+[node name="CharacterSlot7" parent="CenterContainer/Characters" unique_id=598973689 instance=ExtResource("4_0vybo")]
+layout_mode = 2
+
+[node name="Character" parent="CenterContainer/Characters/CharacterSlot7" unique_id=269229338 instance=ExtResource("3_y5ufb")]
 custom_minimum_size = Vector2(128, 128)
 layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
 Hint = "Husch und plötzlich bin ich ne Frau"
 Texture = ExtResource("10_0vybo")
 
-[node name="Character8" parent="Characters" unique_id=584002583 instance=ExtResource("3_y5ufb")]
+[node name="CharacterSlot8" parent="CenterContainer/Characters" unique_id=916274444 instance=ExtResource("4_0vybo")]
+layout_mode = 2
+
+[node name="Character" parent="CenterContainer/Characters/CharacterSlot8" unique_id=584002583 instance=ExtResource("3_y5ufb")]
 custom_minimum_size = Vector2(128, 128)
 layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
 Hint = "Das wird man ja wohl noch sagen dürfen!"
 Texture = ExtResource("11_f28a4")
 
-[node name="Character9" parent="Characters" unique_id=1501594502 instance=ExtResource("3_y5ufb")]
+[node name="CharacterSlot9" parent="CenterContainer/Characters" unique_id=1071015920 instance=ExtResource("4_0vybo")]
+layout_mode = 2
+
+[node name="Character" parent="CenterContainer/Characters/CharacterSlot9" unique_id=1501594502 instance=ExtResource("3_y5ufb")]
 custom_minimum_size = Vector2(128, 128)
 layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
 Hint = "Uhm, excuse me? Wir haben 2026!"
 Texture = ExtResource("12_0dp3v")
 
@@ -122,7 +172,10 @@ anchors_preset = 12
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = 16.0
 offset_top = -200.0
+offset_right = -16.0
+offset_bottom = -16.0
 grow_horizontal = 2
 grow_vertical = 0
 pivot_offset_ratio = Vector2(0.5, 0)
@@ -131,7 +184,6 @@ size_flags_vertical = 10
 theme_override_styles/panel = SubResource("StyleBoxFlat_y5ufb")
 
 [node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/PanelContainer" unique_id=612106216]
-visible = false
 layout_mode = 2
 theme_override_constants/margin_left = 16
 theme_override_constants/margin_top = 16
