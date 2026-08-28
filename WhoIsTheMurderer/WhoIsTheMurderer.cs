@@ -1,11 +1,15 @@
 using Godot;
-using System;
 using System.Linq;
 
 [Tool]
 public partial class WhoIsTheMurderer : Node2D
 {
-	[Export] public int Columns { get; set; }
+	[Export]
+	public int Columns
+	{
+		get => this.CharacterContainer.Columns;
+		set => this.CharacterContainer.Columns = value;
+	}
 	
 	[Export] public int Rows { get; set; }
 
@@ -17,6 +21,8 @@ public partial class WhoIsTheMurderer : Node2D
 	private Character? selected;
 	
 	private Heart Heart => this.GetNode<Heart>("CanvasLayer/HFlowContainer/Heart");
+	
+	private GridContainer CharacterContainer => this.GetNode<GridContainer>("Characters");
 
 	public override void _Ready()
 	{
@@ -24,19 +30,20 @@ public partial class WhoIsTheMurderer : Node2D
 		{
 			return;
 		}
-		foreach (Character child in this.GetNode("Characters").GetChildren().Cast<Character>())
+		this.CharacterContainer.GetChildren().Cast<Character>().First().GrabFocus();
+		foreach (Character child in this.CharacterContainer.GetChildren().Cast<Character>())
 		{
-			child.Click += (hint) => this.OnCharacterClicked(child, hint);
+			child.Pressed += () => this.OnCharacterClicked(child);
 		}
 
 		this.AccuseButton.Pressed += this.OnAccuseButtonPressed;
 	}
 
-	private void OnCharacterClicked(Character character, string hint)
+	private void OnCharacterClicked(Character character)
 	{
 		this.GetNode<MarginContainer>("CanvasLayer/PanelContainer/MarginContainer").Visible = true;
-		this.TextBox.Text = hint;
-		this.CharacterBox.Texture = character.Asset.Texture;
+		this.TextBox.Text = character.Hint;
+		this.CharacterBox.Texture = character.Texture;
 		this.selected = character;
 	}
 

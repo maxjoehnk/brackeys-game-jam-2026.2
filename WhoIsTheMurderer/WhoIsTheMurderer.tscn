@@ -8,7 +8,12 @@
 [ext_resource type="Texture2D" uid="uid://d01iphn6wj18o" path="res://WhoIsTheMurderer/Assets/echsenimp.png" id="5_6j2qa"]
 [ext_resource type="Texture2D" uid="uid://d2gjmtx7wbleg" path="res://WhoIsTheMurderer/Assets/echsenimp-lilaa.png" id="6_6j2qa"]
 [ext_resource type="Texture2D" uid="uid://2mn0p35yh18b" path="res://WhoIsTheMurderer/Assets/fish.png" id="7_nc1di"]
+[ext_resource type="Texture2D" uid="uid://b0xbs5oofu2m6" path="res://WhoIsTheMurderer/Assets/bird.png" id="8_2a6rk"]
 [ext_resource type="PackedScene" uid="uid://d1psbeqtwx3e1" path="res://WhoIsTheMurderer/Heart.tscn" id="9_bnemw"]
+[ext_resource type="Texture2D" uid="uid://gf85tdcxkqnq" path="res://WhoIsTheMurderer/Assets/bomb.png" id="9_dt5qi"]
+[ext_resource type="Texture2D" uid="uid://ckvokgithhg6g" path="res://WhoIsTheMurderer/Assets/gras.png" id="10_0vybo"]
+[ext_resource type="Texture2D" uid="uid://cmr51d8sjmryt" path="res://WhoIsTheMurderer/Assets/pig.png" id="11_f28a4"]
+[ext_resource type="Texture2D" uid="uid://b5b48kdeb0aop" path="res://WhoIsTheMurderer/Assets/sheep.png" id="12_0dp3v"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_y5ufb"]
 bg_color = Color(0, 0, 0, 1)
@@ -31,6 +36,7 @@ border_width_bottom = 4
 border_color = Color(0.8, 0.6484319, 0.17684646, 1)
 
 [sub_resource type="SystemFont" id="SystemFont_v2ds7"]
+subpixel_positioning = 0
 
 [node name="WhoIsTheMurderer" type="Node2D" unique_id=746051315]
 script = ExtResource("1_gl4sl")
@@ -45,48 +51,69 @@ scale = Vector2(5, 5)
 tile_map_data = PackedByteArray("AAADAAAAAAABABoAAAADAAEAAAABABsAAAADAAIAAAABABwAAAAEAAAAAAACABoAAAAEAAEAAAACABsAAAAEAAIAAAACABwAAAAFAAAAAAADABoAAAAFAAEAAAADABsAAAAFAAIAAAADABwAAAAAAAMAAAABABoAAAAAAAQAAAABABsAAAAAAAUAAAABABwAAAABAAMAAAACABoAAAABAAQAAAACABsAAAABAAUAAAACABwAAAACAAMAAAADABoAAAACAAQAAAADABsAAAACAAUAAAADABwAAAADAAMAAAABABoAAAADAAQAAAABABsAAAADAAUAAAABABwAAAAEAAMAAAACABoAAAAEAAQAAAACABsAAAAEAAUAAAACABwAAAAFAAMAAAADABoAAAAFAAQAAAADABsAAAAFAAUAAAADABwAAAAGAAAAAAABABoAAAAGAAEAAAABABsAAAAGAAIAAAABABwAAAAHAAAAAAACABoAAAAHAAEAAAACABsAAAAHAAIAAAACABwAAAAIAAAAAAADABoAAAAIAAEAAAADABsAAAAIAAIAAAADABwAAAAGAAMAAAABABoAAAAGAAQAAAABABsAAAAGAAUAAAABABwAAAAHAAMAAAACABoAAAAHAAQAAAACABsAAAAHAAUAAAACABwAAAAIAAMAAAADABoAAAAIAAQAAAADABsAAAAIAAUAAAADABwAAAAGAAYAAAABABoAAAAGAAcAAAABABsAAAAGAAgAAAABABwAAAAHAAYAAAACABoAAAAHAAcAAAACABsAAAAHAAgAAAACABwAAAAIAAYAAAADABoAAAAIAAcAAAADABsAAAAIAAgAAAADABwAAAADAAYAAAABABoAAAADAAcAAAABABsAAAADAAgAAAABABwAAAAEAAYAAAACABoAAAAEAAcAAAACABsAAAAEAAgAAAACABwAAAAFAAYAAAADABoAAAAFAAcAAAADABsAAAAFAAgAAAADABwAAAAAAAYAAAABABoAAAAAAAcAAAABABsAAAAAAAgAAAABABwAAAABAAYAAAACABoAAAABAAcAAAACABsAAAABAAgAAAACABwAAAACAAYAAAADABoAAAACAAcAAAADABsAAAACAAgAAAADABwAAAAAAAAAAAABABoAAAAAAAEAAAABABsAAAAAAAIAAAABABwAAAABAAAAAAACABoAAAABAAEAAAACABsAAAABAAIAAAACABwAAAACAAAAAAADABoAAAACAAEAAAADABsAAAACAAIAAAADABwAAAA=")
 tile_set = ExtResource("1_kaxeu")
 
-[node name="Characters" type="Node2D" parent="." unique_id=1375039743]
+[node name="Characters" type="GridContainer" parent="." unique_id=1367262659]
+offset_left = 624.0
+offset_top = 240.0
+offset_right = 1320.0
+offset_bottom = 952.0
+theme_override_constants/h_separation = 112
+theme_override_constants/v_separation = 112
+columns = 3
 
 [node name="Character" parent="Characters" unique_id=619005986 instance=ExtResource("3_y5ufb")]
-position = Vector2(688, 304)
+custom_minimum_size = Vector2(128, 128)
+layout_mode = 2
 Hint = "Der Rechts wars"
 Texture = ExtResource("4_6j2qa")
 
 [node name="Character2" parent="Characters" unique_id=262681594 instance=ExtResource("3_y5ufb")]
-position = Vector2(928, 304)
+custom_minimum_size = Vector2(128, 128)
+layout_mode = 2
 Hint = "Ich war's nich"
 Murderer = true
 Texture = ExtResource("5_6j2qa")
 
 [node name="Character3" parent="Characters" unique_id=1489581476 instance=ExtResource("3_y5ufb")]
-position = Vector2(1168, 304)
+custom_minimum_size = Vector2(128, 128)
+layout_mode = 2
 Hint = "Der Links war's"
 Texture = ExtResource("6_6j2qa")
 
 [node name="Character4" parent="Characters" unique_id=517675599 instance=ExtResource("3_y5ufb")]
-position = Vector2(688, 544)
+custom_minimum_size = Vector2(128, 128)
+layout_mode = 2
 Hint = "Was für ein Mörder?"
 Texture = ExtResource("7_nc1di")
 
 [node name="Character5" parent="Characters" unique_id=1277722452 instance=ExtResource("3_y5ufb")]
-position = Vector2(928, 544)
+custom_minimum_size = Vector2(128, 128)
+layout_mode = 2
 Hint = "Ich mag Fische"
+Texture = ExtResource("8_2a6rk")
 
 [node name="Character6" parent="Characters" unique_id=891276158 instance=ExtResource("3_y5ufb")]
-position = Vector2(1168, 544)
+custom_minimum_size = Vector2(128, 128)
+layout_mode = 2
 Hint = "Was ist eigentlich in Buchstabensuppe drin?"
+Texture = ExtResource("9_dt5qi")
 
 [node name="Character7" parent="Characters" unique_id=269229338 instance=ExtResource("3_y5ufb")]
-position = Vector2(688, 784)
+custom_minimum_size = Vector2(128, 128)
+layout_mode = 2
 Hint = "Husch und plötzlich bin ich ne Frau"
+Texture = ExtResource("10_0vybo")
 
 [node name="Character8" parent="Characters" unique_id=584002583 instance=ExtResource("3_y5ufb")]
-position = Vector2(928, 784)
+custom_minimum_size = Vector2(128, 128)
+layout_mode = 2
 Hint = "Das wird man ja wohl noch sagen dürfen!"
+Texture = ExtResource("11_f28a4")
 
 [node name="Character9" parent="Characters" unique_id=1501594502 instance=ExtResource("3_y5ufb")]
-position = Vector2(1168, 784)
+custom_minimum_size = Vector2(128, 128)
+layout_mode = 2
 Hint = "Uhm, excuse me? Wir haben 2026!"
+Texture = ExtResource("12_0dp3v")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=992373059]
 
@@ -146,6 +173,7 @@ offset_top = 32.0
 offset_right = 32.0
 offset_bottom = 520.0
 grow_horizontal = 2
+mouse_filter = 2
 
 [node name="Heart2" parent="CanvasLayer/HFlowContainer" unique_id=558054887 instance=ExtResource("9_bnemw")]
 layout_mode = 2
