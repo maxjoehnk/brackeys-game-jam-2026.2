@@ -1,36 +1,52 @@
 [gd_scene format=3 uid="uid://ccx4ku0ldxtmc"]
 
 [ext_resource type="Script" uid="uid://k70lfnlgyous" path="res://WhoIsTheMurderer.cs" id="1_4w18o"]
-[ext_resource type="Texture2D" uid="uid://dfcgoqrmlo7xt" path="res://Assets/background-0.png" id="2_m5cwp"]
-[ext_resource type="Texture2D" uid="uid://dmeudqupu3pee" path="res://Assets/background-1.png" id="3_fplwn"]
-[ext_resource type="Texture2D" uid="uid://cj4mk7o5r75h8" path="res://Assets/background-2.png" id="4_u7am5"]
-[ext_resource type="Texture2D" uid="uid://7wccabniu14f" path="res://Assets/background-3.png" id="5_llgwl"]
-[ext_resource type="Texture2D" uid="uid://bvq1dpvwy1ucl" path="res://Assets/background-5.png" id="6_fplwn"]
-[ext_resource type="Texture2D" uid="uid://bvb671601tc6d" path="res://Assets/background-4.png" id="6_mj272"]
-[ext_resource type="Texture2D" uid="uid://kw83bq8eoj1h" path="res://Assets/background-7.png" id="7_nln4q"]
-[ext_resource type="Texture2D" uid="uid://b0ximo0tosycb" path="res://Assets/background-6.png" id="8_u7am5"]
 [ext_resource type="Texture2D" uid="uid://bcmjanss35bkw" path="res://Assets/FreeHorrorUi.png" id="10_llgwl"]
 [ext_resource type="FontFile" uid="uid://cqiig8nw8xoui" path="res://Assets/UnscreenMK.ttf" id="14_w0avv"]
 [ext_resource type="PackedScene" uid="uid://d1psbeqtwx3e1" path="res://Heart.tscn" id="15_ui1hk"]
 
-[sub_resource type="AnimatedTexture" id="AnimatedTexture_v2ds7"]
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_knq2t"]
+load_path = "res://.godot/imported/background-0.png-7d33226422bca96eccf70faa158a9e50.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_cwwxe"]
+load_path = "res://.godot/imported/background-1.png-4f4cd77eb37272c4f4e708086bb93d8b.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_ufkdr"]
+load_path = "res://.godot/imported/background-2.png-e72211a8db1dcf855cf8a825222c6ccb.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_epnn3"]
+load_path = "res://.godot/imported/background-3.png-a419d48e13337144c343d652171c7be9.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_tv3th"]
+load_path = "res://.godot/imported/background-5.png-a97c39dc3b1de56b98c05e438b12ee7e.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_xkmwr"]
+load_path = "res://.godot/imported/background-4.png-eb88b7f681c163c21a7fba731fd06a9a.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_now27"]
+load_path = "res://.godot/imported/background-6.png-4c28f0f03e9f4376be0012d5895933b7.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_clh6v"]
+load_path = "res://.godot/imported/background-7.png-68e5f66b82846279f47a26fce703d757.ctex"
+
+[sub_resource type="AnimatedTexture" id="AnimatedTexture_in127"]
 frames = 8
 speed_scale = 2.0
-frame_0/texture = ExtResource("2_m5cwp")
+frame_0/texture = SubResource("CompressedTexture2D_knq2t")
 frame_0/duration = 0.5
-frame_1/texture = ExtResource("3_fplwn")
+frame_1/texture = SubResource("CompressedTexture2D_cwwxe")
 frame_1/duration = 0.5
-frame_2/texture = ExtResource("4_u7am5")
+frame_2/texture = SubResource("CompressedTexture2D_ufkdr")
 frame_2/duration = 0.5
-frame_3/texture = ExtResource("5_llgwl")
+frame_3/texture = SubResource("CompressedTexture2D_epnn3")
 frame_3/duration = 0.5
-frame_4/texture = ExtResource("6_fplwn")
+frame_4/texture = SubResource("CompressedTexture2D_tv3th")
 frame_4/duration = 0.5
-frame_5/texture = ExtResource("6_mj272")
+frame_5/texture = SubResource("CompressedTexture2D_xkmwr")
 frame_5/duration = 0.5
-frame_6/texture = ExtResource("8_u7am5")
+frame_6/texture = SubResource("CompressedTexture2D_now27")
 frame_6/duration = 0.5
-frame_7/texture = ExtResource("7_nln4q")
+frame_7/texture = SubResource("CompressedTexture2D_clh6v")
 frame_7/duration = 0.5
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_u7am5"]
@@ -81,7 +97,7 @@ script = ExtResource("1_4w18o")
 [node name="TextureRect" type="TextureRect" parent="." unique_id=2140475330]
 offset_right = 1920.0
 offset_bottom = 1080.0
-texture = SubResource("AnimatedTexture_v2ds7")
+texture = SubResource("AnimatedTexture_in127")
 
 [node name="CenterContainer" type="CenterContainer" parent="." unique_id=511141921]
 anchors_preset = 15

@@ -10,7 +10,7 @@ public partial class WhoIsTheMurderer : Node2D
 
 	[Export] public int Columns { get; set; } = 3;
 
-	private PackedScene CharacterSlot = GD.Load<PackedScene>("res://WhoIsTheMurderer/CharacterSlot.tscn");
+	private PackedScene CharacterSlot = GD.Load<PackedScene>("res://CharacterSlot.tscn");
 	
 	private Label TextBox => this.GetNode<Label>("CanvasLayer/PanelContainer/Label");
 	private TextureRect CharacterBox => this.GetNode<TextureRect>("CanvasLayer/PanelContainer/Panel/TextureRect");

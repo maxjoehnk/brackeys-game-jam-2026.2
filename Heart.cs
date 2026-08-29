@@ -5,7 +5,7 @@ public partial class Heart : TextureRect
 {
 	private AnimatedSprite2D Animation => this.GetNode<AnimatedSprite2D>("Pop");
 
-	private Texture2D emptyHeart = GD.Load<Texture2D>("res://WhoIsTheMurderer/Assets/heart-empty-export.png");
+	private Texture2D emptyHeart = GD.Load<Texture2D>("res://Assets/heart-empty-export.png");
 
 	public void Pop()
 	{
