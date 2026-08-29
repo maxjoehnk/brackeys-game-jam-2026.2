@@ -15,7 +15,12 @@
 [ext_resource type="AudioStream" uid="uid://c1bokreyfivs8" path="res://Assets/Sounds/Characters/miscellaneous_20_alex.wav" id="9_hn7xs"]
 [ext_resource type="Texture2D" uid="uid://d01iphn6wj18o" path="res://Assets/Characters/echsenimp.png" id="9_vak4q"]
 [ext_resource type="Texture2D" uid="uid://dbih5puf4fcw8" path="res://Assets/Characters/kuhfrau.png" id="10_qllj5"]
+[ext_resource type="AudioStream" uid="uid://db3m8hxg4y4a" path="res://Assets/Sounds/Characters/miscellaneous_20_ian.wav" id="10_xtnt3"]
 [ext_resource type="Texture2D" uid="uid://dm34c21yglrm6" path="res://Assets/Characters/spiderman.png" id="11_8t6sl"]
+[ext_resource type="AudioStream" uid="uid://bxfy06bjjuyi8" path="res://Assets/Sounds/Characters/miscellaneous_19_sean.wav" id="12_7cihr"]
+[ext_resource type="AudioStream" uid="uid://bhpgaxun20e3a" path="res://Assets/Sounds/Characters/miscellaneous_3_sean.wav" id="16_3go3a"]
+[ext_resource type="AudioStream" uid="uid://b44b7gmw2idu0" path="res://Assets/Sounds/Characters/miscellaneous_13_karen.wav" id="18_lvytq"]
+[ext_resource type="AudioStream" uid="uid://bqvjbbrqnicto" path="res://Assets/Sounds/Characters/BlisterPack1.wav" id="20_u10v1"]
 
 [node name="Base Level" unique_id=746051315 instance=ExtResource("1_lxq87")]
 
@@ -36,11 +41,13 @@ Texture = ExtResource("5_rnk4n")
 
 [node name="Character4" parent="Characters" parent_id_path=PackedInt32Array(767967317) index="3" unique_id=1956833871 instance=ExtResource("2_8t6sl")]
 Hint = "A murderer, in this house? That can't be right"
+Samples = Array[AudioStream]([ExtResource("10_xtnt3")])
 Texture = ExtResource("6_qyj6r")
 
 [node name="Character5" parent="Characters" parent_id_path=PackedInt32Array(767967317) index="4" unique_id=1059750150 instance=ExtResource("2_8t6sl")]
 Hint = "Someone got murdered? Oh that's horrible. I hope you'll find the culprit"
 Murderer = true
+Samples = Array[AudioStream]([ExtResource("12_7cihr")])
 Texture = ExtResource("7_gmflh")
 
 [node name="Character6" parent="Characters" parent_id_path=PackedInt32Array(767967317) index="5" unique_id=35169759 instance=ExtResource("2_8t6sl")]
@@ -50,12 +57,15 @@ Texture = ExtResource("8_e1an2")
 
 [node name="Character7" parent="Characters" parent_id_path=PackedInt32Array(767967317) index="6" unique_id=61851677 instance=ExtResource("2_8t6sl")]
 Hint = "I don't have anything to say"
+Samples = Array[AudioStream]([ExtResource("16_3go3a")])
 Texture = ExtResource("9_vak4q")
 
 [node name="Character8" parent="Characters" parent_id_path=PackedInt32Array(767967317) index="7" unique_id=764150834 instance=ExtResource("2_8t6sl")]
 Hint = "Oh a murder? Why don't you come in and tell me more about it..."
+Samples = Array[AudioStream]([ExtResource("18_lvytq")])
 Texture = ExtResource("10_qllj5")
 
 [node name="Character9" parent="Characters" parent_id_path=PackedInt32Array(767967317) index="8" unique_id=106588509 instance=ExtResource("2_8t6sl")]
 Hint = "Sorry, I can't hear very good. I didn't catch anything"
+Samples = Array[AudioStream]([ExtResource("20_u10v1")])
 Texture = ExtResource("11_8t6sl")
