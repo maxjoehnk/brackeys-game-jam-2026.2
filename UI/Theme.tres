@@ -1,0 +1,68 @@
+[gd_resource type="Theme" format=3 uid="uid://74aj1okfu7ms"]
+
+[ext_resource type="Texture2D" uid="uid://bcmjanss35bkw" path="res://Assets/FreeHorrorUi.png" id="1_fy3qm"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_1e1o0"]
+texture = ExtResource("1_fy3qm")
+texture_margin_left = 4.0
+texture_margin_top = 4.0
+texture_margin_right = 4.0
+texture_margin_bottom = 4.0
+expand_margin_left = 4.0
+expand_margin_right = 4.0
+expand_margin_bottom = 6.0
+region_rect = Rect2(6, 234, 52, 16)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_3fwlq"]
+texture = ExtResource("1_fy3qm")
+texture_margin_left = 4.0
+texture_margin_top = 4.0
+texture_margin_right = 4.0
+texture_margin_bottom = 4.0
+expand_margin_left = 4.0
+expand_margin_right = 4.0
+expand_margin_bottom = 6.0
+region_rect = Rect2(6, 234, 52, 16)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_fe3y4"]
+texture = ExtResource("1_fy3qm")
+texture_margin_left = 4.0
+texture_margin_top = 4.0
+texture_margin_right = 4.0
+texture_margin_bottom = 4.0
+expand_margin_left = 4.0
+expand_margin_right = 4.0
+expand_margin_bottom = 6.0
+region_rect = Rect2(70, 234, 52, 16)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_62vmv"]
+texture = ExtResource("1_fy3qm")
+texture_margin_left = 4.0
+texture_margin_top = 4.0
+texture_margin_right = 4.0
+texture_margin_bottom = 4.0
+expand_margin_left = 4.0
+expand_margin_right = 4.0
+expand_margin_bottom = 6.0
+region_rect = Rect2(6, 234, 52, 16)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_v2ds7"]
+content_margin_left = 16.0
+content_margin_top = 16.0
+content_margin_right = 16.0
+content_margin_bottom = 16.0
+texture = ExtResource("1_fy3qm")
+texture_margin_left = 24.0
+texture_margin_top = 10.0
+texture_margin_right = 24.0
+texture_margin_bottom = 8.0
+region_rect = Rect2(128, 131, 64, 76)
+
+[resource]
+Button/font_sizes/font_size = 24
+Button/styles/focus = SubResource("StyleBoxTexture_1e1o0")
+Button/styles/hover = SubResource("StyleBoxTexture_3fwlq")
+Button/styles/normal = SubResource("StyleBoxTexture_fe3y4")
+Button/styles/pressed = SubResource("StyleBoxTexture_62vmv")
+Panel/styles/panel = SubResource("StyleBoxTexture_v2ds7")
+PanelContainer/styles/panel = SubResource("StyleBoxTexture_v2ds7")

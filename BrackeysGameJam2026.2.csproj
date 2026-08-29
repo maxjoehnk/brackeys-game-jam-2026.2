@@ -23,8 +23,4 @@
     <TrimmerRootAssembly Include="System.Private.CoreLib" />
     <TrimmerRootAssembly Include="System.Runtime" />
   </ItemGroup>
-
-  <ItemGroup>
-    <Content Include="WhoIsTheMurderer\README.md" />
-  </ItemGroup>
 </Project>

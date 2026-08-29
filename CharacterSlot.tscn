@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://d8ngoefluv66"]
+
+[ext_resource type="Texture2D" uid="uid://bcw7mpv6arwy" path="res://Assets/CharacterBackdrop.png" id="1_g7rnq"]
+
+[node name="CharacterSlot" type="MarginContainer" unique_id=2143017817]
+custom_minimum_size = Vector2(240, 240)
+mouse_default_cursor_shape = 2
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=133000058]
+layout_mode = 2
+texture = ExtResource("1_g7rnq")

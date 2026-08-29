@@ -1,6 +1,0 @@
-[gd_scene format=3 uid="uid://tsqu2f2bj1gg"]
-
-[ext_resource type="Script" uid="uid://b6ie2k0asigd6" path="res://HellIsNotAHappyPlace/Tasks/DemolitionTask.cs" id="1_5wfgv"]
-
-[node name="Demolition" type="Node" unique_id=725256907]
-script = ExtResource("1_5wfgv")

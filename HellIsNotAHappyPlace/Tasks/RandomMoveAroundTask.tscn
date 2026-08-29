@@ -1,6 +1,0 @@
-[gd_scene format=3 uid="uid://bb5gp1x1swvx5"]
-
-[ext_resource type="Script" uid="uid://bl8by7u7r1207" path="res://HellIsNotAHappyPlace/Tasks/RandomMoveAroundTask.cs" id="1_gqr72"]
-
-[node name="RandomMoveAroundTask" type="Node" unique_id=1361961681]
-script = ExtResource("1_gqr72")
