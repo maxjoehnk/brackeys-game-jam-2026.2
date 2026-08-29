@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cf8nc50b1i5i3"
-path="res://.godot/imported/shade.png-b072711f24e6a4476534cc9e79448573.ctex"
+uid="uid://bcmjanss35bkw"
+path="res://.godot/imported/FreeHorrorUi.png-fd91663370d16e8d0294de4f7b21949c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://WhoIsTheMurderer/Assets/shade.png"
-dest_files=["res://.godot/imported/shade.png-b072711f24e6a4476534cc9e79448573.ctex"]
+source_file="res://WhoIsTheMurderer/Assets/FreeHorrorUi.png"
+dest_files=["res://.godot/imported/FreeHorrorUi.png-fd91663370d16e8d0294de4f7b21949c.ctex"]
 
 [params]
 

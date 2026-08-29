@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dbih5puf4fcw8"
-path="res://.godot/imported/kuhfrau.png-10544a3cd2d55aec6cd3d79e1014feb4.ctex"
+uid="uid://kw83bq8eoj1h"
+path="res://.godot/imported/background-7.png-ca06eca751b5f7df6c707e198d6e0a3e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://WhoIsTheMurderer/Assets/kuhfrau.png"
-dest_files=["res://.godot/imported/kuhfrau.png-10544a3cd2d55aec6cd3d79e1014feb4.ctex"]
+source_file="res://WhoIsTheMurderer/Assets/background-7.png"
+dest_files=["res://.godot/imported/background-7.png-ca06eca751b5f7df6c707e198d6e0a3e.ctex"]
 
 [params]
 

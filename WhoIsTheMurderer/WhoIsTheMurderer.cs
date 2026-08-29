@@ -10,8 +10,6 @@ public partial class WhoIsTheMurderer : Node2D
 
 	[Export] public int Columns { get; set; } = 3;
 
-	[Export] public Array<Character> Characters { get; set; } = [];
-
 	private PackedScene CharacterSlot = GD.Load<PackedScene>("res://WhoIsTheMurderer/CharacterSlot.tscn");
 	
 	private Label TextBox => this.GetNode<Label>("CanvasLayer/PanelContainer/Label");
@@ -31,7 +29,8 @@ public partial class WhoIsTheMurderer : Node2D
 	{
 		this.lives = this.StartHearts;
 		this.CharacterContainer.Columns = this.Columns;
-		foreach (Character _ in this.Characters)
+		Array<Character> characters = [.. this.GetNode("Characters").GetChildren().Cast<Character>()];
+		foreach (Character _ in characters)
 		{
 			Node slot = this.CharacterSlot.Instantiate();
 			this.CharacterContainer.AddChild(slot);
@@ -42,14 +41,14 @@ public partial class WhoIsTheMurderer : Node2D
 			return;
 		}
 
-		for (int i = 0; i < this.Characters.Count; i++)
+		for (int i = 0; i < characters.Count; i++)
 		{
-			Character character = this.Characters[i];
+			Character character = characters[i];
 			Node slot = this.CharacterContainer.GetChild(i);
 			character.CustomMinimumSize = new Vector2(128, 128);
 			character.SizeFlagsHorizontal = Control.SizeFlags.ShrinkCenter;
 			character.SizeFlagsVertical = Control.SizeFlags.ShrinkCenter;
-			this.RemoveChild(character);
+			character.GetParent().RemoveChild(character);
 			slot.AddChild(character);
 		}
 
@@ -60,8 +59,8 @@ public partial class WhoIsTheMurderer : Node2D
 		{
 			this.Hearts[GameState.Instance.Lives].Pop();
 		};
-		this.Characters.FirstOrDefault()?.GrabFocus();
-		foreach (Character child in this.Characters)
+		characters.FirstOrDefault()?.GrabFocus();
+		foreach (Character child in characters)
 		{
 			child.Pressed += () => this.OnCharacterClicked(child);
 		}

@@ -4,17 +4,17 @@
 [ext_resource type="Texture2D" uid="uid://cmitio11bj4y3" path="res://WhoIsTheMurderer/Assets/background placeholder.jpg" id="2_dt5qi"]
 [ext_resource type="PackedScene" uid="uid://ddo36lrfym8wx" path="res://WhoIsTheMurderer/Character.tscn" id="3_y5ufb"]
 [ext_resource type="PackedScene" uid="uid://d8ngoefluv66" path="res://WhoIsTheMurderer/CharacterSlot.tscn" id="4_0vybo"]
-[ext_resource type="Texture2D" uid="uid://cf8nc50b1i5i3" path="res://WhoIsTheMurderer/Assets/shade.png" id="4_6j2qa"]
+[ext_resource type="Texture2D" uid="uid://cf8nc50b1i5i3" path="res://WhoIsTheMurderer/Assets/Characters/shade.png" id="4_6j2qa"]
 [ext_resource type="FontFile" uid="uid://cqiig8nw8xoui" path="res://WhoIsTheMurderer/Assets/UnscreenMK.ttf" id="4_vmmds"]
-[ext_resource type="Texture2D" uid="uid://d01iphn6wj18o" path="res://WhoIsTheMurderer/Assets/echsenimp.png" id="5_6j2qa"]
-[ext_resource type="Texture2D" uid="uid://d2gjmtx7wbleg" path="res://WhoIsTheMurderer/Assets/echsenimp-lilaa.png" id="6_6j2qa"]
-[ext_resource type="Texture2D" uid="uid://bibnyfuhsy8t6" path="res://WhoIsTheMurderer/Assets/tentaclething.png" id="7_2a6rk"]
-[ext_resource type="Texture2D" uid="uid://dbih5puf4fcw8" path="res://WhoIsTheMurderer/Assets/kuhfrau.png" id="9_0vybo"]
+[ext_resource type="Texture2D" uid="uid://d01iphn6wj18o" path="res://WhoIsTheMurderer/Assets/Characters/echsenimp.png" id="5_6j2qa"]
+[ext_resource type="Texture2D" uid="uid://d2gjmtx7wbleg" path="res://WhoIsTheMurderer/Assets/Characters/echsenimp-lilaa.png" id="6_6j2qa"]
+[ext_resource type="Texture2D" uid="uid://bibnyfuhsy8t6" path="res://WhoIsTheMurderer/Assets/Characters/tentaclething.png" id="7_2a6rk"]
+[ext_resource type="Texture2D" uid="uid://dbih5puf4fcw8" path="res://WhoIsTheMurderer/Assets/Characters/kuhfrau.png" id="9_0vybo"]
 [ext_resource type="PackedScene" uid="uid://d1psbeqtwx3e1" path="res://WhoIsTheMurderer/Heart.tscn" id="9_bnemw"]
-[ext_resource type="Texture2D" uid="uid://gf85tdcxkqnq" path="res://WhoIsTheMurderer/Assets/bomb.png" id="9_dt5qi"]
-[ext_resource type="Texture2D" uid="uid://ckvokgithhg6g" path="res://WhoIsTheMurderer/Assets/gras.png" id="10_0vybo"]
-[ext_resource type="Texture2D" uid="uid://cmr51d8sjmryt" path="res://WhoIsTheMurderer/Assets/pig.png" id="11_f28a4"]
+[ext_resource type="Texture2D" uid="uid://d32o7hwvpih7p" path="res://WhoIsTheMurderer/Assets/Characters/kuhoma.png" id="10_dt5qi"]
+[ext_resource type="Texture2D" uid="uid://cjx4twv6qd731" path="res://WhoIsTheMurderer/Assets/Characters/kuhopa.png" id="11_dt5qi"]
 [ext_resource type="Texture2D" uid="uid://b5b48kdeb0aop" path="res://WhoIsTheMurderer/Assets/sheep.png" id="12_0dp3v"]
+[ext_resource type="Texture2D" uid="uid://j3f2px7n4wmy" path="res://WhoIsTheMurderer/Assets/Characters/kuhmann.png" id="12_0vybo"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_y5ufb"]
 bg_color = Color(0, 0, 0, 0.72156864)
@@ -39,9 +39,8 @@ border_color = Color(1, 1, 1, 0.5882353)
 [sub_resource type="SystemFont" id="SystemFont_v2ds7"]
 subpixel_positioning = 0
 
-[node name="WhoIsTheMurderer" type="Node2D" unique_id=746051315 node_paths=PackedStringArray("CharacterBoxes")]
+[node name="WhoIsTheMurderer" type="Node2D" unique_id=746051315]
 script = ExtResource("1_gl4sl")
-CharacterBoxes = [null]
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=2140475330]
 offset_right = 1920.0
@@ -130,7 +129,7 @@ layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 Hint = "Was ist eigentlich in Buchstabensuppe drin?"
-Texture = ExtResource("9_dt5qi")
+Texture = ExtResource("10_dt5qi")
 
 [node name="CharacterSlot7" parent="CenterContainer/Characters" unique_id=598973689 instance=ExtResource("4_0vybo")]
 layout_mode = 2
@@ -141,7 +140,7 @@ layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 Hint = "Husch und plötzlich bin ich ne Frau"
-Texture = ExtResource("10_0vybo")
+Texture = ExtResource("11_dt5qi")
 
 [node name="CharacterSlot8" parent="CenterContainer/Characters" unique_id=916274444 instance=ExtResource("4_0vybo")]
 layout_mode = 2
@@ -152,7 +151,7 @@ layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 Hint = "Das wird man ja wohl noch sagen dürfen!"
-Texture = ExtResource("11_f28a4")
+Texture = ExtResource("12_0vybo")
 
 [node name="CharacterSlot9" parent="CenterContainer/Characters" unique_id=1071015920 instance=ExtResource("4_0vybo")]
 layout_mode = 2

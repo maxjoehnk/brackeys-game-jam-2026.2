@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d2gjmtx7wbleg"
-path="res://.godot/imported/echsenimp-lilaa.png-59a1c613b9ba9ddd447f1851c2156db8.ctex"
+uid="uid://d32o7hwvpih7p"
+path="res://.godot/imported/kuhoma.png-753451f825652998a6a9a2749cf4b188.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://WhoIsTheMurderer/Assets/echsenimp-lilaa.png"
-dest_files=["res://.godot/imported/echsenimp-lilaa.png-59a1c613b9ba9ddd447f1851c2156db8.ctex"]
+source_file="res://WhoIsTheMurderer/Assets/Characters/kuhoma.png"
+dest_files=["res://.godot/imported/kuhoma.png-753451f825652998a6a9a2749cf4b188.ctex"]
 
 [params]
 

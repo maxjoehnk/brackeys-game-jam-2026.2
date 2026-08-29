@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d01iphn6wj18o"
-path="res://.godot/imported/echsenimp.png-2b4c64dec32d12e62159a81b1a9efc4c.ctex"
+uid="uid://bvb671601tc6d"
+path="res://.godot/imported/background-4.png-58ae395f19bac58bd5aa36c3c3eb884d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://WhoIsTheMurderer/Assets/echsenimp.png"
-dest_files=["res://.godot/imported/echsenimp.png-2b4c64dec32d12e62159a81b1a9efc4c.ctex"]
+source_file="res://WhoIsTheMurderer/Assets/background-4.png"
+dest_files=["res://.godot/imported/background-4.png-58ae395f19bac58bd5aa36c3c3eb884d.ctex"]
 
 [params]
 

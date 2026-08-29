@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://cx0grnu1ls3vh"]
+
+[ext_resource type="PackedScene" uid="uid://ccx4ku0ldxtmc" path="res://WhoIsTheMurderer/BaseLevel.tscn" id="1_prrkl"]
+[ext_resource type="PackedScene" uid="uid://ddo36lrfym8wx" path="res://WhoIsTheMurderer/Character.tscn" id="2_uoj0w"]
+[ext_resource type="Texture2D" uid="uid://dbih5puf4fcw8" path="res://WhoIsTheMurderer/Assets/Characters/kuhfrau.png" id="3_ui4g7"]
+[ext_resource type="Texture2D" uid="uid://bibnyfuhsy8t6" path="res://WhoIsTheMurderer/Assets/Characters/tentaclething.png" id="4_jiyog"]
+
+[node name="Tutorial" unique_id=746051315 instance=ExtResource("1_prrkl")]
+
+[node name="Character" parent="Characters" parent_id_path=PackedInt32Array(767967317) index="0" unique_id=2043763220 instance=ExtResource("2_uoj0w")]
+Hint = "It wasn't me"
+Murderer = true
+Texture = ExtResource("3_ui4g7")
+
+[node name="Character2" parent="Characters" parent_id_path=PackedInt32Array(767967317) index="1" unique_id=1467941366 instance=ExtResource("2_uoj0w")]
+Hint = "I saw him do it"
+Texture = ExtResource("4_jiyog")

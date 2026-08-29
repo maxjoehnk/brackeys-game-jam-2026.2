@@ -11,13 +11,14 @@ config_version=5
 [application]
 
 config/name="BrackeysGameJam2026.2"
-run/main_scene="uid://cx0grnu1ls3vh"
+run/main_scene="uid://bgrm817qh3xl5"
 config/features=PackedStringArray("4.7", "C#", "GL Compatibility")
 config/icon="res://icon.svg"
 
 [autoload]
 
 GameState="*uid://jhft8ebumata"
+SceneManager="*uid://cfpfv2ukavnan"
 
 [display]
 
@@ -29,6 +30,11 @@ window/stretch/aspect="expand"
 [dotnet]
 
 project/assembly_name="BrackeysGameJam2026.2"
+
+[gui]
+
+theme/custom="uid://74aj1okfu7ms"
+theme/custom_font="uid://cqiig8nw8xoui"
 
 [input]
 
