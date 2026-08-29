@@ -25,8 +25,8 @@ public partial class WhoIsTheMurderer : Node2D
 	private Control PauseMenu => (this.FindChild("PauseMenu") as Control)!;
 	private Control WinMenu => (this.FindChild("LevelClearedMenu") as Control)!;
 	private Control LostMenu => (this.FindChild("FailedMenu") as Control)!;
-
-	private int lives;
+	
+	private AudioStreamPlayer AudioPlayer => this.GetNode<AudioStreamPlayer>("OneShotPlayer");
 
 	public override void _Ready()
 	{
@@ -121,8 +121,14 @@ public partial class WhoIsTheMurderer : Node2D
 
 	private void OnAccuseButtonPressed()
 	{
+		GlobalAudioPlayback.Instance.PlayButtonClick();
 		if (this.selected?.Murderer != true)
 		{
+			if (this.selected?.FalseAccusedSample != null)
+			{
+				this.AudioPlayer.Stream = this.selected?.FalseAccusedSample;
+				this.AudioPlayer.Play();
+			}
 			GameState.Instance.Fail();
 			return;
 		}

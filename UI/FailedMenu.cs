@@ -7,11 +7,13 @@ public partial class FailedMenu : Panel
 {
 	public void OnRestart()
 	{
+		GlobalAudioPlayback.Instance.PlayButtonClick();
 		SceneManager.Instance.StartRun();
 	}
 
 	public void OnExit()
 	{
+		GlobalAudioPlayback.Instance.PlayButtonClick();
 		SceneManager.Instance.OpenMainMenu();
 	}
 }

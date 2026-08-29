@@ -15,10 +15,16 @@ run/main_scene="uid://bgrm817qh3xl5"
 config/features=PackedStringArray("4.7", "C#", "GL Compatibility")
 config/icon="res://icon.svg"
 
+[audio]
+
+buses/default_bus_layout="uid://c5uqfmh8xyn0u"
+
 [autoload]
 
 GameState="*uid://jhft8ebumata"
 SceneManager="*uid://cfpfv2ukavnan"
+GlobalAudioPlayback="*uid://biijompbn8kvo"
+SettingsManager="*uid://c8rv2fpilkcco"
 
 [display]
 

@@ -14,12 +14,14 @@ public partial class PauseMenu : Control
 
 	public void OnResume()
 	{
+		GlobalAudioPlayback.Instance.PlayButtonClick();
 		this.GetTree().Paused = false;
 		this.Visible = false;
 	}
 
 	public void OnExit()
 	{
+		GlobalAudioPlayback.Instance.PlayButtonClick();
 		SceneManager.Instance.OpenMainMenu();
 	}
 }

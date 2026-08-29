@@ -1,0 +1,165 @@
+[gd_scene format=3 uid="uid://yum5x0j7n1us"]
+
+[ext_resource type="Script" uid="uid://bjs25g4xornkm" path="res://UI/Settings.cs" id="1_aveij"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_lbqto"]
+load_path = "res://.godot/imported/background-0.png-7d33226422bca96eccf70faa158a9e50.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_ojqoa"]
+load_path = "res://.godot/imported/background-1.png-4f4cd77eb37272c4f4e708086bb93d8b.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_i550k"]
+load_path = "res://.godot/imported/background-2.png-e72211a8db1dcf855cf8a825222c6ccb.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_1ario"]
+load_path = "res://.godot/imported/background-3.png-a419d48e13337144c343d652171c7be9.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_ay7hg"]
+load_path = "res://.godot/imported/background-5.png-a97c39dc3b1de56b98c05e438b12ee7e.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_oflx8"]
+load_path = "res://.godot/imported/background-4.png-eb88b7f681c163c21a7fba731fd06a9a.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_r3owr"]
+load_path = "res://.godot/imported/background-6.png-4c28f0f03e9f4376be0012d5895933b7.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_rbc7x"]
+load_path = "res://.godot/imported/background-7.png-68e5f66b82846279f47a26fce703d757.ctex"
+
+[sub_resource type="AnimatedTexture" id="AnimatedTexture_aveij"]
+frames = 8
+speed_scale = 2.0
+frame_0/texture = SubResource("CompressedTexture2D_lbqto")
+frame_0/duration = 0.5
+frame_1/texture = SubResource("CompressedTexture2D_ojqoa")
+frame_1/duration = 0.5
+frame_2/texture = SubResource("CompressedTexture2D_i550k")
+frame_2/duration = 0.5
+frame_3/texture = SubResource("CompressedTexture2D_1ario")
+frame_3/duration = 0.5
+frame_4/texture = SubResource("CompressedTexture2D_ay7hg")
+frame_4/duration = 0.5
+frame_5/texture = SubResource("CompressedTexture2D_oflx8")
+frame_5/duration = 0.5
+frame_6/texture = SubResource("CompressedTexture2D_r3owr")
+frame_6/duration = 0.5
+frame_7/texture = SubResource("CompressedTexture2D_rbc7x")
+frame_7/duration = 0.5
+
+[node name="Settings" type="Control" unique_id=1996216376]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_aveij")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=112679655]
+layout_mode = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+texture = SubResource("AnimatedTexture_aveij")
+
+[node name="PanelContainer" type="Panel" parent="." unique_id=426453673]
+layout_mode = 0
+offset_left = 688.0
+offset_top = 384.0
+offset_right = 1248.0
+offset_bottom = 696.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer" unique_id=480885484]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 16.0
+offset_top = 32.0
+offset_right = -16.0
+offset_bottom = 32.0
+grow_horizontal = 2
+grow_vertical = 2
+offset_transform_position = Vector2(0, 16)
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/VBoxContainer" unique_id=518728229]
+layout_mode = 2
+theme_override_constants/separation = 32
+
+[node name="Label" type="Label" parent="PanelContainer/VBoxContainer/HBoxContainer" unique_id=1637727603]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+text = "Main Volume"
+
+[node name="MainVolume" type="HSlider" parent="PanelContainer/VBoxContainer/HBoxContainer" unique_id=52695413]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+max_value = 1.2
+step = 0.1
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="PanelContainer/VBoxContainer" unique_id=1181696769]
+layout_mode = 2
+theme_override_constants/separation = 32
+
+[node name="Label" type="Label" parent="PanelContainer/VBoxContainer/HBoxContainer2" unique_id=2052717098]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+text = "Music"
+
+[node name="MusicVolume" type="HSlider" parent="PanelContainer/VBoxContainer/HBoxContainer2" unique_id=304307138]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+max_value = 1.2
+step = 0.1
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="PanelContainer/VBoxContainer" unique_id=2125662914]
+layout_mode = 2
+theme_override_constants/separation = 32
+
+[node name="Label" type="Label" parent="PanelContainer/VBoxContainer/HBoxContainer3" unique_id=1493418242]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+text = "Effects"
+
+[node name="EffectsVolume" type="HSlider" parent="PanelContainer/VBoxContainer/HBoxContainer3" unique_id=758191602]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+max_value = 1.2
+step = 0.1
+
+[node name="HBoxContainer4" type="HBoxContainer" parent="PanelContainer/VBoxContainer" unique_id=551795711]
+layout_mode = 2
+theme_override_constants/separation = 32
+
+[node name="Label" type="Label" parent="PanelContainer/VBoxContainer/HBoxContainer4" unique_id=617015879]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+text = "Quotes"
+
+[node name="QuotesVolume" type="HSlider" parent="PanelContainer/VBoxContainer/HBoxContainer4" unique_id=84416731]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+max_value = 1.2
+step = 0.1
+
+[node name="Exit" type="Button" parent="PanelContainer/VBoxContainer" unique_id=760769315]
+layout_mode = 2
+text = "Exit"
+
+[node name="Label" type="Label" parent="." unique_id=1559761361]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -374.0
+offset_top = 128.0
+offset_right = 374.0
+offset_bottom = 268.0
+grow_horizontal = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.7294118)
+theme_override_constants/shadow_offset_x = 8
+theme_override_constants/shadow_offset_y = 8
+theme_override_font_sizes/font_size = 128
+text = "Settings"
+horizontal_alignment = 1
+
+[connection signal="pressed" from="PanelContainer/VBoxContainer/Exit" to="." method="OnBackPressed"]

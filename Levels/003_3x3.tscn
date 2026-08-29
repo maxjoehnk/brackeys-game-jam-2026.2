@@ -1,0 +1,73 @@
+[gd_scene format=3 uid="uid://djun2ysejjxqv"]
+
+[ext_resource type="PackedScene" uid="uid://ccx4ku0ldxtmc" path="res://BaseLevel.tscn" id="1_woh2c"]
+[ext_resource type="PackedScene" uid="uid://ddo36lrfym8wx" path="res://Character.tscn" id="2_ujuci"]
+[ext_resource type="AudioStream" uid="uid://dlb05nv0k5fk4" path="res://Assets/Sounds/Characters/miscellaneous_2_ian.wav" id="3_xawoc"]
+[ext_resource type="Texture2D" uid="uid://j3f2px7n4wmy" path="res://Assets/Characters/kuhmann.png" id="4_w1jr1"]
+[ext_resource type="AudioStream" uid="uid://dsk8m203wjda2" path="res://Assets/Sounds/Characters/miscellaneous_19_karen.wav" id="5_agkpd"]
+[ext_resource type="AudioStream" uid="uid://dafqo7vatdvqj" path="res://Assets/Sounds/Characters/miscellaneous_19_meghan.wav" id="6_cstg6"]
+[ext_resource type="Texture2D" uid="uid://cf8nc50b1i5i3" path="res://Assets/Characters/shade.png" id="7_my8bv"]
+[ext_resource type="AudioStream" uid="uid://ctlcx6qxbi1m3" path="res://Assets/Sounds/Characters/miscellaneous_3_karen.wav" id="8_o5ab7"]
+[ext_resource type="Texture2D" uid="uid://d32o7hwvpih7p" path="res://Assets/Characters/kuhoma.png" id="9_qp54v"]
+[ext_resource type="AudioStream" uid="uid://db3m8hxg4y4a" path="res://Assets/Sounds/Characters/miscellaneous_20_ian.wav" id="10_juk41"]
+[ext_resource type="Texture2D" uid="uid://bibnyfuhsy8t6" path="res://Assets/Characters/tentaclething.png" id="11_015qb"]
+[ext_resource type="AudioStream" uid="uid://bxfy06bjjuyi8" path="res://Assets/Sounds/Characters/miscellaneous_19_sean.wav" id="12_ke7ay"]
+[ext_resource type="Texture2D" uid="uid://d2gjmtx7wbleg" path="res://Assets/Characters/echsenimp-lilaa.png" id="13_73nul"]
+[ext_resource type="AudioStream" uid="uid://c1bokreyfivs8" path="res://Assets/Sounds/Characters/miscellaneous_20_alex.wav" id="14_hea5a"]
+[ext_resource type="Texture2D" uid="uid://cjx4twv6qd731" path="res://Assets/Characters/kuhopa.png" id="15_38l17"]
+[ext_resource type="AudioStream" uid="uid://bhpgaxun20e3a" path="res://Assets/Sounds/Characters/miscellaneous_3_sean.wav" id="16_n2jme"]
+[ext_resource type="Texture2D" uid="uid://d01iphn6wj18o" path="res://Assets/Characters/echsenimp.png" id="17_d3qgf"]
+[ext_resource type="AudioStream" uid="uid://b44b7gmw2idu0" path="res://Assets/Sounds/Characters/miscellaneous_13_karen.wav" id="18_dfur6"]
+[ext_resource type="Texture2D" uid="uid://dbih5puf4fcw8" path="res://Assets/Characters/kuhfrau.png" id="19_xq2xy"]
+[ext_resource type="AudioStream" uid="uid://bqvjbbrqnicto" path="res://Assets/Sounds/Characters/BlisterPack1.wav" id="20_4a4k3"]
+[ext_resource type="Texture2D" uid="uid://dm34c21yglrm6" path="res://Assets/Characters/spiderman.png" id="21_5pncm"]
+
+[node name="Romeo And Juliet" unique_id=746051315 instance=ExtResource("1_woh2c")]
+
+[node name="Character" parent="Characters" parent_id_path=PackedInt32Array(767967317) index="0" unique_id=2043763220 instance=ExtResource("2_ujuci")]
+Hint = "O Romeo, Romeo!"
+Samples = Array[AudioStream]([ExtResource("3_xawoc")])
+Texture = ExtResource("4_w1jr1")
+
+[node name="Character2" parent="Characters" parent_id_path=PackedInt32Array(767967317) index="1" unique_id=1358306795 instance=ExtResource("2_ujuci")]
+Hint = "wherefore art thou Romeo?"
+Samples = Array[AudioStream]([ExtResource("5_agkpd"), ExtResource("6_cstg6")])
+Texture = ExtResource("7_my8bv")
+
+[node name="Character3" parent="Characters" parent_id_path=PackedInt32Array(767967317) index="2" unique_id=170421179 instance=ExtResource("2_ujuci")]
+Hint = "Deny thy father and refuse thy name"
+Samples = Array[AudioStream]([ExtResource("8_o5ab7")])
+Texture = ExtResource("9_qp54v")
+
+[node name="Character4" parent="Characters" parent_id_path=PackedInt32Array(767967317) index="3" unique_id=1956833871 instance=ExtResource("2_ujuci")]
+Hint = "Or, if thou wilt not, be but sworn my love"
+Samples = Array[AudioStream]([ExtResource("10_juk41")])
+Texture = ExtResource("11_015qb")
+
+[node name="Character5" parent="Characters" parent_id_path=PackedInt32Array(767967317) index="4" unique_id=1059750150 instance=ExtResource("2_ujuci")]
+Hint = "And I'll no longer be a Capulet."
+Samples = Array[AudioStream]([ExtResource("12_ke7ay")])
+Texture = ExtResource("13_73nul")
+
+[node name="Character6" parent="Characters" parent_id_path=PackedInt32Array(767967317) index="5" unique_id=35169759 instance=ExtResource("2_ujuci")]
+Hint = "Shall I hear more, or shall I speak at this?"
+Murderer = true
+Samples = Array[AudioStream]([ExtResource("14_hea5a")])
+Texture = ExtResource("15_38l17")
+
+[node name="Character7" parent="Characters" parent_id_path=PackedInt32Array(767967317) index="6" unique_id=61851677 instance=ExtResource("2_ujuci")]
+Hint = "Tis but thy name that is my enemy"
+Samples = Array[AudioStream]([ExtResource("16_n2jme")])
+Texture = ExtResource("17_d3qgf")
+
+[node name="Character8" parent="Characters" parent_id_path=PackedInt32Array(767967317) index="7" unique_id=764150834 instance=ExtResource("2_ujuci")]
+Hint = "What's Montague?"
+Samples = Array[AudioStream]([ExtResource("18_dfur6")])
+Texture = ExtResource("19_xq2xy")
+
+[node name="Character9" parent="Characters" parent_id_path=PackedInt32Array(767967317) index="8" unique_id=106588509 instance=ExtResource("2_ujuci")]
+Hint = "it is nor hand, nor foot,
+Nor arm, nor face, nor any other part
+Belonging to a man."
+Samples = Array[AudioStream]([ExtResource("20_4a4k3")])
+Texture = ExtResource("21_5pncm")

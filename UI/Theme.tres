@@ -47,6 +47,32 @@ expand_margin_right = 4.0
 expand_margin_bottom = 6.0
 region_rect = Rect2(6, 234, 52, 16)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_romme"]
+atlas = ExtResource("1_h0bm5")
+region = Rect2(130, 66, 28, 29)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6joml"]
+atlas = ExtResource("1_h0bm5")
+region = Rect2(130, 66, 28, 29)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_31i6c"]
+texture = ExtResource("1_h0bm5")
+texture_margin_left = 2.0
+texture_margin_top = 2.0
+texture_margin_right = 2.0
+texture_margin_bottom = 2.0
+region_rect = Rect2(81, 84, 14, 9)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_pciki"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_8ylc6"]
+texture = ExtResource("1_h0bm5")
+texture_margin_left = 2.0
+texture_margin_top = 2.0
+texture_margin_right = 2.0
+texture_margin_bottom = 2.0
+region_rect = Rect2(81, 68, 14, 9)
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_31i6c"]
 content_margin_left = 4.0
 content_margin_top = 4.0
@@ -88,6 +114,11 @@ Button/styles/focus = SubResource("StyleBoxTexture_1e1o0")
 Button/styles/hover = SubResource("StyleBoxTexture_3fwlq")
 Button/styles/normal = SubResource("StyleBoxTexture_fe3y4")
 Button/styles/pressed = SubResource("StyleBoxTexture_62vmv")
+HSlider/icons/grabber = SubResource("AtlasTexture_romme")
+HSlider/icons/grabber_highlight = SubResource("AtlasTexture_6joml")
+HSlider/styles/grabber_area = SubResource("StyleBoxTexture_31i6c")
+HSlider/styles/grabber_area_highlight = SubResource("StyleBoxEmpty_pciki")
+HSlider/styles/slider = SubResource("StyleBoxTexture_8ylc6")
 Label/colors/font_color = Color(1, 1, 1, 1)
 Label/colors/font_outline_color = Color(0, 0, 0, 1)
 Label/colors/font_shadow_color = Color(0, 0, 0, 0)

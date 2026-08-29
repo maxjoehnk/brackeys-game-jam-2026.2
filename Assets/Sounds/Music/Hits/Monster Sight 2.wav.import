@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://cy331dalb6hou"
+path="res://.godot/imported/Monster Sight 2.wav-1c1edbcd7831bee7d20ed06425a8d114.sample"
+
+[deps]
+
+source_file="res://Assets/Sounds/Music/Hits/Monster Sight 2.wav"
+dest_files=["res://.godot/imported/Monster Sight 2.wav-1c1edbcd7831bee7d20ed06425a8d114.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

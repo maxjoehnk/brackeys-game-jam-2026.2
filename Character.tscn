@@ -14,6 +14,8 @@ border_width_top = 4
 border_width_right = 4
 border_width_bottom = 4
 
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_oolk3"]
+
 [node name="Character" type="Button" unique_id=2043763220]
 offset_right = 128.0
 offset_bottom = 128.0
@@ -29,3 +31,9 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=985282305]
+stream = SubResource("AudioStreamRandomizer_oolk3")
+bus = &"Quotes"
+
+[node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="." unique_id=124890407]
