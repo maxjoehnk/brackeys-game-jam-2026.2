@@ -72,7 +72,7 @@ public partial class WhoIsTheMurderer : Node2D
 		this.WinMenu?.Visible = false;
 		this.LostMenu?.Visible = false;
 
-		GameState.Instance.LifeLost += () => { this.Hearts[GameState.Instance.Lives].Pop(); };
+		GameState.Instance.LifeLost += this.OnUpdateLives;
 		GameState.Instance.Lost += this.OnLost;
 		characters.FirstOrDefault()?.GrabFocus();
 		foreach (Character child in characters)
@@ -83,14 +83,16 @@ public partial class WhoIsTheMurderer : Node2D
 		this.AccuseButton.Pressed += this.OnAccuseButtonPressed;
 	}
 
-	public override void _EnterTree()
-	{
-		GD.Print("Enter Tree");
-	}
-
 	public override void _ExitTree()
 	{
-		GD.Print("Exit Tree");
+		this.AccuseButton.Pressed -= this.OnAccuseButtonPressed;
+		GameState.Instance.LifeLost -= this.OnUpdateLives;
+		GameState.Instance.Lost -= this.OnLost;
+	}
+
+	private void OnUpdateLives()
+	{
+		this.Hearts[GameState.Instance.Lives].Pop();
 	}
 
 	private void OnLost()
