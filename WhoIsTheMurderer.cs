@@ -25,6 +25,7 @@ public partial class WhoIsTheMurderer : Node2D
 	private Control PauseMenu => (this.FindChild("PauseMenu") as Control)!;
 	private Control WinMenu => (this.FindChild("LevelClearedMenu") as Control)!;
 	private Control LostMenu => (this.FindChild("FailedMenu") as Control)!;
+	private Control WrongAccusationOverlay => (this.FindChild("WrongAccusationOverlay") as Control)!;
 	
 	private AudioStreamPlayer AudioPlayer => this.GetNode<AudioStreamPlayer>("OneShotPlayer");
 
@@ -71,6 +72,7 @@ public partial class WhoIsTheMurderer : Node2D
 		this.PauseMenu.Visible = false;
 		this.WinMenu.Visible = false;
 		this.LostMenu.Visible = false;
+		this.WrongAccusationOverlay.Modulate = new Color(0xffffff00);
 
 		GameState.Instance.LifeLost += this.OnUpdateLives;
 		GameState.Instance.Lost += this.OnLost;
@@ -130,10 +132,32 @@ public partial class WhoIsTheMurderer : Node2D
 				this.AudioPlayer.Play();
 			}
 			GameState.Instance.Fail();
+
+			this.ShowAccusationOverlay();
+			SceneTreeTimer timer = this.GetTree().CreateTimer(5);
+			timer.Timeout += this.HideAccusationOverlay;
+
 			return;
 		}
 
 		this.WinMenu.Visible = true;
 		this.GetTree().Paused = true;
+	}
+
+	private void ShowAccusationOverlay()
+	{
+		this.FadeAccusationOverlay(new Color(0xffffffff));
+	}
+
+	private void HideAccusationOverlay()
+	{
+		this.FadeAccusationOverlay(new Color(0xffffff00));
+	}
+
+	private void FadeAccusationOverlay(Color color)
+	{
+		Tween tween = this.CreateTween();
+		tween.TweenProperty(this.WrongAccusationOverlay, "modulate", color, 0.5f);
+		tween.Play();
 	}
 }
