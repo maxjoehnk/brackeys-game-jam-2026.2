@@ -1,7 +1,6 @@
 [gd_scene format=3 uid="uid://ddo36lrfym8wx"]
 
 [ext_resource type="Script" uid="uid://bn85xgd68c8iv" path="res://Character.cs" id="1_y0e31"]
-[ext_resource type="AudioStream" uid="uid://ctlcx6qxbi1m3" path="res://Assets/Sounds/Characters/miscellaneous_3_karen.wav" id="2_7ig0a"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_udt8q"]
 
@@ -14,6 +13,8 @@ border_width_left = 4
 border_width_top = 4
 border_width_right = 4
 border_width_bottom = 4
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_oolk3"]
 
 [node name="Character" type="Button" unique_id=2043763220]
 offset_right = 128.0
@@ -32,5 +33,7 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=985282305]
-stream = ExtResource("2_7ig0a")
+stream = SubResource("AudioStreamRandomizer_oolk3")
 bus = &"Quotes"
+
+[node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="." unique_id=124890407]

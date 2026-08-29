@@ -10,6 +10,8 @@ public partial class Character : Button
 	[Export] public bool Murderer { get; set; }
 
 	[Export] public Array<AudioStream> Samples { get; set; } = [];
+	
+	[Export] public AudioStream FalseAccusedSample { get; set; }
 
 	private AudioStreamPlayer AudioPlayer => this.GetNode<AudioStreamPlayer>("AudioStreamPlayer");
 

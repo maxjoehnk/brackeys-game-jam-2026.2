@@ -201,3 +201,6 @@ offset_bottom = 104.5
 visible = false
 
 [node name="Characters" type="Node" parent="." unique_id=767967317]
+
+[node name="OneShotPlayer" type="AudioStreamPlayer" parent="." unique_id=1701078523]
+bus = &"Quotes"
