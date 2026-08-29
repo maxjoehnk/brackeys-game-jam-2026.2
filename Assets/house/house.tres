@@ -1,0 +1,13 @@
+[gd_resource type="AnimatedTexture" format=3 uid="uid://camj5dve0wdq7"]
+
+[ext_resource type="Texture2D" uid="uid://dq1t1468yb1b6" path="res://Assets/house/house1.png" id="1_ilq56"]
+[ext_resource type="Texture2D" uid="uid://bc0waxrji25id" path="res://Assets/house/house2.png" id="2_bugo1"]
+[ext_resource type="Texture2D" uid="uid://btydqdokoaevp" path="res://Assets/house/house3.png" id="3_o4h0u"]
+
+[resource]
+frames = 3
+frame_0/texture = ExtResource("1_ilq56")
+frame_1/texture = ExtResource("2_bugo1")
+frame_1/duration = 1.0
+frame_2/texture = ExtResource("3_o4h0u")
+frame_2/duration = 1.0
