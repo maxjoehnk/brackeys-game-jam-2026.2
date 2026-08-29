@@ -22,9 +22,9 @@ public partial class WhoIsTheMurderer : Node2D
 
 	private GridContainer CharacterContainer => this.GetNode<GridContainer>("CenterContainer/Characters");
 
-	private Control? PauseMenu => FindChild("PauseMenu") as Control;
-	private Control? WinMenu => FindChild("LevelClearedMenu") as Control;
-	private Control? LostMenu => FindChild("FailedMenu") as Control;
+	private Control PauseMenu => (this.FindChild("PauseMenu") as Control)!;
+	private Control WinMenu => (this.FindChild("LevelClearedMenu") as Control)!;
+	private Control LostMenu => (this.FindChild("FailedMenu") as Control)!;
 
 	private int lives;
 
@@ -68,9 +68,9 @@ public partial class WhoIsTheMurderer : Node2D
 
 		this.GetNode<Control>("CanvasLayer/PanelContainer/Panel").Visible = false;
 		this.AccuseButton.Visible = false;
-		this.PauseMenu?.Visible = false;
-		this.WinMenu?.Visible = false;
-		this.LostMenu?.Visible = false;
+		this.PauseMenu.Visible = false;
+		this.WinMenu.Visible = false;
+		this.LostMenu.Visible = false;
 
 		GameState.Instance.LifeLost += this.OnUpdateLives;
 		GameState.Instance.Lost += this.OnLost;
@@ -98,7 +98,7 @@ public partial class WhoIsTheMurderer : Node2D
 	private void OnLost()
 	{
 		this.GetTree().Paused = true;
-		this.LostMenu?.Visible = true;
+		this.LostMenu.Visible = true;
 	}
 
 	public override void _Input(InputEvent @event)
@@ -106,7 +106,7 @@ public partial class WhoIsTheMurderer : Node2D
 		if (Input.IsActionJustPressedByEvent("menu", @event))
 		{
 			this.GetTree().Paused = true;
-			this.PauseMenu?.Visible = true;
+			this.PauseMenu.Visible = true;
 		}
 	}
 
@@ -127,7 +127,7 @@ public partial class WhoIsTheMurderer : Node2D
 			return;
 		}
 
-		this.WinMenu?.Visible = true;
+		this.WinMenu.Visible = true;
 		this.GetTree().Paused = true;
 	}
 }
