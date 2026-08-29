@@ -23,23 +23,30 @@ Hint = "I think the murderer lives in the floor below"
 Texture = ExtResource("4_54hew")
 
 [node name="Character3" parent="Characters" parent_id_path=PackedInt32Array(767967317) index="2" unique_id=170421179 instance=ExtResource("2_8t6sl")]
+Hint = "I've heard the murderer has horns"
 Texture = ExtResource("5_rnk4n")
 
 [node name="Character4" parent="Characters" parent_id_path=PackedInt32Array(767967317) index="3" unique_id=1956833871 instance=ExtResource("2_8t6sl")]
+Hint = "A murderer, in this house? That can't be right"
 Texture = ExtResource("6_qyj6r")
 
 [node name="Character5" parent="Characters" parent_id_path=PackedInt32Array(767967317) index="4" unique_id=1059750150 instance=ExtResource("2_8t6sl")]
+Hint = "Someone got murdered? Oh that's horrible. I hope you'll find the culprit"
 Murderer = true
 Texture = ExtResource("7_gmflh")
 
 [node name="Character6" parent="Characters" parent_id_path=PackedInt32Array(767967317) index="5" unique_id=35169759 instance=ExtResource("2_8t6sl")]
+Hint = "WUB WUB WUB WUB WUB WUB WUB WUB WUB WUB WUB WUB WUB WUB WUB"
 Texture = ExtResource("8_e1an2")
 
 [node name="Character7" parent="Characters" parent_id_path=PackedInt32Array(767967317) index="6" unique_id=61851677 instance=ExtResource("2_8t6sl")]
+Hint = "I don't have anything to say"
 Texture = ExtResource("9_vak4q")
 
 [node name="Character8" parent="Characters" parent_id_path=PackedInt32Array(767967317) index="7" unique_id=764150834 instance=ExtResource("2_8t6sl")]
+Hint = "Oh a murder? Why don't you come in and tell me more about it..."
 Texture = ExtResource("10_qllj5")
 
 [node name="Character9" parent="Characters" parent_id_path=PackedInt32Array(767967317) index="8" unique_id=106588509 instance=ExtResource("2_8t6sl")]
+Hint = "Sorry, I can't hear very good. I didn't catch anything"
 Texture = ExtResource("11_8t6sl")
