@@ -1,6 +1,17 @@
 [gd_scene format=3 uid="uid://d8ngoefluv66"]
 
-[ext_resource type="Texture2D" uid="uid://bcw7mpv6arwy" path="res://Assets/CharacterBackdrop.png" id="1_g7rnq"]
+[ext_resource type="Texture2D" uid="uid://dq1t1468yb1b6" path="res://Assets/house/house1.png" id="1_kme8j"]
+[ext_resource type="Texture2D" uid="uid://bc0waxrji25id" path="res://Assets/house/house2.png" id="2_0mnpy"]
+[ext_resource type="Texture2D" uid="uid://btydqdokoaevp" path="res://Assets/house/house3.png" id="3_ewb8m"]
+
+[sub_resource type="AnimatedTexture" id="AnimatedTexture_j3pel"]
+frames = 3
+frame_0/texture = ExtResource("1_kme8j")
+frame_0/duration = 0.3
+frame_1/texture = ExtResource("2_0mnpy")
+frame_1/duration = 0.3
+frame_2/texture = ExtResource("3_ewb8m")
+frame_2/duration = 0.3
 
 [node name="CharacterSlot" type="MarginContainer" unique_id=2143017817]
 custom_minimum_size = Vector2(240, 240)
@@ -8,4 +19,7 @@ mouse_default_cursor_shape = 2
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=133000058]
 layout_mode = 2
-texture = ExtResource("1_g7rnq")
+offset_transform_enabled = true
+offset_transform_scale = Vector2(1.25, 1.25)
+texture = SubResource("AnimatedTexture_j3pel")
+expand_mode = 3
