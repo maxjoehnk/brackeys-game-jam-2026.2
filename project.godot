@@ -13,6 +13,8 @@ config_version=5
 config/name="Hell House"
 run/main_scene="uid://bgrm817qh3xl5"
 config/features=PackedStringArray("4.7", "C#", "GL Compatibility")
+boot_splash/use_filter=false
+boot_splash/image="uid://ckm77u7es61kh"
 config/icon="res://icon.svg"
 
 [audio]
