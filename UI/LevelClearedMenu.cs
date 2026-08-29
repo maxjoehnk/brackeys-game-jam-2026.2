@@ -7,11 +7,13 @@ public partial class LevelClearedMenu : Control
 {
 	public void OnNextLevel()
 	{
+		GlobalAudioPlayback.Instance.PlayButtonClick();
 		SceneManager.Instance.OpenNextLevel();
 	}
 
 	public void OnExit()
 	{
+		GlobalAudioPlayback.Instance.PlayButtonClick();
 		SceneManager.Instance.OpenMainMenu();
 	}
 }

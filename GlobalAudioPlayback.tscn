@@ -2,28 +2,29 @@
 
 [ext_resource type="Script" uid="uid://cxy6sw8sdxf7e" path="res://GlobalAudioPlayback.cs" id="1_2wty2"]
 [ext_resource type="AudioStream" uid="uid://dc7s4568xylu4" path="res://Assets/Sounds/Music/Deaths Melody.wav" id="1_yd0ll"]
-[ext_resource type="AudioStream" uid="uid://dwh3bdsl4ti4s" path="res://Assets/Sounds/Bug.wav" id="2_g3cxp"]
-[ext_resource type="AudioStream" uid="uid://bui3brscqxm1g" path="res://Assets/Sounds/Run.wav" id="3_2wty2"]
-[ext_resource type="AudioStream" uid="uid://b7b7b82fmndp1" path="res://Assets/Sounds/Wind.wav" id="4_435xo"]
-[ext_resource type="AudioStream" uid="uid://c4tosmj7wnvs4" path="res://Assets/Sounds/Sirens.wav" id="5_e03yc"]
-[ext_resource type="AudioStream" uid="uid://b4jn4ic0qq4fs" path="res://Assets/Sounds/Crash.wav" id="5_pmnjh"]
-[ext_resource type="AudioStream" uid="uid://2neeyag7w5qy" path="res://Assets/Sounds/Creep.wav" id="6_cetm0"]
-[ext_resource type="AudioStream" uid="uid://bvnih4lnf5by5" path="res://Assets/Sounds/Tension.wav" id="6_o7cot"]
-[ext_resource type="AudioStream" uid="uid://cf5ly6nrw2yf7" path="res://Assets/Sounds/Breather.wav" id="7_3ky0b"]
-[ext_resource type="AudioStream" uid="uid://ds1xc8bp0cd4e" path="res://Assets/Sounds/Children.wav" id="8_e6qmp"]
-[ext_resource type="AudioStream" uid="uid://crhe6xtk8jf4v" path="res://Assets/Sounds/Sirens 2.wav" id="9_6xh2j"]
-[ext_resource type="AudioStream" uid="uid://b57vhtjx5nkv3" path="res://Assets/Sounds/Ear Ghost.wav" id="10_gauo5"]
-[ext_resource type="AudioStream" uid="uid://bgyg0inun2ao5" path="res://Assets/Sounds/Ghost Bee.wav" id="11_qm12a"]
-[ext_resource type="AudioStream" uid="uid://j4qeyb4hlv2t" path="res://Assets/Sounds/Psy Waves.wav" id="12_y5hjw"]
-[ext_resource type="AudioStream" uid="uid://dyiraprgipb2l" path="res://Assets/Sounds/Radiation.wav" id="13_jhih5"]
-[ext_resource type="AudioStream" uid="uid://b8xthnbb3fg6q" path="res://Assets/Sounds/Soul-Wind.wav" id="14_0yrul"]
-[ext_resource type="AudioStream" uid="uid://bcl3gipd03mhy" path="res://Assets/Sounds/Synth Winds.wav" id="16_uflf5"]
-[ext_resource type="AudioStream" uid="uid://cqro2fil0aucw" path="res://Assets/Sounds/Vinyl Ghost.wav" id="17_72sbu"]
-[ext_resource type="AudioStream" uid="uid://cenp5isqaqvy4" path="res://Assets/Sounds/Flute.wav" id="20_5boag"]
-[ext_resource type="AudioStream" uid="uid://jq2vf7i7odm5" path="res://Assets/Sounds/Volts.wav" id="21_cc65n"]
-[ext_resource type="AudioStream" uid="uid://cjru61w5305q4" path="res://Assets/Sounds/Wasps.wav" id="22_5di4g"]
-[ext_resource type="AudioStream" uid="uid://dogjcy1u4vnx3" path="res://Assets/Sounds/orbit.wav" id="23_pqjef"]
-[ext_resource type="AudioStream" uid="uid://dyu0305fd71dy" path="res://Assets/Sounds/Gate 2.wav" id="24_b35ks"]
+[ext_resource type="AudioStream" uid="uid://dwh3bdsl4ti4s" path="res://Assets/Sounds/Music/Hits/Bug.wav" id="2_g3cxp"]
+[ext_resource type="AudioStream" uid="uid://bui3brscqxm1g" path="res://Assets/Sounds/Music/Hits/Run.wav" id="3_2wty2"]
+[ext_resource type="AudioStream" uid="uid://b7b7b82fmndp1" path="res://Assets/Sounds/Music/Hits/Wind.wav" id="4_435xo"]
+[ext_resource type="AudioStream" uid="uid://c4tosmj7wnvs4" path="res://Assets/Sounds/Music/Hits/Sirens.wav" id="5_e03yc"]
+[ext_resource type="AudioStream" uid="uid://b4jn4ic0qq4fs" path="res://Assets/Sounds/Music/Hits/Crash.wav" id="5_pmnjh"]
+[ext_resource type="AudioStream" uid="uid://2neeyag7w5qy" path="res://Assets/Sounds/Music/Hits/Creep.wav" id="6_cetm0"]
+[ext_resource type="AudioStream" uid="uid://bvnih4lnf5by5" path="res://Assets/Sounds/Music/Hits/Tension.wav" id="6_o7cot"]
+[ext_resource type="AudioStream" uid="uid://cf5ly6nrw2yf7" path="res://Assets/Sounds/Music/Hits/Breather.wav" id="7_3ky0b"]
+[ext_resource type="AudioStream" uid="uid://ds1xc8bp0cd4e" path="res://Assets/Sounds/Music/Hits/Children.wav" id="8_e6qmp"]
+[ext_resource type="AudioStream" uid="uid://crhe6xtk8jf4v" path="res://Assets/Sounds/Music/Hits/Sirens 2.wav" id="9_6xh2j"]
+[ext_resource type="AudioStream" uid="uid://b57vhtjx5nkv3" path="res://Assets/Sounds/Music/Hits/Ear Ghost.wav" id="10_gauo5"]
+[ext_resource type="AudioStream" uid="uid://bgyg0inun2ao5" path="res://Assets/Sounds/Music/Hits/Ghost Bee.wav" id="11_qm12a"]
+[ext_resource type="AudioStream" uid="uid://j4qeyb4hlv2t" path="res://Assets/Sounds/Music/Hits/Psy Waves.wav" id="12_y5hjw"]
+[ext_resource type="AudioStream" uid="uid://dyiraprgipb2l" path="res://Assets/Sounds/Music/Hits/Radiation.wav" id="13_jhih5"]
+[ext_resource type="AudioStream" uid="uid://b8xthnbb3fg6q" path="res://Assets/Sounds/Music/Hits/Soul-Wind.wav" id="14_0yrul"]
+[ext_resource type="AudioStream" uid="uid://bcl3gipd03mhy" path="res://Assets/Sounds/Music/Hits/Synth Winds.wav" id="16_uflf5"]
+[ext_resource type="AudioStream" uid="uid://cqro2fil0aucw" path="res://Assets/Sounds/Music/Hits/Vinyl Ghost.wav" id="17_72sbu"]
+[ext_resource type="AudioStream" uid="uid://cenp5isqaqvy4" path="res://Assets/Sounds/Music/Hits/Flute.wav" id="20_5boag"]
+[ext_resource type="AudioStream" uid="uid://jq2vf7i7odm5" path="res://Assets/Sounds/Music/Hits/Volts.wav" id="21_cc65n"]
+[ext_resource type="AudioStream" uid="uid://cjru61w5305q4" path="res://Assets/Sounds/Music/Hits/Wasps.wav" id="22_5di4g"]
+[ext_resource type="AudioStream" uid="uid://dogjcy1u4vnx3" path="res://Assets/Sounds/Music/Hits/orbit.wav" id="23_pqjef"]
+[ext_resource type="AudioStream" uid="uid://dyu0305fd71dy" path="res://Assets/Sounds/Music/Hits/Gate 2.wav" id="24_b35ks"]
+[ext_resource type="AudioStream" uid="uid://cb60bf4ch4pva" path="res://Assets/Sounds/UI/CrunchyClick.wav" id="25_o7cot"]
 
 [sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_yd0ll"]
 streams_count = 22
@@ -68,5 +69,11 @@ bus = &"Effects"
 [node name="Timer" type="Timer" parent="." unique_id=1340132229]
 wait_time = 20.0
 autostart = true
+
+[node name="ButtonPress" type="AudioStreamPlayer" parent="." unique_id=1669546116]
+stream = ExtResource("25_o7cot")
+volume_db = -15.0
+pitch_scale = 0.6
+bus = &"UI"
 
 [connection signal="timeout" from="Timer" to="Effects" method="play"]

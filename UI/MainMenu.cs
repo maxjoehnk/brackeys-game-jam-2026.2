@@ -14,17 +14,20 @@ public partial class MainMenu : Control
 
 	public void OnPlay()
 	{
+		GlobalAudioPlayback.Instance.PlayButtonClick();
 		// SceneManager.Instance.StartTutorial();
 		SceneManager.Instance.StartRun();
 	}
 
 	public void OnOpenSettings()
 	{
+		GlobalAudioPlayback.Instance.PlayButtonClick();
 		SceneManager.Instance.OpenSettings();
 	}
 	
 	public void OnExit()
 	{
+		GlobalAudioPlayback.Instance.PlayButtonClick();
 		this.GetTree().Quit();
 	}
 }

@@ -29,4 +29,9 @@ public partial class GlobalAudioPlayback : Node
 			audioStreamPlayer.Play();
 		}
 	}
+
+	public void PlayButtonClick()
+	{
+		this.GetNode<AudioStreamPlayer>("ButtonPress").Play();
+	}
 }

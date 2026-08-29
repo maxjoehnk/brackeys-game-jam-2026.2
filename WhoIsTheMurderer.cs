@@ -121,6 +121,7 @@ public partial class WhoIsTheMurderer : Node2D
 
 	private void OnAccuseButtonPressed()
 	{
+		GlobalAudioPlayback.Instance.PlayButtonClick();
 		if (this.selected?.Murderer != true)
 		{
 			GameState.Instance.Fail();

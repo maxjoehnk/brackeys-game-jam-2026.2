@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://c3eee6x2ddoyt"
+path="res://.godot/imported/Mysterious Bell.wav-02995249be84eb242de8c8568bff5fb2.sample"
+
+[deps]
+
+source_file="res://Assets/Sounds/Music/Hits/Mysterious Bell.wav"
+dest_files=["res://.godot/imported/Mysterious Bell.wav-02995249be84eb242de8c8568bff5fb2.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2
