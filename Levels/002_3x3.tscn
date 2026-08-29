@@ -25,26 +25,32 @@
 [node name="Base Level" unique_id=746051315 instance=ExtResource("1_elsm4")]
 
 [node name="Character" parent="Characters" parent_id_path=PackedInt32Array(767967317) index="0" unique_id=2043763220 instance=ExtResource("2_c7hw6")]
+Hint = "Hmmmmm"
 Samples = Array[AudioStream]([ExtResource("3_erev4")])
 Texture = ExtResource("3_535h4")
 
 [node name="Character2" parent="Characters" parent_id_path=PackedInt32Array(767967317) index="1" unique_id=1358306795 instance=ExtResource("2_c7hw6")]
+Hint = "I’m blind, how am I supposed to know?"
 Samples = Array[AudioStream]([ExtResource("5_aakkq"), ExtResource("6_1pct2")])
 Texture = ExtResource("4_5ie7d")
 
 [node name="Character3" parent="Characters" parent_id_path=PackedInt32Array(767967317) index="2" unique_id=170421179 instance=ExtResource("2_c7hw6")]
+Hint = "I..I...I don’t know anything about that"
 Samples = Array[AudioStream]([ExtResource("8_03v17")])
 Texture = ExtResource("5_3x4e5")
 
 [node name="Character4" parent="Characters" parent_id_path=PackedInt32Array(767967317) index="3" unique_id=1956833871 instance=ExtResource("2_c7hw6")]
+Hint = "gnihtyna deraeh t'nevah I ,yrros m'I"
 Samples = Array[AudioStream]([ExtResource("10_djt3q")])
 Texture = ExtResource("6_faomv")
 
 [node name="Character5" parent="Characters" parent_id_path=PackedInt32Array(767967317) index="4" unique_id=1059750150 instance=ExtResource("2_c7hw6")]
+Hint = "What, Xayora is...dead? No, I don’t know who it was"
 Samples = Array[AudioStream]([ExtResource("12_61cve")])
 Texture = ExtResource("7_vk4ly")
 
 [node name="Character6" parent="Characters" parent_id_path=PackedInt32Array(767967317) index="5" unique_id=35169759 instance=ExtResource("2_c7hw6")]
+Hint = "I don’t know anything. Goodbye."
 Murderer = true
 Samples = Array[AudioStream]([ExtResource("14_n3mbp")])
 Texture = ExtResource("8_pik5n")
@@ -60,6 +66,7 @@ Samples = Array[AudioStream]([ExtResource("18_s4m5u")])
 Texture = ExtResource("10_am2a5")
 
 [node name="Character9" parent="Characters" parent_id_path=PackedInt32Array(767967317) index="8" unique_id=106588509 instance=ExtResource("2_c7hw6")]
-Hint = "Oh finally someone is here for the murder. Yes yes, I saw it. It was very cowardly done."
+Hint = "Oh finally someone is here for the murder.
+Yes yes, I saw it. It was very cowardly done."
 Samples = Array[AudioStream]([ExtResource("20_4ongx")])
 Texture = ExtResource("11_13lpp")
