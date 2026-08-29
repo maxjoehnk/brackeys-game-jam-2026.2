@@ -94,7 +94,7 @@ expand_margin_right = 4.0
 expand_margin_bottom = 6.0
 region_rect = Rect2(6, 234, 52, 16)
 
-[node name="Base Level" type="Node2D" unique_id=746051315]
+[node name="Base Level2" type="Node2D" unique_id=746051315]
 script = ExtResource("1_4w18o")
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=2140475330]

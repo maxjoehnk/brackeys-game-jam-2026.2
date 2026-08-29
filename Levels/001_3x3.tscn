@@ -3,11 +3,16 @@
 [ext_resource type="PackedScene" uid="uid://ccx4ku0ldxtmc" path="res://BaseLevel.tscn" id="1_lxq87"]
 [ext_resource type="PackedScene" uid="uid://ddo36lrfym8wx" path="res://Character.tscn" id="2_8t6sl"]
 [ext_resource type="Texture2D" uid="uid://j3f2px7n4wmy" path="res://Assets/Characters/kuhmann.png" id="3_165nu"]
+[ext_resource type="AudioStream" uid="uid://dlb05nv0k5fk4" path="res://Assets/Sounds/Characters/miscellaneous_2_ian.wav" id="3_eeh8o"]
 [ext_resource type="Texture2D" uid="uid://cf8nc50b1i5i3" path="res://Assets/Characters/shade.png" id="4_54hew"]
+[ext_resource type="AudioStream" uid="uid://dsk8m203wjda2" path="res://Assets/Sounds/Characters/miscellaneous_19_karen.wav" id="5_55wik"]
 [ext_resource type="Texture2D" uid="uid://d32o7hwvpih7p" path="res://Assets/Characters/kuhoma.png" id="5_rnk4n"]
+[ext_resource type="AudioStream" uid="uid://ctlcx6qxbi1m3" path="res://Assets/Sounds/Characters/miscellaneous_3_karen.wav" id="6_eeh8o"]
+[ext_resource type="AudioStream" uid="uid://dafqo7vatdvqj" path="res://Assets/Sounds/Characters/miscellaneous_19_meghan.wav" id="6_gwcn1"]
 [ext_resource type="Texture2D" uid="uid://bibnyfuhsy8t6" path="res://Assets/Characters/tentaclething.png" id="6_qyj6r"]
 [ext_resource type="Texture2D" uid="uid://d2gjmtx7wbleg" path="res://Assets/Characters/echsenimp-lilaa.png" id="7_gmflh"]
 [ext_resource type="Texture2D" uid="uid://cjx4twv6qd731" path="res://Assets/Characters/kuhopa.png" id="8_e1an2"]
+[ext_resource type="AudioStream" uid="uid://c1bokreyfivs8" path="res://Assets/Sounds/Characters/miscellaneous_20_alex.wav" id="9_hn7xs"]
 [ext_resource type="Texture2D" uid="uid://d01iphn6wj18o" path="res://Assets/Characters/echsenimp.png" id="9_vak4q"]
 [ext_resource type="Texture2D" uid="uid://dbih5puf4fcw8" path="res://Assets/Characters/kuhfrau.png" id="10_qllj5"]
 [ext_resource type="Texture2D" uid="uid://dm34c21yglrm6" path="res://Assets/Characters/spiderman.png" id="11_8t6sl"]
@@ -16,14 +21,17 @@
 
 [node name="Character" parent="Characters" parent_id_path=PackedInt32Array(767967317) index="0" unique_id=2043763220 instance=ExtResource("2_8t6sl")]
 Hint = "I haven't seen anything"
+Samples = Array[AudioStream]([ExtResource("3_eeh8o")])
 Texture = ExtResource("3_165nu")
 
 [node name="Character2" parent="Characters" parent_id_path=PackedInt32Array(767967317) index="1" unique_id=1358306795 instance=ExtResource("2_8t6sl")]
 Hint = "I think the murderer lives in the floor below"
+Samples = Array[AudioStream]([ExtResource("5_55wik"), ExtResource("6_gwcn1")])
 Texture = ExtResource("4_54hew")
 
 [node name="Character3" parent="Characters" parent_id_path=PackedInt32Array(767967317) index="2" unique_id=170421179 instance=ExtResource("2_8t6sl")]
 Hint = "I've heard the murderer has horns"
+Samples = Array[AudioStream]([ExtResource("6_eeh8o")])
 Texture = ExtResource("5_rnk4n")
 
 [node name="Character4" parent="Characters" parent_id_path=PackedInt32Array(767967317) index="3" unique_id=1956833871 instance=ExtResource("2_8t6sl")]
@@ -37,6 +45,7 @@ Texture = ExtResource("7_gmflh")
 
 [node name="Character6" parent="Characters" parent_id_path=PackedInt32Array(767967317) index="5" unique_id=35169759 instance=ExtResource("2_8t6sl")]
 Hint = "WUB WUB WUB WUB WUB WUB WUB WUB WUB WUB WUB WUB WUB WUB WUB"
+Samples = Array[AudioStream]([ExtResource("9_hn7xs")])
 Texture = ExtResource("8_e1an2")
 
 [node name="Character7" parent="Characters" parent_id_path=PackedInt32Array(767967317) index="6" unique_id=61851677 instance=ExtResource("2_8t6sl")]

@@ -38,6 +38,7 @@ Hint = "No I don't know anything about this murder, but have you asked the spide
 Texture = ExtResource("9_rd1js")
 
 [node name="Character8" parent="Characters" parent_id_path=PackedInt32Array(767967317) index="7" unique_id=764150834 instance=ExtResource("2_c7hw6")]
+Hint = "I think they live in the floor above"
 Texture = ExtResource("10_am2a5")
 
 [node name="Character9" parent="Characters" parent_id_path=PackedInt32Array(767967317) index="8" unique_id=106588509 instance=ExtResource("2_c7hw6")]

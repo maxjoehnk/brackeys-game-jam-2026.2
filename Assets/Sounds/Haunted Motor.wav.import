@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://dunhqtn0bahoa"
+path="res://.godot/imported/Haunted Motor.wav-f312d112f1f26b1fb8684d3683fef103.sample"
+
+[deps]
+
+source_file="res://Assets/Sounds/Haunted Motor.wav"
+dest_files=["res://.godot/imported/Haunted Motor.wav-f312d112f1f26b1fb8684d3683fef103.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

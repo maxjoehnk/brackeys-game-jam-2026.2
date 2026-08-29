@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://c0qri05ip0v7w"
+path="res://.godot/imported/Reverse Ghost.wav-475517a66161732d43976b564a67b62d.sample"
+
+[deps]
+
+source_file="res://Assets/Sounds/Reverse Ghost.wav"
+dest_files=["res://.godot/imported/Reverse Ghost.wav-475517a66161732d43976b564a67b62d.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

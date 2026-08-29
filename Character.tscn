@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://ddo36lrfym8wx"]
 
 [ext_resource type="Script" uid="uid://bn85xgd68c8iv" path="res://Character.cs" id="1_y0e31"]
+[ext_resource type="AudioStream" uid="uid://ctlcx6qxbi1m3" path="res://Assets/Sounds/Characters/miscellaneous_3_karen.wav" id="2_7ig0a"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_udt8q"]
 
@@ -29,3 +30,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=985282305]
+stream = ExtResource("2_7ig0a")
+bus = &"Quotes"
