@@ -27,17 +27,19 @@ Texture = ExtResource("5_3x4e5")
 Texture = ExtResource("6_faomv")
 
 [node name="Character5" parent="Characters" parent_id_path=PackedInt32Array(767967317) index="4" unique_id=1059750150 instance=ExtResource("2_c7hw6")]
-Murderer = true
 Texture = ExtResource("7_vk4ly")
 
 [node name="Character6" parent="Characters" parent_id_path=PackedInt32Array(767967317) index="5" unique_id=35169759 instance=ExtResource("2_c7hw6")]
+Murderer = true
 Texture = ExtResource("8_pik5n")
 
 [node name="Character7" parent="Characters" parent_id_path=PackedInt32Array(767967317) index="6" unique_id=61851677 instance=ExtResource("2_c7hw6")]
+Hint = "No I don't know anything about this murder, but have you asked the spider yet?"
 Texture = ExtResource("9_rd1js")
 
 [node name="Character8" parent="Characters" parent_id_path=PackedInt32Array(767967317) index="7" unique_id=764150834 instance=ExtResource("2_c7hw6")]
 Texture = ExtResource("10_am2a5")
 
 [node name="Character9" parent="Characters" parent_id_path=PackedInt32Array(767967317) index="8" unique_id=106588509 instance=ExtResource("2_c7hw6")]
+Hint = "Oh finally someone is here for the murder. Yes yes, I saw it. It was very cowardly done."
 Texture = ExtResource("11_13lpp")
