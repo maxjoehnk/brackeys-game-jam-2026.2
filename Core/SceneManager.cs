@@ -2,7 +2,7 @@ using System.Collections.Generic;
 using System.Linq;
 using Godot;
 
-namespace BrackeysGameJam2026.Empty.WhoIsTheMurderer.Core;
+namespace BrackeysGameJam2026.Core;
 
 public partial class SceneManager : Node
 {

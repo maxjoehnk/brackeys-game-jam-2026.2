@@ -1,7 +1,8 @@
 using Godot;
 using System.Linq;
-using BrackeysGameJam2026.Empty.WhoIsTheMurderer;
 using Godot.Collections;
+
+namespace BrackeysGameJam2026;
 
 [Tool]
 public partial class WhoIsTheMurderer : Node2D

@@ -1,6 +1,7 @@
+using BrackeysGameJam2026.Core;
 using Godot;
-using System;
-using BrackeysGameJam2026.Empty.WhoIsTheMurderer.Core;
+
+namespace BrackeysGameJam2026.UI;
 
 public partial class MainMenu : Control
 {

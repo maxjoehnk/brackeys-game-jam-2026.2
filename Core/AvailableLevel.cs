@@ -1,7 +1,7 @@
 using System.Text.RegularExpressions;
 using Godot;
 
-namespace BrackeysGameJam2026.Empty.WhoIsTheMurderer.Core;
+namespace BrackeysGameJam2026.Core;
 
 public partial class AvailableLevel
 {

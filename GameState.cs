@@ -1,6 +1,6 @@
 using Godot;
 
-namespace BrackeysGameJam2026.Empty.WhoIsTheMurderer;
+namespace BrackeysGameJam2026;
 
 public partial class GameState : Node
 {

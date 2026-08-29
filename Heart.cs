@@ -1,5 +1,6 @@
 using Godot;
-using System;
+
+namespace BrackeysGameJam2026;
 
 public partial class Heart : TextureRect
 {

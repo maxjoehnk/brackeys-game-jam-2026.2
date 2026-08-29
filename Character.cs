@@ -1,5 +1,7 @@
 using Godot;
 
+namespace BrackeysGameJam2026;
+
 [Tool]
 public partial class Character : Button
 {
