@@ -3,12 +3,12 @@
 importer="font_data_dynamic"
 type="FontFile"
 uid="uid://cqiig8nw8xoui"
-path="res://.godot/imported/UnscreenMK.ttf-065b32d2598c17e463c3502bbbe2f86f.fontdata"
+path="res://.godot/imported/UnscreenMK.ttf-b84d141e388a654d47b6b627208dc228.fontdata"
 
 [deps]
 
-source_file="res://Assets/UnscreenMK.ttf"
-dest_files=["res://.godot/imported/UnscreenMK.ttf-065b32d2598c17e463c3502bbbe2f86f.fontdata"]
+source_file="res://Assets/UI/UnscreenMK.ttf"
+dest_files=["res://.godot/imported/UnscreenMK.ttf-b84d141e388a654d47b6b627208dc228.fontdata"]
 
 [params]
 

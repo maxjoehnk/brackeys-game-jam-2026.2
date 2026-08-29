@@ -1,7 +1,7 @@
 [gd_resource type="Theme" format=3 uid="uid://74aj1okfu7ms"]
 
-[ext_resource type="Texture2D" uid="uid://bcmjanss35bkw" path="res://Assets/FreeHorrorUi.png" id="1_h0bm5"]
-[ext_resource type="FontFile" uid="uid://cqiig8nw8xoui" path="res://Assets/UnscreenMK.ttf" id="2_6joml"]
+[ext_resource type="Texture2D" uid="uid://bcmjanss35bkw" path="res://Assets/UI/FreeHorrorUi.png" id="1_h0bm5"]
+[ext_resource type="FontFile" uid="uid://cqiig8nw8xoui" path="res://Assets/UI/UnscreenMK.ttf" id="2_6joml"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_1e1o0"]
 texture = ExtResource("1_h0bm5")

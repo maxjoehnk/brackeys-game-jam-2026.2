@@ -1,11 +1,11 @@
 [gd_scene format=3 uid="uid://d1psbeqtwx3e1"]
 
-[ext_resource type="Texture2D" uid="uid://c7ysjgwtqyfap" path="res://Assets/heart.png" id="1_ar45k"]
-[ext_resource type="Texture2D" uid="uid://1lqh6qgw3686" path="res://Assets/disappear-frame01.png" id="2_js5w7"]
+[ext_resource type="Texture2D" uid="uid://c7ysjgwtqyfap" path="res://Assets/UI/heart.png" id="1_ar45k"]
+[ext_resource type="Texture2D" uid="uid://1lqh6qgw3686" path="res://Assets/UI/disappear-frame01.png" id="2_js5w7"]
 [ext_resource type="Script" uid="uid://dvlwrda8sd3qn" path="res://Heart.cs" id="2_pgcdd"]
-[ext_resource type="Texture2D" uid="uid://dapc1fyf8hpxg" path="res://Assets/disappear-frame02.png" id="3_pgcdd"]
-[ext_resource type="Texture2D" uid="uid://dkqmrh4nqmwon" path="res://Assets/disappear-frame03.png" id="4_mpmi1"]
-[ext_resource type="Texture2D" uid="uid://dr0nb8vno641e" path="res://Assets/disappear-frame04.png" id="5_bvaml"]
+[ext_resource type="Texture2D" uid="uid://dapc1fyf8hpxg" path="res://Assets/UI/disappear-frame02.png" id="3_pgcdd"]
+[ext_resource type="Texture2D" uid="uid://dkqmrh4nqmwon" path="res://Assets/UI/disappear-frame03.png" id="4_mpmi1"]
+[ext_resource type="Texture2D" uid="uid://dr0nb8vno641e" path="res://Assets/UI/disappear-frame04.png" id="5_bvaml"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_v2ds7"]
 animations = [{

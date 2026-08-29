@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dr0nb8vno641e"
-path="res://.godot/imported/disappear-frame04.png-a12b1bdbf29aa13b2a84914518cbe768.ctex"
+uid="uid://dapc1fyf8hpxg"
+path="res://.godot/imported/disappear-frame02.png-5fb6090f3060bbe684e3ada78c022749.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/disappear-frame04.png"
-dest_files=["res://.godot/imported/disappear-frame04.png-a12b1bdbf29aa13b2a84914518cbe768.ctex"]
+source_file="res://Assets/UI/disappear-frame02.png"
+dest_files=["res://.godot/imported/disappear-frame02.png-5fb6090f3060bbe684e3ada78c022749.ctex"]
 
 [params]
 

@@ -7,8 +7,8 @@ public partial class Heart : TextureRect
 {
 	private AnimatedSprite2D Animation => this.GetNode<AnimatedSprite2D>("Pop");
 
-	private Texture2D fullHeart = GD.Load<Texture2D>("res://Assets/heart.png");
-	private Texture2D emptyHeart = GD.Load<Texture2D>("res://Assets/heart-empty-export.png");
+	private Texture2D fullHeart = GD.Load<Texture2D>("res://Assets/UI/heart.png");
+	private Texture2D emptyHeart = GD.Load<Texture2D>("res://Assets/UI/heart-empty-export.png");
 
 	public override void _Ready()
 	{

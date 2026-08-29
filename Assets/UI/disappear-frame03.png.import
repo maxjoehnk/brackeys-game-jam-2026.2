@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bus87tdpht01d"
-path="res://.godot/imported/heart-empty-export.png-5c3e08fd21e7c91e5a1bb2d260a4b25f.ctex"
+uid="uid://dkqmrh4nqmwon"
+path="res://.godot/imported/disappear-frame03.png-ff5dc9dfe49461b7ac9573b4e1888b14.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/heart-empty-export.png"
-dest_files=["res://.godot/imported/heart-empty-export.png-5c3e08fd21e7c91e5a1bb2d260a4b25f.ctex"]
+source_file="res://Assets/UI/disappear-frame03.png"
+dest_files=["res://.godot/imported/disappear-frame03.png-ff5dc9dfe49461b7ac9573b4e1888b14.ctex"]
 
 [params]
 

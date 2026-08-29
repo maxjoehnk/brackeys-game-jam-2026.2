@@ -4,8 +4,8 @@
 [ext_resource type="PackedScene" uid="uid://djukox1mloovo" path="res://UI/PauseMenu.tscn" id="5_cwwxe"]
 [ext_resource type="PackedScene" uid="uid://dy2ofa0pd2plp" path="res://UI/LevelClearedMenu.tscn" id="6_ufkdr"]
 [ext_resource type="PackedScene" uid="uid://blpgrmhv4njwa" path="res://UI/FailedMenu.tscn" id="7_epnn3"]
-[ext_resource type="Texture2D" uid="uid://bcmjanss35bkw" path="res://Assets/FreeHorrorUi.png" id="10_llgwl"]
-[ext_resource type="FontFile" uid="uid://cqiig8nw8xoui" path="res://Assets/UnscreenMK.ttf" id="14_w0avv"]
+[ext_resource type="Texture2D" uid="uid://bcmjanss35bkw" path="res://Assets/UI/FreeHorrorUi.png" id="10_llgwl"]
+[ext_resource type="FontFile" uid="uid://cqiig8nw8xoui" path="res://Assets/UI/UnscreenMK.ttf" id="14_w0avv"]
 [ext_resource type="PackedScene" uid="uid://d1psbeqtwx3e1" path="res://Heart.tscn" id="15_ui1hk"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_knq2t"]
