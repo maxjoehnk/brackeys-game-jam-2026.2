@@ -1,34 +1,7 @@
 [gd_scene format=3 uid="uid://bgrm817qh3xl5"]
 
 [ext_resource type="Script" uid="uid://cqaw7t6ymfn5h" path="res://UI/MainMenu.cs" id="1_1i6li"]
-[ext_resource type="Texture2D" uid="uid://dfcgoqrmlo7xt" path="res://Assets/background-0.png" id="2_o0gvj"]
-[ext_resource type="Texture2D" uid="uid://dmeudqupu3pee" path="res://Assets/background-1.png" id="3_ooy68"]
-[ext_resource type="Texture2D" uid="uid://cj4mk7o5r75h8" path="res://Assets/background-2.png" id="4_2rcti"]
-[ext_resource type="Texture2D" uid="uid://7wccabniu14f" path="res://Assets/background-3.png" id="5_a2x4f"]
-[ext_resource type="Texture2D" uid="uid://bvq1dpvwy1ucl" path="res://Assets/background-5.png" id="6_eh13i"]
-[ext_resource type="Texture2D" uid="uid://bvb671601tc6d" path="res://Assets/background-4.png" id="7_haso6"]
-[ext_resource type="Texture2D" uid="uid://b0ximo0tosycb" path="res://Assets/background-6.png" id="8_m85rc"]
-[ext_resource type="Texture2D" uid="uid://kw83bq8eoj1h" path="res://Assets/background-7.png" id="9_fme0l"]
-
-[sub_resource type="AnimatedTexture" id="AnimatedTexture_cq8kb"]
-frames = 8
-speed_scale = 2.0
-frame_0/texture = ExtResource("2_o0gvj")
-frame_0/duration = 0.5
-frame_1/texture = ExtResource("3_ooy68")
-frame_1/duration = 0.5
-frame_2/texture = ExtResource("4_2rcti")
-frame_2/duration = 0.5
-frame_3/texture = ExtResource("5_a2x4f")
-frame_3/duration = 0.5
-frame_4/texture = ExtResource("6_eh13i")
-frame_4/duration = 0.5
-frame_5/texture = ExtResource("7_haso6")
-frame_5/duration = 0.5
-frame_6/texture = ExtResource("8_m85rc")
-frame_6/duration = 0.5
-frame_7/texture = ExtResource("9_fme0l")
-frame_7/duration = 0.5
+[ext_resource type="Texture2D" uid="uid://s62xn8q34814" path="res://Assets/background/Background.tres" id="2_b37jj"]
 
 [node name="MainMenu" type="Control" unique_id=1996216376]
 layout_mode = 3
@@ -43,7 +16,7 @@ script = ExtResource("1_1i6li")
 layout_mode = 0
 offset_right = 1920.0
 offset_bottom = 1080.0
-texture = SubResource("AnimatedTexture_cq8kb")
+texture = ExtResource("2_b37jj")
 
 [node name="PanelContainer" type="Panel" parent="." unique_id=426453673]
 layout_mode = 0

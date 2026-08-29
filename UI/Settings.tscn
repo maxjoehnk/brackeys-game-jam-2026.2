@@ -1,50 +1,7 @@
 [gd_scene format=3 uid="uid://yum5x0j7n1us"]
 
 [ext_resource type="Script" uid="uid://bjs25g4xornkm" path="res://UI/Settings.cs" id="1_aveij"]
-
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_lbqto"]
-load_path = "res://.godot/imported/background-0.png-7d33226422bca96eccf70faa158a9e50.ctex"
-
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_ojqoa"]
-load_path = "res://.godot/imported/background-1.png-4f4cd77eb37272c4f4e708086bb93d8b.ctex"
-
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_i550k"]
-load_path = "res://.godot/imported/background-2.png-e72211a8db1dcf855cf8a825222c6ccb.ctex"
-
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_1ario"]
-load_path = "res://.godot/imported/background-3.png-a419d48e13337144c343d652171c7be9.ctex"
-
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_ay7hg"]
-load_path = "res://.godot/imported/background-5.png-a97c39dc3b1de56b98c05e438b12ee7e.ctex"
-
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_oflx8"]
-load_path = "res://.godot/imported/background-4.png-eb88b7f681c163c21a7fba731fd06a9a.ctex"
-
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_r3owr"]
-load_path = "res://.godot/imported/background-6.png-4c28f0f03e9f4376be0012d5895933b7.ctex"
-
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_rbc7x"]
-load_path = "res://.godot/imported/background-7.png-68e5f66b82846279f47a26fce703d757.ctex"
-
-[sub_resource type="AnimatedTexture" id="AnimatedTexture_aveij"]
-frames = 8
-speed_scale = 2.0
-frame_0/texture = SubResource("CompressedTexture2D_lbqto")
-frame_0/duration = 0.5
-frame_1/texture = SubResource("CompressedTexture2D_ojqoa")
-frame_1/duration = 0.5
-frame_2/texture = SubResource("CompressedTexture2D_i550k")
-frame_2/duration = 0.5
-frame_3/texture = SubResource("CompressedTexture2D_1ario")
-frame_3/duration = 0.5
-frame_4/texture = SubResource("CompressedTexture2D_ay7hg")
-frame_4/duration = 0.5
-frame_5/texture = SubResource("CompressedTexture2D_oflx8")
-frame_5/duration = 0.5
-frame_6/texture = SubResource("CompressedTexture2D_r3owr")
-frame_6/duration = 0.5
-frame_7/texture = SubResource("CompressedTexture2D_rbc7x")
-frame_7/duration = 0.5
+[ext_resource type="Texture2D" uid="uid://s62xn8q34814" path="res://Assets/background/Background.tres" id="2_ojqoa"]
 
 [node name="Settings" type="Control" unique_id=1996216376]
 layout_mode = 3
@@ -59,7 +16,7 @@ script = ExtResource("1_aveij")
 layout_mode = 0
 offset_right = 1920.0
 offset_bottom = 1080.0
-texture = SubResource("AnimatedTexture_aveij")
+texture = ExtResource("2_ojqoa")
 
 [node name="PanelContainer" type="Panel" parent="." unique_id=426453673]
 layout_mode = 0
