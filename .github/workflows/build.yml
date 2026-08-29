@@ -8,7 +8,7 @@ on:
 
 env:
   GODOT_VERSION: 4.7.2
-  EXPORT_NAME: Hell is not a Happy Place
+  EXPORT_NAME: Hell House
   PROJECT_PATH: "."
   # Built by .github/workflows/web-toolchain.yml.
   TOOLCHAIN_ARTIFACT: godot-web-toolchain-linux-x86_64

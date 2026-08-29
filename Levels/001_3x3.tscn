@@ -15,9 +15,11 @@
 [node name="Base Level" unique_id=746051315 instance=ExtResource("1_lxq87")]
 
 [node name="Character" parent="Characters" parent_id_path=PackedInt32Array(767967317) index="0" unique_id=2043763220 instance=ExtResource("2_8t6sl")]
+Hint = "I haven't seen anything"
 Texture = ExtResource("3_165nu")
 
 [node name="Character2" parent="Characters" parent_id_path=PackedInt32Array(767967317) index="1" unique_id=1358306795 instance=ExtResource("2_8t6sl")]
+Hint = "I think the murderer lives in the floor below"
 Texture = ExtResource("4_54hew")
 
 [node name="Character3" parent="Characters" parent_id_path=PackedInt32Array(767967317) index="2" unique_id=170421179 instance=ExtResource("2_8t6sl")]
@@ -27,6 +29,7 @@ Texture = ExtResource("5_rnk4n")
 Texture = ExtResource("6_qyj6r")
 
 [node name="Character5" parent="Characters" parent_id_path=PackedInt32Array(767967317) index="4" unique_id=1059750150 instance=ExtResource("2_8t6sl")]
+Murderer = true
 Texture = ExtResource("7_gmflh")
 
 [node name="Character6" parent="Characters" parent_id_path=PackedInt32Array(767967317) index="5" unique_id=35169759 instance=ExtResource("2_8t6sl")]

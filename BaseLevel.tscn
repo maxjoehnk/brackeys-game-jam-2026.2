@@ -1,6 +1,9 @@
 [gd_scene format=3 uid="uid://ccx4ku0ldxtmc"]
 
 [ext_resource type="Script" uid="uid://k70lfnlgyous" path="res://WhoIsTheMurderer.cs" id="1_4w18o"]
+[ext_resource type="PackedScene" uid="uid://djukox1mloovo" path="res://UI/PauseMenu.tscn" id="5_cwwxe"]
+[ext_resource type="PackedScene" uid="uid://dy2ofa0pd2plp" path="res://UI/LevelClearedMenu.tscn" id="6_ufkdr"]
+[ext_resource type="PackedScene" uid="uid://blpgrmhv4njwa" path="res://UI/FailedMenu.tscn" id="7_epnn3"]
 [ext_resource type="Texture2D" uid="uid://bcmjanss35bkw" path="res://Assets/FreeHorrorUi.png" id="10_llgwl"]
 [ext_resource type="FontFile" uid="uid://cqiig8nw8xoui" path="res://Assets/UnscreenMK.ttf" id="14_w0avv"]
 [ext_resource type="PackedScene" uid="uid://d1psbeqtwx3e1" path="res://Heart.tscn" id="15_ui1hk"]
@@ -95,6 +98,7 @@ region_rect = Rect2(6, 234, 52, 16)
 script = ExtResource("1_4w18o")
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=2140475330]
+process_mode = 1
 offset_right = 1920.0
 offset_bottom = 1080.0
 texture = SubResource("AnimatedTexture_in127")
@@ -182,5 +186,18 @@ layout_mode = 2
 
 [node name="Heart" parent="CanvasLayer/HFlowContainer" unique_id=31935835 instance=ExtResource("15_ui1hk")]
 layout_mode = 2
+
+[node name="PauseMenu" parent="CanvasLayer" unique_id=1661873983 instance=ExtResource("5_cwwxe")]
+visible = false
+
+[node name="LevelClearedMenu" parent="CanvasLayer" unique_id=21805939 instance=ExtResource("6_ufkdr")]
+visible = false
+offset_left = -132.0
+offset_top = -104.5
+offset_right = 132.0
+offset_bottom = 104.5
+
+[node name="FailedMenu" parent="CanvasLayer" unique_id=1715573117 instance=ExtResource("7_epnn3")]
+visible = false
 
 [node name="Characters" type="Node" parent="." unique_id=767967317]

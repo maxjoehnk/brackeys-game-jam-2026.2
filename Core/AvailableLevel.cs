@@ -18,16 +18,19 @@ public partial class AvailableLevel
 	{
 		this.Path = path;
 		Match match = LevelNameRegex().Match(path);
-		this.Name = match.Groups["Name"].Value;
+		if (match.Groups["Name"].Success)
+		{
+			this.Name = match.Groups["Name"].Value;
+		}
 		if (match.Groups["Size"].Success)
 		{
-			string[] size = match.Groups["Size"].Value.Substring(1).Split("x");
+			string[] size = match.Groups["Size"].Value[1..].Split("x");
 			this.Columns = int.Parse(size[0]);
 			this.Rows = int.Parse(size[1]);
 		}
 	}
 
-	[GeneratedRegex("((?<Id>[0-9]+)_)?(?<Name>[^_]*)(?<Size>_[0-9]x[0-9])?.tscn",
+	[GeneratedRegex("((?<Id>[0-9]+)_)?(?<Name>[^_]*)?(?<Size>_[0-9]x[0-9])?.tscn",
 		RegexOptions.Compiled | RegexOptions.IgnoreCase)]
 	private static partial Regex LevelNameRegex();
 }

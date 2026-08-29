@@ -1,0 +1,49 @@
+[gd_scene format=3 uid="uid://djukox1mloovo"]
+
+[ext_resource type="Script" uid="uid://3o4bq86vli8d" path="res://UI/PauseMenu.cs" id="1_05bun"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_05bun"]
+bg_color = Color(0, 0, 0, 0.5921569)
+
+[node name="PauseMenu" type="Panel" unique_id=961526460]
+process_mode = 2
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_05bun")
+script = ExtResource("1_05bun")
+
+[node name="PanelContainer" type="PanelContainer" parent="." unique_id=86459713]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -68.0
+offset_top = -85.0
+offset_right = 68.0
+offset_bottom = 85.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer" unique_id=652902522]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="PanelContainer/VBoxContainer" unique_id=337088572]
+layout_mode = 2
+text = "PAUSE"
+horizontal_alignment = 1
+
+[node name="Button" type="Button" parent="PanelContainer/VBoxContainer" unique_id=633387907]
+layout_mode = 2
+text = "Resume"
+
+[node name="Exit" type="Button" parent="PanelContainer/VBoxContainer" unique_id=577223746]
+layout_mode = 2
+text = "Exit"
+
+[connection signal="pressed" from="PanelContainer/VBoxContainer/Button" to="." method="OnResume"]
+[connection signal="pressed" from="PanelContainer/VBoxContainer/Exit" to="." method="OnExit"]

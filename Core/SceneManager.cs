@@ -25,6 +25,7 @@ public partial class SceneManager : Node
 
 	public void StartRun()
 	{
+		GameState.Instance.Reset();
 		this.CurrentRun = new Queue<AvailableLevel>(this.Levels
 			.GroupBy(l => l.Size)
 			.SelectMany(g => g.OrderBy(_ => GD.Randi()).Take(5)));

@@ -1,0 +1,49 @@
+[gd_scene format=3 uid="uid://blpgrmhv4njwa"]
+
+[ext_resource type="Script" uid="uid://yrs4xjxsykmk" path="res://UI/FailedMenu.cs" id="1_t7qwp"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6q2mp"]
+bg_color = Color(0, 0, 0, 0.5921569)
+
+[node name="FailedMenu" type="Panel" unique_id=1715573117]
+process_mode = 2
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_6q2mp")
+script = ExtResource("1_t7qwp")
+
+[node name="PanelContainer" type="PanelContainer" parent="." unique_id=1852358601]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -132.0
+offset_top = -90.25
+offset_right = 132.0
+offset_bottom = 90.25
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer" unique_id=652902522]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="PanelContainer/VBoxContainer" unique_id=337088572]
+layout_mode = 2
+text = "You Lost!"
+horizontal_alignment = 1
+
+[node name="Button" type="Button" parent="PanelContainer/VBoxContainer" unique_id=633387907]
+layout_mode = 2
+text = "Retry"
+
+[node name="Exit" type="Button" parent="PanelContainer/VBoxContainer" unique_id=577223746]
+layout_mode = 2
+text = "Exit"
+
+[connection signal="pressed" from="PanelContainer/VBoxContainer/Button" to="." method="OnRestart"]
+[connection signal="pressed" from="PanelContainer/VBoxContainer/Exit" to="." method="OnExit"]

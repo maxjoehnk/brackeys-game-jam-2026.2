@@ -7,28 +7,29 @@ namespace BrackeysGameJam2026;
 [Tool]
 public partial class WhoIsTheMurderer : Node2D
 {
-	[Export] public int StartHearts { get; set; } = 3;
-
 	[Export] public int Columns { get; set; } = 3;
 
 	private PackedScene CharacterSlot = GD.Load<PackedScene>("res://CharacterSlot.tscn");
-	
+
 	private Label TextBox => this.GetNode<Label>("CanvasLayer/PanelContainer/Label");
 	private TextureRect CharacterBox => this.GetNode<TextureRect>("CanvasLayer/PanelContainer/Panel/TextureRect");
-	
+
 	private Button AccuseButton => this.GetNode<Button>("CanvasLayer/PanelContainer/Button");
 
 	private Character? selected;
-	
-	private Array<Heart> Hearts => [.. this.GetNode("CanvasLayer/HFlowContainer").GetChildren().Cast<Heart>() ];
-	
+
+	private Array<Heart> Hearts => [.. this.GetNode("CanvasLayer/HFlowContainer").GetChildren().Cast<Heart>()];
+
 	private GridContainer CharacterContainer => this.GetNode<GridContainer>("CenterContainer/Characters");
+
+	private Control? PauseMenu => FindChild("PauseMenu") as Control;
+	private Control? WinMenu => FindChild("LevelClearedMenu") as Control;
+	private Control? LostMenu => FindChild("FailedMenu") as Control;
 
 	private int lives;
 
 	public override void _Ready()
 	{
-		this.lives = this.StartHearts;
 		this.CharacterContainer.Columns = this.Columns;
 		Array<Character> characters = [.. this.GetNode("Characters").GetChildren().Cast<Character>()];
 		foreach (Character _ in characters)
@@ -36,10 +37,22 @@ public partial class WhoIsTheMurderer : Node2D
 			Node slot = this.CharacterSlot.Instantiate();
 			this.CharacterContainer.AddChild(slot);
 		}
-		
+
 		if (Engine.IsEditorHint())
 		{
 			return;
+		}
+
+		for (int i = 0; i < GameState.Instance.TotalLives; i++)
+		{
+			if (i < GameState.Instance.Lives)
+			{
+				this.Hearts[i].SetFull();
+			}
+			else
+			{
+				this.Hearts[i].SetEmpty();
+			}
 		}
 
 		for (int i = 0; i < characters.Count; i++)
@@ -55,11 +68,12 @@ public partial class WhoIsTheMurderer : Node2D
 
 		this.GetNode<Control>("CanvasLayer/PanelContainer/Panel").Visible = false;
 		this.AccuseButton.Visible = false;
+		this.PauseMenu?.Visible = false;
+		this.WinMenu?.Visible = false;
+		this.LostMenu?.Visible = false;
 
-		GameState.Instance.LifeLost += () =>
-		{
-			this.Hearts[GameState.Instance.Lives].Pop();
-		};
+		GameState.Instance.LifeLost += () => { this.Hearts[GameState.Instance.Lives].Pop(); };
+		GameState.Instance.Lost += this.OnLost;
 		characters.FirstOrDefault()?.GrabFocus();
 		foreach (Character child in characters)
 		{
@@ -67,6 +81,31 @@ public partial class WhoIsTheMurderer : Node2D
 		}
 
 		this.AccuseButton.Pressed += this.OnAccuseButtonPressed;
+	}
+
+	public override void _EnterTree()
+	{
+		GD.Print("Enter Tree");
+	}
+
+	public override void _ExitTree()
+	{
+		GD.Print("Exit Tree");
+	}
+
+	private void OnLost()
+	{
+		this.GetTree().Paused = true;
+		this.LostMenu?.Visible = true;
+	}
+
+	public override void _Input(InputEvent @event)
+	{
+		if (Input.IsActionJustPressedByEvent("menu", @event))
+		{
+			this.GetTree().Paused = true;
+			this.PauseMenu?.Visible = true;
+		}
 	}
 
 	private void OnCharacterClicked(Character character)
@@ -85,7 +124,8 @@ public partial class WhoIsTheMurderer : Node2D
 			GameState.Instance.Fail();
 			return;
 		}
-		
-		GD.Print("Du hast den Täter erraten!");
+
+		this.WinMenu?.Visible = true;
+		this.GetTree().Paused = true;
 	}
 }

@@ -11,7 +11,8 @@ public partial class GameState : Node
 		Instance = this;
 	}
 
-	[Export] public int Lives { get; set; } = 3;
+	[Export] public int TotalLives { get; set; } = 3;
+	public int Lives { get; set; } = 3;
 
 	[Signal]
 	public delegate void LifeLostEventHandler();
@@ -27,5 +28,10 @@ public partial class GameState : Node
 		{
 			this.EmitSignalLost();
 		}
+	}
+
+	public void Reset()
+	{
+		this.Lives = this.TotalLives;
 	}
 }
