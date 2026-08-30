@@ -1,0 +1,116 @@
+[gd_scene format=3 uid="uid://bho6b0vo40t2v"]
+
+[ext_resource type="PackedScene" uid="uid://ccx4ku0ldxtmc" path="res://BaseLevel.tscn" id="1_5dg4s"]
+[ext_resource type="PackedScene" uid="uid://ddo36lrfym8wx" path="res://Character.tscn" id="2_x2hkx"]
+[ext_resource type="AudioStream" uid="uid://dlb05nv0k5fk4" path="res://Assets/Sounds/Characters/miscellaneous_2_ian.wav" id="3_74bxg"]
+[ext_resource type="AudioStream" uid="uid://jrpj31m5n2wp" path="res://Assets/Sounds/Characters/grunting_1_sean.wav" id="4_uxjsw"]
+[ext_resource type="Texture2D" uid="uid://j3f2px7n4wmy" path="res://Assets/Characters/kuhmann.png" id="5_5f2jq"]
+[ext_resource type="AudioStream" uid="uid://dsk8m203wjda2" path="res://Assets/Sounds/Characters/miscellaneous_19_karen.wav" id="6_f0bln"]
+[ext_resource type="AudioStream" uid="uid://dafqo7vatdvqj" path="res://Assets/Sounds/Characters/miscellaneous_19_meghan.wav" id="7_0g6wd"]
+[ext_resource type="AudioStream" uid="uid://ih7wkov4lb6x" path="res://Assets/Sounds/Characters/grunting_2_karen.wav" id="8_c6g32"]
+[ext_resource type="Texture2D" uid="uid://cf8nc50b1i5i3" path="res://Assets/Characters/shade.png" id="9_7kb3l"]
+[ext_resource type="AudioStream" uid="uid://ctlcx6qxbi1m3" path="res://Assets/Sounds/Characters/miscellaneous_3_karen.wav" id="10_nep37"]
+[ext_resource type="AudioStream" uid="uid://cid435x4qecey" path="res://Assets/Sounds/Characters/grunting_3_karen.wav" id="11_pib4e"]
+[ext_resource type="Texture2D" uid="uid://d32o7hwvpih7p" path="res://Assets/Characters/kuhoma.png" id="12_js7lg"]
+[ext_resource type="AudioStream" uid="uid://db3m8hxg4y4a" path="res://Assets/Sounds/Characters/miscellaneous_20_ian.wav" id="13_mya4s"]
+[ext_resource type="AudioStream" uid="uid://4l54mf5jysod" path="res://Assets/Sounds/Characters/miscellaneous_20_ian_reverse.wav" id="14_qnos6"]
+[ext_resource type="Texture2D" uid="uid://bibnyfuhsy8t6" path="res://Assets/Characters/tentaclething.png" id="15_n8xvm"]
+[ext_resource type="AudioStream" uid="uid://bxfy06bjjuyi8" path="res://Assets/Sounds/Characters/miscellaneous_19_sean.wav" id="16_swonr"]
+[ext_resource type="AudioStream" uid="uid://ctl7t3oqqlmbq" path="res://Assets/Sounds/Characters/grunting_1_alex.wav" id="17_nbo1r"]
+[ext_resource type="Texture2D" uid="uid://d2gjmtx7wbleg" path="res://Assets/Characters/echsenimp-lilaa.png" id="18_s27id"]
+[ext_resource type="AudioStream" uid="uid://c1bokreyfivs8" path="res://Assets/Sounds/Characters/miscellaneous_20_alex.wav" id="19_1jbqa"]
+[ext_resource type="AudioStream" uid="uid://kek5747owkjg" path="res://Assets/Sounds/Characters/miscellaneous_20_alex_short.wav" id="20_01s0e"]
+[ext_resource type="AudioStream" uid="uid://dvondbtpeuohm" path="res://Assets/Sounds/Characters/grunting_6_sean.wav" id="21_t4fdy"]
+[ext_resource type="Texture2D" uid="uid://cjx4twv6qd731" path="res://Assets/Characters/kuhopa.png" id="22_1tlkh"]
+[ext_resource type="AudioStream" uid="uid://bhpgaxun20e3a" path="res://Assets/Sounds/Characters/miscellaneous_3_sean.wav" id="23_522pk"]
+[ext_resource type="AudioStream" uid="uid://d3c2ythhvn6kl" path="res://Assets/Sounds/Characters/grunting_2_alex.wav" id="24_uxbk6"]
+[ext_resource type="Texture2D" uid="uid://d01iphn6wj18o" path="res://Assets/Characters/echsenimp.png" id="25_mcuvr"]
+[ext_resource type="AudioStream" uid="uid://b44b7gmw2idu0" path="res://Assets/Sounds/Characters/miscellaneous_13_karen.wav" id="26_25xia"]
+[ext_resource type="AudioStream" uid="uid://clpedqeuy2d3r" path="res://Assets/Sounds/Characters/grunting_4_karen.wav" id="27_ts5tu"]
+[ext_resource type="Texture2D" uid="uid://dbih5puf4fcw8" path="res://Assets/Characters/kuhfrau.png" id="28_mwn0q"]
+[ext_resource type="AudioStream" uid="uid://bqvjbbrqnicto" path="res://Assets/Sounds/Characters/BlisterPack1.wav" id="29_wqvci"]
+[ext_resource type="AudioStream" uid="uid://7j8y2cpfe30w" path="res://Assets/Sounds/Characters/BlisterPack1_reverse.ogg" id="30_nwo4w"]
+[ext_resource type="Texture2D" uid="uid://dm34c21yglrm6" path="res://Assets/Characters/spiderman.png" id="31_by0d6"]
+[ext_resource type="Texture2D" uid="uid://be6p8kxvldym4" path="res://Assets/Characters/shade2.png" id="32_i2us2"]
+[ext_resource type="Texture2D" uid="uid://ba4yfvvlgnni" path="res://Assets/Characters/spidermanohnearschgesicht.png" id="33_a2yq8"]
+[ext_resource type="AudioStream" uid="uid://ch4tik4abcb4f" path="res://Assets/Sounds/Characters/greeting_9_alex.wav" id="34_ba8u1"]
+[ext_resource type="AudioStream" uid="uid://5vwylb0ucnqh" path="res://Assets/Sounds/Characters/grunting_9_alex.wav" id="35_grp1s"]
+[ext_resource type="Texture2D" uid="uid://duui5agsmtvuo" path="res://Assets/Characters/definitlynotaserialkiller.png" id="36_l3gue"]
+
+[node name="Base Level" unique_id=746051315 instance=ExtResource("1_5dg4s")]
+Columns = 4
+
+[node name="Characters" parent="CenterContainer" parent_id_path=PackedInt32Array(511141921) index="0" unique_id=1367262659]
+columns = 4
+
+[node name="Character" parent="Characters" parent_id_path=PackedInt32Array(767967317) index="0" unique_id=2043763220 instance=ExtResource("2_x2hkx")]
+Hint = "They have no horns"
+Samples = Array[AudioStream]([ExtResource("3_74bxg")])
+FalseAccusedSample = ExtResource("4_uxjsw")
+Texture = ExtResource("5_5f2jq")
+
+[node name="Character2" parent="Characters" parent_id_path=PackedInt32Array(767967317) index="1" unique_id=1358306795 instance=ExtResource("2_x2hkx")]
+Hint = "They must have horns"
+Samples = Array[AudioStream]([ExtResource("6_f0bln"), ExtResource("7_0g6wd")])
+FalseAccusedSample = ExtResource("8_c6g32")
+Texture = ExtResource("9_7kb3l")
+
+[node name="Character3" parent="Characters" parent_id_path=PackedInt32Array(767967317) index="2" unique_id=170421179 instance=ExtResource("2_x2hkx")]
+Hint = "They have no horns"
+Samples = Array[AudioStream]([ExtResource("10_nep37")])
+FalseAccusedSample = ExtResource("11_pib4e")
+Texture = ExtResource("12_js7lg")
+
+[node name="Character4" parent="Characters" parent_id_path=PackedInt32Array(767967317) index="3" unique_id=1956833871 instance=ExtResource("2_x2hkx")]
+Hint = "They must have horns"
+Samples = Array[AudioStream]([ExtResource("13_mya4s")])
+FalseAccusedSample = ExtResource("14_qnos6")
+Texture = ExtResource("15_n8xvm")
+
+[node name="Character5" parent="Characters" parent_id_path=PackedInt32Array(767967317) index="4" unique_id=1059750150 instance=ExtResource("2_x2hkx")]
+Hint = "They have no horns"
+Samples = Array[AudioStream]([ExtResource("16_swonr")])
+FalseAccusedSample = ExtResource("17_nbo1r")
+Texture = ExtResource("18_s27id")
+
+[node name="Character6" parent="Characters" parent_id_path=PackedInt32Array(767967317) index="5" unique_id=35169759 instance=ExtResource("2_x2hkx")]
+Hint = "They have no horns"
+Samples = Array[AudioStream]([ExtResource("19_1jbqa"), ExtResource("20_01s0e")])
+FalseAccusedSample = ExtResource("21_t4fdy")
+Texture = ExtResource("22_1tlkh")
+
+[node name="Character7" parent="Characters" parent_id_path=PackedInt32Array(767967317) index="6" unique_id=61851677 instance=ExtResource("2_x2hkx")]
+Hint = "They have no horns"
+Samples = Array[AudioStream]([ExtResource("23_522pk")])
+FalseAccusedSample = ExtResource("24_uxbk6")
+Texture = ExtResource("25_mcuvr")
+
+[node name="Character8" parent="Characters" parent_id_path=PackedInt32Array(767967317) index="7" unique_id=764150834 instance=ExtResource("2_x2hkx")]
+Hint = "They have no horns"
+Samples = Array[AudioStream]([ExtResource("26_25xia")])
+FalseAccusedSample = ExtResource("27_ts5tu")
+Texture = ExtResource("28_mwn0q")
+
+[node name="Character9" parent="Characters" parent_id_path=PackedInt32Array(767967317) index="8" unique_id=106588509 instance=ExtResource("2_x2hkx")]
+Hint = "They must have horns"
+Samples = Array[AudioStream]([ExtResource("29_wqvci")])
+FalseAccusedSample = ExtResource("30_nwo4w")
+Texture = ExtResource("31_by0d6")
+
+[node name="Character10" parent="Characters" parent_id_path=PackedInt32Array(767967317) index="9" unique_id=1421789777 instance=ExtResource("2_x2hkx")]
+Hint = "They must have horns"
+Samples = Array[AudioStream]([ExtResource("26_25xia")])
+Texture = ExtResource("32_i2us2")
+
+[node name="Character11" parent="Characters" parent_id_path=PackedInt32Array(767967317) index="10" unique_id=84619509 instance=ExtResource("2_x2hkx")]
+Hint = "They have no horns"
+Murderer = true
+Samples = Array[AudioStream]([ExtResource("30_nwo4w")])
+FalseAccusedSample = ExtResource("29_wqvci")
+Texture = ExtResource("33_a2yq8")
+
+[node name="Character12" parent="Characters" parent_id_path=PackedInt32Array(767967317) index="11" unique_id=168563806 instance=ExtResource("2_x2hkx")]
+Hint = "They must have horns"
+Samples = Array[AudioStream]([ExtResource("34_ba8u1")])
+FalseAccusedSample = ExtResource("35_grp1s")
+Texture = ExtResource("36_l3gue")
