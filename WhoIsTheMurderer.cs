@@ -1,5 +1,6 @@
 using Godot;
 using System.Linq;
+using BrackeysGameJam2026.UI;
 using Godot.Collections;
 
 namespace BrackeysGameJam2026;
@@ -23,8 +24,8 @@ public partial class WhoIsTheMurderer : Node2D
 	private GridContainer CharacterContainer => this.GetNode<GridContainer>("CenterContainer/Characters");
 
 	private Control PauseMenu => (this.FindChild("PauseMenu") as Control)!;
-	private Control WinMenu => (this.FindChild("LevelClearedMenu") as Control)!;
-	private Control LostMenu => (this.FindChild("FailedMenu") as Control)!;
+	private LevelClearedMenu WinMenu => (this.FindChild("LevelClearedMenu") as LevelClearedMenu)!;
+	private FailedMenu LostMenu => (this.FindChild("FailedMenu") as FailedMenu)!;
 	private Control WrongAccusationOverlay => (this.FindChild("WrongAccusationOverlay") as Control)!;
 	
 	private AudioStreamPlayer AudioPlayer => this.GetNode<AudioStreamPlayer>("OneShotPlayer");
@@ -101,6 +102,7 @@ public partial class WhoIsTheMurderer : Node2D
 	{
 		this.GetTree().Paused = true;
 		this.LostMenu.Visible = true;
+		this.LostMenu.Focus();
 	}
 
 	public override void _Input(InputEvent @event)
@@ -109,6 +111,11 @@ public partial class WhoIsTheMurderer : Node2D
 		{
 			this.GetTree().Paused = true;
 			this.PauseMenu.Visible = true;
+		}
+
+		if (Input.IsActionJustPressedByEvent("accuse", @event) && this.selected != null)
+		{
+			this.OnAccuseButtonPressed();
 		}
 	}
 
@@ -141,6 +148,7 @@ public partial class WhoIsTheMurderer : Node2D
 		}
 
 		this.WinMenu.Visible = true;
+		this.WinMenu.Focus();
 		this.GetTree().Paused = true;
 	}
 

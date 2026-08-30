@@ -37,7 +37,7 @@ layout_mode = 2
 text = "You Lost!"
 horizontal_alignment = 1
 
-[node name="Button" type="Button" parent="PanelContainer/VBoxContainer" unique_id=633387907]
+[node name="Retry" type="Button" parent="PanelContainer/VBoxContainer" unique_id=633387907]
 layout_mode = 2
 text = "Retry"
 
@@ -45,5 +45,5 @@ text = "Retry"
 layout_mode = 2
 text = "Exit"
 
-[connection signal="pressed" from="PanelContainer/VBoxContainer/Button" to="." method="OnRestart"]
+[connection signal="pressed" from="PanelContainer/VBoxContainer/Retry" to="." method="OnRestart"]
 [connection signal="pressed" from="PanelContainer/VBoxContainer/Exit" to="." method="OnExit"]

@@ -32,4 +32,17 @@ public partial class LevelClearedMenu : Control
 		GlobalAudioPlayback.Instance.PlayButtonClick();
 		SceneManager.Instance.OpenMainMenu();
 	}
+
+	public void Focus()
+	{
+		bool hasNextLevel = SceneManager.Instance.HasNextLevel();
+		if (hasNextLevel)
+		{
+			this.NextLevelButton.GrabFocus();
+		}
+		else
+		{
+			this.NewRunButton.GrabFocus();
+		}
+	}
 }

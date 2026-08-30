@@ -5,6 +5,8 @@ namespace BrackeysGameJam2026.UI;
 
 public partial class FailedMenu : Panel
 {
+	private Control RetryButton => this.GetNode<Control>("PanelContainer/VBoxContainer/Retry");
+	
 	public void OnRestart()
 	{
 		GlobalAudioPlayback.Instance.PlayButtonClick();
@@ -15,5 +17,10 @@ public partial class FailedMenu : Panel
 	{
 		GlobalAudioPlayback.Instance.PlayButtonClick();
 		SceneManager.Instance.OpenMainMenu();
+	}
+
+	public void Focus()
+	{
+		this.RetryButton.GrabFocus();
 	}
 }
