@@ -5,6 +5,7 @@ on:
   push:
     branches:
       - main
+      - feature/mac-export
 
 env:
   GODOT_VERSION: 4.7.2
@@ -94,6 +95,43 @@ jobs:
         with:
           name: mac
           path: build/mac
+  
+  sign-mac:
+    name: Sign & Notarize MacOS App
+    runs-on: macos-latest
+    needs: export-mac
+    steps:
+      - name: Install build dependencies
+        run: brew install create-dmg
+      - name: Checkout
+        uses: actions/checkout@v4
+      - uses: actions/download-artifact@v4
+        with:
+          name: unsigned-mac
+      - name: Extract artifacts
+        run: |
+          mkdir build
+          mv "Hell House.zip" ./build
+          cd build
+          unzip "Hell House.zip"
+      - name: Sign Mac App
+        run: |
+          .scripts/sign-macos-app.sh
+          .scripts/notarize-macos-app.sh
+          .scripts/package-dmg.sh
+        env:
+          MACOS_CERTIFICATE: ${{ secrets.MACOS_CERTIFICATE }}
+          MACOS_CERTIFICATE_NAME: ${{ secrets.MACOS_CERTIFICATE_NAME }}
+          MACOS_CERTIFICATE_PASSWORD: ${{ secrets.MACOS_CERTIFICATE_PASSWORD }}
+          MACOS_KEYCHAIN_PASSWORD: ${{ secrets.MACOS_KEYCHAIN_PASSWORD }}
+          MACOS_NOTARIZATION_APPLE_ID: ${{ secrets.MACOS_NOTARIZATION_APPLE_ID }}
+          MACOS_NOTARIZATION_PASSWORD: ${{ secrets.MACOS_NOTARIZATION_PASSWORD }}
+          MACOS_NOTARIZATION_TEAM_ID: ${{ secrets.MACOS_NOTARIZATION_TEAM_ID }}
+      - name: Upload Artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: mac
+          path: Hell House.dmg
 
   export-web:
     name: Web Export (experimental)
@@ -250,35 +288,35 @@ jobs:
           name: web
           path: build/web
   
-  itchio:
-    name: Deploy to itch.io
-    runs-on: ubuntu-22.04
-    container:
-      image: barichello/godot-ci:mono-4.7.2
-    needs:
-      - export-linux
-      - export-mac
-      - export-windows
-      - export-web
-    steps:
-      - uses: actions/download-artifact@v4
-      - run: butler push ./linux $ITCHIO_USERNAME/$ITCHIO_GAME:linux
-        env:
-          ITCHIO_USERNAME: ${{ vars.ITCHIO_USERNAME }}
-          ITCHIO_GAME: ${{ vars.ITCHIO_GAME }}
-          BUTLER_API_KEY: ${{ secrets.BUTLER_API_KEY }}
-      - run: butler push ./windows $ITCHIO_USERNAME/$ITCHIO_GAME:windows
-        env:
-          ITCHIO_USERNAME: ${{ vars.ITCHIO_USERNAME }}
-          ITCHIO_GAME: ${{ vars.ITCHIO_GAME }}
-          BUTLER_API_KEY: ${{ secrets.BUTLER_API_KEY }}
-      - run: butler push ./mac $ITCHIO_USERNAME/$ITCHIO_GAME:mac
-        env:
-          ITCHIO_USERNAME: ${{ vars.ITCHIO_USERNAME }}
-          ITCHIO_GAME: ${{ vars.ITCHIO_GAME }}
-          BUTLER_API_KEY: ${{ secrets.BUTLER_API_KEY }}
-      - run: butler push ./web $ITCHIO_USERNAME/$ITCHIO_GAME:web
-        env:
-          ITCHIO_USERNAME: ${{ vars.ITCHIO_USERNAME }}
-          ITCHIO_GAME: ${{ vars.ITCHIO_GAME }}
-          BUTLER_API_KEY: ${{ secrets.BUTLER_API_KEY }}
+#  itchio:
+#    name: Deploy to itch.io
+#    runs-on: ubuntu-22.04
+#    container:
+#      image: barichello/godot-ci:mono-4.7.2
+#    needs:
+#      - export-linux
+#      - export-windows
+#      - export-web
+#      - sign-mac
+#    steps:
+#      - uses: actions/download-artifact@v4
+#      - run: butler push ./linux $ITCHIO_USERNAME/$ITCHIO_GAME:linux
+#        env:
+#          ITCHIO_USERNAME: ${{ vars.ITCHIO_USERNAME }}
+#          ITCHIO_GAME: ${{ vars.ITCHIO_GAME }}
+#          BUTLER_API_KEY: ${{ secrets.BUTLER_API_KEY }}
+#      - run: butler push ./windows $ITCHIO_USERNAME/$ITCHIO_GAME:windows
+#        env:
+#          ITCHIO_USERNAME: ${{ vars.ITCHIO_USERNAME }}
+#          ITCHIO_GAME: ${{ vars.ITCHIO_GAME }}
+#          BUTLER_API_KEY: ${{ secrets.BUTLER_API_KEY }}
+#      - run: butler push ./mac $ITCHIO_USERNAME/$ITCHIO_GAME:mac
+#        env:
+#          ITCHIO_USERNAME: ${{ vars.ITCHIO_USERNAME }}
+#          ITCHIO_GAME: ${{ vars.ITCHIO_GAME }}
+#          BUTLER_API_KEY: ${{ secrets.BUTLER_API_KEY }}
+#      - run: butler push ./web $ITCHIO_USERNAME/$ITCHIO_GAME:web
+#        env:
+#          ITCHIO_USERNAME: ${{ vars.ITCHIO_USERNAME }}
+#          ITCHIO_GAME: ${{ vars.ITCHIO_GAME }}
+#          BUTLER_API_KEY: ${{ secrets.BUTLER_API_KEY }}
