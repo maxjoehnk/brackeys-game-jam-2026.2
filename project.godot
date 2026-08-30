@@ -15,7 +15,7 @@ run/main_scene="uid://bgrm817qh3xl5"
 config/features=PackedStringArray("4.7", "C#", "GL Compatibility")
 boot_splash/use_filter=false
 boot_splash/image="uid://cl4lml32mhv4v"
-config/icon="res://icon.svg"
+config/icon="uid://8ustqwn4pv6d"
 
 [audio]
 
