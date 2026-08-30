@@ -40,73 +40,78 @@
 [node name="Base Level" unique_id=746051315 instance=ExtResource("1_m21ye")]
 Columns = 4
 
+[node name="Characters" parent="CenterContainer" parent_id_path=PackedInt32Array(511141921) index="0" unique_id=1367262659]
+columns = 4
+
 [node name="Character" parent="Characters" parent_id_path=PackedInt32Array(767967317) index="0" unique_id=2043763220 instance=ExtResource("2_xiy4d")]
-Hint = ""
+Hint = "I don’t know anything about that"
+Murderer = true
 Samples = Array[AudioStream]([ExtResource("3_uuhb0")])
 FalseAccusedSample = ExtResource("4_iymkf")
 Texture = ExtResource("4_s4t7g")
 
 [node name="Character2" parent="Characters" parent_id_path=PackedInt32Array(767967317) index="1" unique_id=1358306795 instance=ExtResource("2_xiy4d")]
-Hint = ""
+Hint = "em ot tfel nam eht saw tI"
 Samples = Array[AudioStream]([ExtResource("5_p4s0c"), ExtResource("6_vronh")])
 FalseAccusedSample = ExtResource("8_lqquw")
 Texture = ExtResource("7_jriaf")
 
 [node name="Character3" parent="Characters" parent_id_path=PackedInt32Array(767967317) index="2" unique_id=170421179 instance=ExtResource("2_xiy4d")]
-Hint = ""
+Hint = "No."
 Samples = Array[AudioStream]([ExtResource("8_0f15m")])
 FalseAccusedSample = ExtResource("11_21b18")
 Texture = ExtResource("9_dnx2y")
 
 [node name="Character4" parent="Characters" parent_id_path=PackedInt32Array(767967317) index="3" unique_id=1956833871 instance=ExtResource("2_xiy4d")]
-Hint = ""
+Hint = "I don’t know shit, go away"
 Samples = Array[AudioStream]([ExtResource("13_sqppw")])
 FalseAccusedSample = ExtResource("14_16sue")
 Texture = ExtResource("10_hjlqc")
 
 [node name="Character5" parent="Characters" parent_id_path=PackedInt32Array(767967317) index="4" unique_id=1059750150 instance=ExtResource("2_xiy4d")]
-Hint = ""
+Hint = "I can vouch for my brother"
 Samples = Array[AudioStream]([ExtResource("16_kn1lg")])
 FalseAccusedSample = ExtResource("17_e1tp8")
 Texture = ExtResource("11_ut5yl")
 
 [node name="Character6" parent="Characters" parent_id_path=PackedInt32Array(767967317) index="5" unique_id=35169759 instance=ExtResource("2_xiy4d")]
-Hint = ""
+Hint = "Murder runs in the family"
 Samples = Array[AudioStream]([ExtResource("12_vdtkl"), ExtResource("20_e1tp8")])
 FalseAccusedSample = ExtResource("20_hhk3p")
 Texture = ExtResource("13_tqmny")
 
 [node name="Character7" parent="Characters" parent_id_path=PackedInt32Array(767967317) index="6" unique_id=61851677 instance=ExtResource("2_xiy4d")]
-Hint = ""
+Hint = "I can vouch for my brother"
 Samples = Array[AudioStream]([ExtResource("22_fkuw6")])
 FalseAccusedSample = ExtResource("23_romck")
 Texture = ExtResource("14_yo5n8")
 
 [node name="Character8" parent="Characters" parent_id_path=PackedInt32Array(767967317) index="7" unique_id=764150834 instance=ExtResource("2_xiy4d")]
-Hint = ""
+Hint = "I can vouch for my brother"
 Samples = Array[AudioStream]([ExtResource("25_1h11i")])
 FalseAccusedSample = ExtResource("26_gx2ep")
 Texture = ExtResource("15_iymkf")
 
 [node name="Character9" parent="Characters" parent_id_path=PackedInt32Array(767967317) index="8" unique_id=106588509 instance=ExtResource("2_xiy4d")]
-Hint = ""
+Hint = "I haven’t catched a thing about a murder"
 Samples = Array[AudioStream]([ExtResource("28_l2jov")])
 FalseAccusedSample = ExtResource("29_w11pj")
 Texture = ExtResource("16_lqquw")
 
 [node name="Character10" parent="Characters" parent_id_path=PackedInt32Array(767967317) index="9" unique_id=1421789777 instance=ExtResource("2_xiy4d")]
-Hint = ""
+Hint = "I ain’t afraid of no ghosts"
 Samples = Array[AudioStream]([ExtResource("25_1h11i")])
 Texture = ExtResource("17_xiy4d")
 
 [node name="Character11" parent="Characters" parent_id_path=PackedInt32Array(767967317) index="10" unique_id=84619509 instance=ExtResource("2_xiy4d")]
-Hint = ""
+Hint = "Maybe that’s what I was hearing from the roof…"
 Samples = Array[AudioStream]([ExtResource("29_w11pj")])
 FalseAccusedSample = ExtResource("28_l2jov")
 Texture = ExtResource("18_uuhb0")
 
 [node name="Character12" parent="Characters" parent_id_path=PackedInt32Array(767967317) index="11" unique_id=168563806 instance=ExtResource("2_xiy4d")]
-Hint = ""
+Hint = "Hey man, I’m just chillin here.
+Why don’t you ask someone else"
 Samples = Array[AudioStream]([ExtResource("33_16sue")])
 FalseAccusedSample = ExtResource("34_kn1lg")
 Texture = ExtResource("19_s4t7g")
