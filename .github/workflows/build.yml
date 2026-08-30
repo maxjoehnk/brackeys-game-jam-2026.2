@@ -93,7 +93,7 @@ jobs:
       - name: Upload Artifact
         uses: actions/upload-artifact@v4
         with:
-          name: mac
+          name: unsigned-mac
           path: build/mac
   
   sign-mac:
