@@ -6,7 +6,7 @@ namespace BrackeysGameJam2026.UI;
 public partial class MainMenu : Control
 {
 	private Control? PlayButton => this.FindChild("Play") as Control;
-	
+
 	public override void _Ready()
 	{
 		this.PlayButton?.GrabFocus();
@@ -15,8 +15,14 @@ public partial class MainMenu : Control
 	public void OnPlay()
 	{
 		GlobalAudioPlayback.Instance.PlayButtonClick();
-		// SceneManager.Instance.StartTutorial();
-		SceneManager.Instance.StartRun();
+		if (!SceneManager.Instance.HasPlayedTutorial)
+		{
+			SceneManager.Instance.StartTutorial();
+		}
+		else
+		{
+			SceneManager.Instance.StartRun();
+		}
 	}
 
 	public void OnOpenSettings()
@@ -24,7 +30,7 @@ public partial class MainMenu : Control
 		GlobalAudioPlayback.Instance.PlayButtonClick();
 		SceneManager.Instance.OpenSettings();
 	}
-	
+
 	public void OnExit()
 	{
 		GlobalAudioPlayback.Instance.PlayButtonClick();

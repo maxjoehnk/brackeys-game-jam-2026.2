@@ -13,7 +13,7 @@ corner_radius_bottom_left = 10
 expand_margin_left = 12.0
 expand_margin_top = 19.0
 expand_margin_right = 14.0
-expand_margin_bottom = 11.0
+expand_margin_bottom = 23.0
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_epnn3"]
 bg_color = Color(0, 0, 0, 0.34901962)
@@ -24,7 +24,7 @@ corner_radius_bottom_left = 10
 expand_margin_left = 12.0
 expand_margin_top = 19.0
 expand_margin_right = 14.0
-expand_margin_bottom = 11.0
+expand_margin_bottom = 23.0
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xkmwr"]
 bg_color = Color(1, 1, 1, 0.16470589)
@@ -36,7 +36,7 @@ corner_radius_bottom_left = 10
 expand_margin_left = 12.0
 expand_margin_top = 19.0
 expand_margin_right = 14.0
-expand_margin_bottom = 11.0
+expand_margin_bottom = 23.0
 
 [sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_oolk3"]
 

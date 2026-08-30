@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using Godot;
+using Godot.Collections;
 
 namespace BrackeysGameJam2026.Core;
 
@@ -15,6 +16,8 @@ public partial class SceneManager : Node
 
 	private Queue<AvailableLevel> CurrentRun { get; set; }
 
+	public bool HasPlayedTutorial { get; private set; } = OS.IsDebugBuild();
+
 	public override void _Ready()
 	{
 		Instance = this;
@@ -23,14 +26,29 @@ public partial class SceneManager : Node
 		this.Levels = GetAvailableLevels();
 	}
 
+	public void StartTutorial()
+	{
+		GameState.Instance.Reset();
+		this.LoadScene("res://Levels/Tutorial.tscn");
+		this.HasPlayedTutorial = true;
+	}
+
 	public void StartRun()
 	{
 		GameState.Instance.Reset();
 		this.CurrentRun = new Queue<AvailableLevel>(this.Levels
 			.GroupBy(l => l.Size)
 			.SelectMany(g => g.OrderBy(_ => GD.Randi()).Take(5)));
-		
+
+		Array<string> levels = [..this.CurrentRun.Select(r => r.Path)];
+		GD.Print(levels);
+
 		this.OpenNextLevel();
+	}
+
+	public bool HasNextLevel()
+	{
+		return this.CurrentRun is { Count: > 0 };
 	}
 
 	public void OpenMainMenu()
@@ -72,6 +90,7 @@ public partial class SceneManager : Node
 		List<AvailableLevel> levels = ResourceLoader.ListDirectory("res://Levels")
 			.Where(name => name.EndsWith(".tscn"))
 			.Where(name => !name.StartsWith("_"))
+			.Where(name => !name.Contains("Tutorial"))
 			.Select(file => new AvailableLevel(file))
 			.ToList();
 

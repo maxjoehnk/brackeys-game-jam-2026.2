@@ -4,68 +4,87 @@
 [ext_resource type="PackedScene" uid="uid://ddo36lrfym8wx" path="res://Character.tscn" id="2_uinfe"]
 [ext_resource type="AudioStream" uid="uid://dlb05nv0k5fk4" path="res://Assets/Sounds/Characters/miscellaneous_2_ian.wav" id="3_4w0fr"]
 [ext_resource type="Texture2D" uid="uid://j3f2px7n4wmy" path="res://Assets/Characters/kuhmann.png" id="4_naf4m"]
+[ext_resource type="AudioStream" uid="uid://jrpj31m5n2wp" path="res://Assets/Sounds/Characters/grunting_1_sean.wav" id="4_ttfuu"]
 [ext_resource type="AudioStream" uid="uid://dsk8m203wjda2" path="res://Assets/Sounds/Characters/miscellaneous_19_karen.wav" id="5_hxk8d"]
 [ext_resource type="AudioStream" uid="uid://dafqo7vatdvqj" path="res://Assets/Sounds/Characters/miscellaneous_19_meghan.wav" id="6_rxlpo"]
 [ext_resource type="Texture2D" uid="uid://cf8nc50b1i5i3" path="res://Assets/Characters/shade.png" id="7_iw2r3"]
+[ext_resource type="AudioStream" uid="uid://ih7wkov4lb6x" path="res://Assets/Sounds/Characters/grunting_2_karen.wav" id="8_3on4j"]
 [ext_resource type="AudioStream" uid="uid://ctlcx6qxbi1m3" path="res://Assets/Sounds/Characters/miscellaneous_3_karen.wav" id="8_g3b1f"]
 [ext_resource type="Texture2D" uid="uid://d32o7hwvpih7p" path="res://Assets/Characters/kuhoma.png" id="9_oj4dp"]
 [ext_resource type="AudioStream" uid="uid://db3m8hxg4y4a" path="res://Assets/Sounds/Characters/miscellaneous_20_ian.wav" id="10_alxwo"]
+[ext_resource type="AudioStream" uid="uid://cid435x4qecey" path="res://Assets/Sounds/Characters/grunting_3_karen.wav" id="11_57krc"]
 [ext_resource type="Texture2D" uid="uid://bibnyfuhsy8t6" path="res://Assets/Characters/tentaclething.png" id="11_ttfuu"]
 [ext_resource type="AudioStream" uid="uid://bxfy06bjjuyi8" path="res://Assets/Sounds/Characters/miscellaneous_19_sean.wav" id="12_3on4j"]
 [ext_resource type="Texture2D" uid="uid://d2gjmtx7wbleg" path="res://Assets/Characters/echsenimp-lilaa.png" id="13_57krc"]
 [ext_resource type="AudioStream" uid="uid://c1bokreyfivs8" path="res://Assets/Sounds/Characters/miscellaneous_20_alex.wav" id="14_e1tks"]
+[ext_resource type="AudioStream" uid="uid://4l54mf5jysod" path="res://Assets/Sounds/Characters/miscellaneous_20_ian_reverse.wav" id="14_vktle"]
 [ext_resource type="Texture2D" uid="uid://cjx4twv6qd731" path="res://Assets/Characters/kuhopa.png" id="15_vktle"]
 [ext_resource type="AudioStream" uid="uid://bhpgaxun20e3a" path="res://Assets/Sounds/Characters/miscellaneous_3_sean.wav" id="16_lsyka"]
 [ext_resource type="Texture2D" uid="uid://d01iphn6wj18o" path="res://Assets/Characters/echsenimp.png" id="17_0w6oj"]
+[ext_resource type="AudioStream" uid="uid://ctl7t3oqqlmbq" path="res://Assets/Sounds/Characters/grunting_1_alex.wav" id="17_lsyka"]
 [ext_resource type="AudioStream" uid="uid://b44b7gmw2idu0" path="res://Assets/Sounds/Characters/miscellaneous_13_karen.wav" id="18_puds2"]
 [ext_resource type="Texture2D" uid="uid://dbih5puf4fcw8" path="res://Assets/Characters/kuhfrau.png" id="19_43ag0"]
+[ext_resource type="AudioStream" uid="uid://kek5747owkjg" path="res://Assets/Sounds/Characters/miscellaneous_20_alex_short.wav" id="20_0w6oj"]
 [ext_resource type="AudioStream" uid="uid://bqvjbbrqnicto" path="res://Assets/Sounds/Characters/BlisterPack1.wav" id="20_idsed"]
 [ext_resource type="Texture2D" uid="uid://dm34c21yglrm6" path="res://Assets/Characters/spiderman.png" id="21_fyl4t"]
+[ext_resource type="AudioStream" uid="uid://dvondbtpeuohm" path="res://Assets/Sounds/Characters/grunting_6_sean.wav" id="21_puds2"]
+[ext_resource type="AudioStream" uid="uid://d3c2ythhvn6kl" path="res://Assets/Sounds/Characters/grunting_2_alex.wav" id="24_43ag0"]
+[ext_resource type="AudioStream" uid="uid://clpedqeuy2d3r" path="res://Assets/Sounds/Characters/grunting_4_karen.wav" id="27_idsed"]
+[ext_resource type="AudioStream" uid="uid://7j8y2cpfe30w" path="res://Assets/Sounds/Characters/BlisterPack1_reverse.ogg" id="30_fyl4t"]
 
 [node name="It Could Be Anyone" unique_id=746051315 instance=ExtResource("1_sll0k")]
 
 [node name="Character" parent="Characters" parent_id_path=PackedInt32Array(767967317) index="0" unique_id=2043763220 instance=ExtResource("2_uinfe")]
 Hint = "the ghost is the murderer!"
 Samples = Array[AudioStream]([ExtResource("3_4w0fr")])
+FalseAccusedSample = ExtResource("4_ttfuu")
 Texture = ExtResource("4_naf4m")
 
 [node name="Character2" parent="Characters" parent_id_path=PackedInt32Array(767967317) index="1" unique_id=1358306795 instance=ExtResource("2_uinfe")]
 Hint = "i saw the purple lizard do it"
 Samples = Array[AudioStream]([ExtResource("5_hxk8d"), ExtResource("6_rxlpo")])
+FalseAccusedSample = ExtResource("8_3on4j")
 Texture = ExtResource("7_iw2r3")
 
 [node name="Character3" parent="Characters" parent_id_path=PackedInt32Array(767967317) index="2" unique_id=170421179 instance=ExtResource("2_uinfe")]
 Hint = "It was my husband"
 Samples = Array[AudioStream]([ExtResource("8_g3b1f")])
+FalseAccusedSample = ExtResource("11_57krc")
 Texture = ExtResource("9_oj4dp")
 
 [node name="Character4" parent="Characters" parent_id_path=PackedInt32Array(767967317) index="3" unique_id=1956833871 instance=ExtResource("2_uinfe")]
 Hint = "i saw the cow lady do it"
 Samples = Array[AudioStream]([ExtResource("10_alxwo")])
+FalseAccusedSample = ExtResource("14_vktle")
 Texture = ExtResource("11_ttfuu")
 
 [node name="Character5" parent="Characters" parent_id_path=PackedInt32Array(767967317) index="4" unique_id=1059750150 instance=ExtResource("2_uinfe")]
 Hint = "i saw how the green haired ox killed them"
 Samples = Array[AudioStream]([ExtResource("12_3on4j")])
+FalseAccusedSample = ExtResource("17_lsyka")
 Texture = ExtResource("13_57krc")
 
 [node name="Character6" parent="Characters" parent_id_path=PackedInt32Array(767967317) index="5" unique_id=35169759 instance=ExtResource("2_uinfe")]
 Hint = "it was my wife"
-Samples = Array[AudioStream]([ExtResource("14_e1tks")])
+Samples = Array[AudioStream]([ExtResource("14_e1tks"), ExtResource("20_0w6oj")])
+FalseAccusedSample = ExtResource("21_puds2")
 Texture = ExtResource("15_vktle")
 
 [node name="Character7" parent="Characters" parent_id_path=PackedInt32Array(767967317) index="6" unique_id=61851677 instance=ExtResource("2_uinfe")]
 Hint = "It was the other lizard"
 Samples = Array[AudioStream]([ExtResource("16_lsyka")])
+FalseAccusedSample = ExtResource("24_43ag0")
 Texture = ExtResource("17_0w6oj")
 
 [node name="Character8" parent="Characters" parent_id_path=PackedInt32Array(767967317) index="7" unique_id=764150834 instance=ExtResource("2_uinfe")]
 Hint = "it was the red lizard."
 Samples = Array[AudioStream]([ExtResource("18_puds2")])
+FalseAccusedSample = ExtResource("27_idsed")
 Texture = ExtResource("19_43ag0")
 
 [node name="Character9" parent="Characters" parent_id_path=PackedInt32Array(767967317) index="8" unique_id=106588509 instance=ExtResource("2_uinfe")]
 Hint = "the creepy tentacle thing did it"
 Murderer = true
 Samples = Array[AudioStream]([ExtResource("20_idsed")])
+FalseAccusedSample = ExtResource("30_fyl4t")
 Texture = ExtResource("21_fyl4t")

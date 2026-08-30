@@ -1,11 +1,17 @@
 [gd_scene format=3 uid="uid://cx0grnu1ls3vh"]
 
 [ext_resource type="PackedScene" uid="uid://ccx4ku0ldxtmc" path="res://BaseLevel.tscn" id="1_prrkl"]
+[ext_resource type="PackedScene" uid="uid://cigpf1x8cose" path="res://UI/TutorialOverlay.tscn" id="2_ixs1y"]
 [ext_resource type="PackedScene" uid="uid://ddo36lrfym8wx" path="res://Character.tscn" id="2_uoj0w"]
 [ext_resource type="Texture2D" uid="uid://dbih5puf4fcw8" path="res://Assets/Characters/kuhfrau.png" id="3_ui4g7"]
 [ext_resource type="Texture2D" uid="uid://bibnyfuhsy8t6" path="res://Assets/Characters/tentaclething.png" id="4_jiyog"]
 
 [node name="Tutorial" unique_id=746051315 instance=ExtResource("1_prrkl")]
+
+[node name="WrongAccusationOverlay" parent="CanvasLayer" parent_id_path=PackedInt32Array(992373059) index="5" unique_id=1761075936]
+visible = false
+
+[node name="TutorialOverlay" parent="CanvasLayer" parent_id_path=PackedInt32Array(992373059) index="6" unique_id=1281070080 instance=ExtResource("2_ixs1y")]
 
 [node name="Character" parent="Characters" parent_id_path=PackedInt32Array(767967317) index="0" unique_id=2043763220 instance=ExtResource("2_uoj0w")]
 Hint = "It wasn't me"
