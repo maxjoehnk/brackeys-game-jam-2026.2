@@ -28,7 +28,7 @@ if you think they're guilty, press the accuse button.
 You have 3 tries per run."
 
 [node name="Timer" type="Timer" parent="." unique_id=1419308032]
-wait_time = 15.0
+wait_time = 10.0
 one_shot = true
 autostart = true
 
