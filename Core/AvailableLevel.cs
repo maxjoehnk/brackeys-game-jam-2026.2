@@ -7,9 +7,7 @@ public partial class AvailableLevel
 {
 	public string Path { get; }
 
-	public string Name { get; }
-
-	public Vector2I Size =>  new(this.Columns, this.Rows);
+	public Vector2I Size { get; }
 	
 	public int Rows { get; }
 	public int Columns { get; }
@@ -18,19 +16,18 @@ public partial class AvailableLevel
 	{
 		this.Path = path;
 		Match match = LevelNameRegex().Match(path);
-		if (match.Groups["Name"].Success)
-		{
-			this.Name = match.Groups["Name"].Value;
-		}
-		if (match.Groups["Size"].Success)
-		{
-			string[] size = match.Groups["Size"].Value[1..].Split("x");
-			this.Columns = int.Parse(size[0]);
-			this.Rows = int.Parse(size[1]);
-		}
+		string[] size = match.Groups["Size"].Value.Split("x");
+		this.Columns = int.Parse(size[0]);
+		this.Rows = int.Parse(size[1]);
+		this.Size = new Vector2I(this.Columns, this.Rows);
 	}
 
-	[GeneratedRegex("((?<Id>[0-9]+)_)?(?<Name>[^_]*)?(?<Size>_[0-9]x[0-9])?.tscn",
+	[GeneratedRegex("((?<Id>[0-9]+)_)?_(?<Size>[0-9]x[0-9]).tscn",
 		RegexOptions.Compiled | RegexOptions.IgnoreCase)]
 	private static partial Regex LevelNameRegex();
+
+	public override string ToString()
+	{
+		return $"{nameof(this.Path)}: {this.Path}, {nameof(this.Size)}: {this.Size}";
+	}
 }

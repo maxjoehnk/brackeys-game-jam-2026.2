@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using Godot;
+using Godot.Collections;
 
 namespace BrackeysGameJam2026.Core;
 
@@ -14,8 +15,8 @@ public partial class SceneManager : Node
 	public List<AvailableLevel> Levels { get; private set; }
 
 	private Queue<AvailableLevel> CurrentRun { get; set; }
-	
-	public bool HasPlayedTutorial { get; private set; }
+
+	public bool HasPlayedTutorial { get; private set; } = OS.IsDebugBuild();
 
 	public override void _Ready()
 	{
@@ -28,8 +29,7 @@ public partial class SceneManager : Node
 	public void StartTutorial()
 	{
 		GameState.Instance.Reset();
-		AvailableLevel level = new("Tutorial.tscn");
-		this.OpenLevel(level);
+		this.LoadScene("res://Levels/Tutorial.tscn");
 		this.HasPlayedTutorial = true;
 	}
 
@@ -39,6 +39,9 @@ public partial class SceneManager : Node
 		this.CurrentRun = new Queue<AvailableLevel>(this.Levels
 			.GroupBy(l => l.Size)
 			.SelectMany(g => g.OrderBy(_ => GD.Randi()).Take(5)));
+
+		Array<string> levels = [..this.CurrentRun.Select(r => r.Path)];
+		GD.Print(levels);
 
 		this.OpenNextLevel();
 	}
