@@ -93,7 +93,6 @@ public partial class WhoIsTheMurderer : Node2D
 
 	public override void _ExitTree()
 	{
-		this.AccuseButton.Pressed -= this.OnAccuseButtonPressed;
 		GameState.Instance.LifeLost -= this.OnUpdateLives;
 		GameState.Instance.Lost -= this.OnLost;
 	}
