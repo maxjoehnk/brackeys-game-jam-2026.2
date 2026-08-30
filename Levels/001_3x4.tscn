@@ -34,6 +34,7 @@
 [ext_resource type="AudioStream" uid="uid://clpedqeuy2d3r" path="res://Assets/Sounds/Characters/grunting_4_karen.wav" id="26_gx2ep"]
 [ext_resource type="AudioStream" uid="uid://bqvjbbrqnicto" path="res://Assets/Sounds/Characters/BlisterPack1.wav" id="28_l2jov"]
 [ext_resource type="AudioStream" uid="uid://7j8y2cpfe30w" path="res://Assets/Sounds/Characters/BlisterPack1_reverse.ogg" id="29_w11pj"]
+[ext_resource type="AudioStream" uid="uid://cwie0b7lgfhcs" path="res://Assets/Sounds/Characters/grunting_2_meghan.wav" id="32_hhk3p"]
 [ext_resource type="AudioStream" uid="uid://ch4tik4abcb4f" path="res://Assets/Sounds/Characters/greeting_9_alex.wav" id="33_16sue"]
 [ext_resource type="AudioStream" uid="uid://5vwylb0ucnqh" path="res://Assets/Sounds/Characters/grunting_9_alex.wav" id="34_kn1lg"]
 
@@ -101,6 +102,7 @@ Texture = ExtResource("16_lqquw")
 [node name="Character10" parent="Characters" parent_id_path=PackedInt32Array(767967317) index="9" unique_id=1421789777 instance=ExtResource("2_xiy4d")]
 Hint = "I ain’t afraid of no ghosts"
 Samples = Array[AudioStream]([ExtResource("25_1h11i")])
+FalseAccusedSample = ExtResource("32_hhk3p")
 Texture = ExtResource("17_xiy4d")
 
 [node name="Character11" parent="Characters" parent_id_path=PackedInt32Array(767967317) index="10" unique_id=84619509 instance=ExtResource("2_xiy4d")]

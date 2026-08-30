@@ -32,6 +32,7 @@
 [ext_resource type="AudioStream" uid="uid://7j8y2cpfe30w" path="res://Assets/Sounds/Characters/BlisterPack1_reverse.ogg" id="30_nwo4w"]
 [ext_resource type="Texture2D" uid="uid://dm34c21yglrm6" path="res://Assets/Characters/spiderman.png" id="31_by0d6"]
 [ext_resource type="Texture2D" uid="uid://be6p8kxvldym4" path="res://Assets/Characters/shade2.png" id="32_i2us2"]
+[ext_resource type="AudioStream" uid="uid://cwie0b7lgfhcs" path="res://Assets/Sounds/Characters/grunting_2_meghan.wav" id="32_x2hkx"]
 [ext_resource type="Texture2D" uid="uid://ba4yfvvlgnni" path="res://Assets/Characters/spidermanohnearschgesicht.png" id="33_a2yq8"]
 [ext_resource type="AudioStream" uid="uid://ch4tik4abcb4f" path="res://Assets/Sounds/Characters/greeting_9_alex.wav" id="34_ba8u1"]
 [ext_resource type="AudioStream" uid="uid://5vwylb0ucnqh" path="res://Assets/Sounds/Characters/grunting_9_alex.wav" id="35_grp1s"]
@@ -100,6 +101,7 @@ Texture = ExtResource("31_by0d6")
 [node name="Character10" parent="Characters" parent_id_path=PackedInt32Array(767967317) index="9" unique_id=1421789777 instance=ExtResource("2_x2hkx")]
 Hint = "They must have horns"
 Samples = Array[AudioStream]([ExtResource("26_25xia")])
+FalseAccusedSample = ExtResource("32_x2hkx")
 Texture = ExtResource("32_i2us2")
 
 [node name="Character11" parent="Characters" parent_id_path=PackedInt32Array(767967317) index="10" unique_id=84619509 instance=ExtResource("2_x2hkx")]

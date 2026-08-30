@@ -32,6 +32,7 @@
 [ext_resource type="AudioStream" uid="uid://7j8y2cpfe30w" path="res://Assets/Sounds/Characters/BlisterPack1_reverse.ogg" id="30_u25k3"]
 [ext_resource type="Texture2D" uid="uid://dm34c21yglrm6" path="res://Assets/Characters/spiderman.png" id="31_rilys"]
 [ext_resource type="Texture2D" uid="uid://be6p8kxvldym4" path="res://Assets/Characters/shade2.png" id="32_stei0"]
+[ext_resource type="AudioStream" uid="uid://cwie0b7lgfhcs" path="res://Assets/Sounds/Characters/grunting_2_meghan.wav" id="32_suxi7"]
 [ext_resource type="Texture2D" uid="uid://ba4yfvvlgnni" path="res://Assets/Characters/spidermanohnearschgesicht.png" id="33_by7sw"]
 [ext_resource type="AudioStream" uid="uid://ch4tik4abcb4f" path="res://Assets/Sounds/Characters/greeting_9_alex.wav" id="34_2asvo"]
 [ext_resource type="AudioStream" uid="uid://5vwylb0ucnqh" path="res://Assets/Sounds/Characters/grunting_9_alex.wav" id="35_wrcxh"]
@@ -101,6 +102,7 @@ Texture = ExtResource("31_rilys")
 Hint = "They can’t be on this floor"
 Murderer = true
 Samples = Array[AudioStream]([ExtResource("26_vemy7")])
+FalseAccusedSample = ExtResource("32_suxi7")
 Texture = ExtResource("32_stei0")
 
 [node name="Character11" parent="Characters" parent_id_path=PackedInt32Array(767967317) index="10" unique_id=84619509 instance=ExtResource("2_suxi7")]
