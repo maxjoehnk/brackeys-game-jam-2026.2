@@ -1,0 +1,8 @@
+[gd_resource type="AtlasTexture" format=3 uid="uid://cfq2fkn0ssva2"]
+
+[ext_resource type="Texture2D" uid="uid://cdhqsw5ri7ar2" path="res://Assets/UI/gdb-playstation-2.png" id="1_p30au"]
+
+[resource]
+atlas = ExtResource("1_p30au")
+region = Rect2(17, 33, 14, 14)
+margin = Rect2(3, 3, 6, 6)

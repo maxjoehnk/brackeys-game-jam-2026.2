@@ -15,7 +15,7 @@ public partial class WhoIsTheMurderer : Node2D
 	private Label TextBox => this.GetNode<Label>("CanvasLayer/PanelContainer/Label");
 	private TextureRect CharacterBox => this.GetNode<TextureRect>("CanvasLayer/PanelContainer/Panel/TextureRect");
 
-	private Button AccuseButton => this.GetNode<Button>("CanvasLayer/PanelContainer/Button");
+	private Button AccuseButton => this.GetNode<Button>("CanvasLayer/PanelContainer/AccuseButton");
 
 	private Character? selected;
 
@@ -29,6 +29,11 @@ public partial class WhoIsTheMurderer : Node2D
 	private Control WrongAccusationOverlay => (this.FindChild("WrongAccusationOverlay") as Control)!;
 	
 	private AudioStreamPlayer AudioPlayer => this.GetNode<AudioStreamPlayer>("OneShotPlayer");
+
+	private Texture2D XboxTexture = GD.Load<AtlasTexture>("res://Assets/UI/AccuseXbox.tres");
+	private Texture2D PlaystationTexture = GD.Load<AtlasTexture>("res://Assets/UI/AccusePlaystation.tres");
+	private Texture2D KeyboardTexture = GD.Load<AtlasTexture>("res://Assets/UI/AccuseKeyboard.tres");
+	private InputType inputType = InputType.Keyboard;
 
 	public override void _Ready()
 	{
@@ -107,6 +112,15 @@ public partial class WhoIsTheMurderer : Node2D
 
 	public override void _Input(InputEvent @event)
 	{
+		if (@event is InputEventMouseButton or InputEventKey)
+		{
+			this.inputType = InputType.Keyboard;
+		}else if (@event is InputEventJoypadButton)
+		{
+			this.SetInputTypeForDevice(@event.Device);
+		}
+		this.UpdateAccuseIcon();
+
 		if (Input.IsActionJustPressedByEvent("menu", @event))
 		{
 			this.GetTree().Paused = true;
@@ -117,6 +131,31 @@ public partial class WhoIsTheMurderer : Node2D
 		{
 			this.OnAccuseButtonPressed();
 		}
+	}
+	
+	private void SetInputTypeForDevice(int deviceId)
+	{
+		string controllerName = Input.GetJoyName(deviceId);
+		if (controllerName.Contains("PS") || controllerName.Contains("DualShock") ||
+		    controllerName.Contains("PlayStation"))
+		{
+			this.inputType = InputType.PlayStation;
+		}
+		else
+		{
+			this.inputType = InputType.GenericController;
+		}
+	}
+
+	private void UpdateAccuseIcon()
+	{
+		Texture2D texture = this.inputType switch
+		{
+			InputType.Keyboard => this.KeyboardTexture,
+			InputType.PlayStation => this.PlaystationTexture,
+			_ => this.XboxTexture,
+		};
+		this.AccuseButton.GetChild<TextureRect>(0).Texture = texture;
 	}
 
 	private void OnCharacterClicked(Character character)
@@ -167,5 +206,12 @@ public partial class WhoIsTheMurderer : Node2D
 		Tween tween = this.CreateTween();
 		tween.TweenProperty(this.WrongAccusationOverlay, "modulate", color, 0.5f);
 		tween.Play();
+	}
+
+	enum InputType
+	{
+		GenericController = 0,
+		PlayStation = 1,
+		Keyboard = 2,
 	}
 }

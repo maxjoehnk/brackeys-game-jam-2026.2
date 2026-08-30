@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ckm77u7es61kh"
-path="res://.godot/imported/Loading Screen.png-9257113030f6135b41871d0f8d297404.ctex"
+uid="uid://cdhqsw5ri7ar2"
+path="res://.godot/imported/gdb-playstation-2.png-e767da8d9856dbdf0ce9657b01648315.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Loading Screen.png"
-dest_files=["res://.godot/imported/Loading Screen.png-9257113030f6135b41871d0f8d297404.ctex"]
+source_file="res://Assets/UI/gdb-playstation-2.png"
+dest_files=["res://.godot/imported/gdb-playstation-2.png-e767da8d9856dbdf0ce9657b01648315.ctex"]
 
 [params]
 
