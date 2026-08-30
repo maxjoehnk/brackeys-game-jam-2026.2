@@ -14,6 +14,8 @@ public partial class SceneManager : Node
 	public List<AvailableLevel> Levels { get; private set; }
 
 	private Queue<AvailableLevel> CurrentRun { get; set; }
+	
+	public bool HasPlayedTutorial { get; private set; }
 
 	public override void _Ready()
 	{
@@ -23,14 +25,27 @@ public partial class SceneManager : Node
 		this.Levels = GetAvailableLevels();
 	}
 
+	public void StartTutorial()
+	{
+		GameState.Instance.Reset();
+		AvailableLevel level = new("Tutorial.tscn");
+		this.OpenLevel(level);
+		this.HasPlayedTutorial = true;
+	}
+
 	public void StartRun()
 	{
 		GameState.Instance.Reset();
 		this.CurrentRun = new Queue<AvailableLevel>(this.Levels
 			.GroupBy(l => l.Size)
 			.SelectMany(g => g.OrderBy(_ => GD.Randi()).Take(5)));
-		
+
 		this.OpenNextLevel();
+	}
+
+	public bool HasNextLevel()
+	{
+		return this.CurrentRun is { Count: > 0 };
 	}
 
 	public void OpenMainMenu()
@@ -72,6 +87,7 @@ public partial class SceneManager : Node
 		List<AvailableLevel> levels = ResourceLoader.ListDirectory("res://Levels")
 			.Where(name => name.EndsWith(".tscn"))
 			.Where(name => !name.StartsWith("_"))
+			.Where(name => !name.Contains("Tutorial"))
 			.Select(file => new AvailableLevel(file))
 			.ToList();
 

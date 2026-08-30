@@ -38,13 +38,18 @@ text = "You found the
 Murderer!"
 horizontal_alignment = 1
 
-[node name="Button" type="Button" parent="PanelContainer/VBoxContainer" unique_id=633387907]
+[node name="NextLevel" type="Button" parent="PanelContainer/VBoxContainer" unique_id=633387907]
 layout_mode = 2
 text = "Next Level"
+
+[node name="NewRun" type="Button" parent="PanelContainer/VBoxContainer" unique_id=1248924892]
+layout_mode = 2
+text = "New Run"
 
 [node name="Exit" type="Button" parent="PanelContainer/VBoxContainer" unique_id=577223746]
 layout_mode = 2
 text = "Exit"
 
-[connection signal="pressed" from="PanelContainer/VBoxContainer/Button" to="." method="OnNextLevel"]
+[connection signal="pressed" from="PanelContainer/VBoxContainer/NextLevel" to="." method="OnNextLevel"]
+[connection signal="pressed" from="PanelContainer/VBoxContainer/NewRun" to="." method="OnNewRun"]
 [connection signal="pressed" from="PanelContainer/VBoxContainer/Exit" to="." method="OnExit"]
