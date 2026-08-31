@@ -116,7 +116,6 @@ jobs:
           unzip "Hell House.zip"
       - name: Sign Mac App
         run: |
-#          .scripts/sign-macos-app.sh
           .scripts/notarize-macos-app.sh
           .scripts/package-dmg.sh
         env:
