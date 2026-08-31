@@ -11,5 +11,5 @@ create-dmg --volname "Hell House" \
 	--hide-extension "Hell House.app" \
 	--app-drop-link 600 185 \
 	--codesign "$MACOS_CERTIFICATE_NAME" \
-	Loopscape.dmg \
+	"Hell House.dmg" \
 	build
