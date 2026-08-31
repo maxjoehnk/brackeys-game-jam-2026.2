@@ -20,8 +20,8 @@ echo "Notarize app"
 submission_json="$(xcrun notarytool submit "notarization.zip" --keychain-profile "notarytool-profile" --wait --output-format json)"
 echo "$submission_json"
 
-submission_id="$(echo "$submission_json" | jq ".id")"
-status="$(echo "$submission_json" | jq ".status")"
+submission_id="$(echo "$submission_json" | jq -r ".id")"
+status="$(echo "$submission_json" | jq -r ".status")"
 
 if [ -n "$submission_id" ]; then
   echo "Notarization log for $submission_id"
