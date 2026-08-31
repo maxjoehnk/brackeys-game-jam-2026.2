@@ -12,7 +12,14 @@ security import certificate.p12 -k build.keychain -P "$MACOS_CERTIFICATE_PASSWOR
 security set-key-partition-list -S apple-tool:,apple:,codesign: -s -k "$MACOS_KEYCHAIN_PASSWORD" build.keychain
 
 echo "Signing app..."
-/usr/bin/codesign --force -s "$MACOS_CERTIFICATE_NAME" --options runtime --deep "./build/Hell House.app" -v
+while IFS= read -r -d '' binary; do
+	if file -b "$binary" | grep -q "Mach-O"; then
+		echo "  $binary"
+		/usr/bin/codesign --force -s "$MACOS_CERTIFICATE_NAME" --options runtime "$binary"
+	fi
+done < <(find "./build/Hell House.app/Contents" -type f -print0)
+
+/usr/bin/codesign --force -s "$MACOS_CERTIFICATE_NAME" --options runtime "./build/Hell House.app" -v
 
 echo "Verifying signature..."
 /usr/bin/codesign --verify --deep --strict --verbose=4 "./build/Hell House.app"
