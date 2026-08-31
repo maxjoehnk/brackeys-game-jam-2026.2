@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-set -e
+set -eo pipefail
 
 echo "Create keychain profile"
 xcrun notarytool store-credentials "notarytool-profile" --apple-id "$MACOS_NOTARIZATION_APPLE_ID" --team-id "$MACOS_NOTARIZATION_TEAM_ID" --password "$MACOS_NOTARIZATION_PASSWORD"
@@ -17,7 +17,21 @@ ditto -c -k --keepParent "build/Hell House.app" "notarization.zip"
 # you're curious
 
 echo "Notarize app"
-xcrun notarytool submit "notarization.zip" --keychain-profile "notarytool-profile" --wait
+submission_json="$(xcrun notarytool submit "notarization.zip" --keychain-profile "notarytool-profile" --wait --output-format json)"
+echo "$submission_json"
+
+submission_id="$(echo "$submission_json" | jq ".id")"
+status="$(echo "$submission_json" | jq ".status")"
+
+if [ -n "$submission_id" ]; then
+  echo "Notarization log for $submission_id"
+  xcrun notarytool log "$submission_id" --keychain-profile "notarytool-profile" || true
+fi
+
+if [ "$status" != "Accepted" ]; then
+  echo "Notarization failed with status: $status" >&2
+  exit 1
+fi
 
 # Finally, we need to "attach the staple" to our executable, which will allow our app to be
 # validated by macOS even when an internet connection is not available.
