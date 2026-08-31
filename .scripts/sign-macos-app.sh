@@ -13,3 +13,7 @@ security set-key-partition-list -S apple-tool:,apple:,codesign: -s -k "$MACOS_KE
 
 echo "Signing app..."
 /usr/bin/codesign --force -s "$MACOS_CERTIFICATE_NAME" --options runtime --deep "./build/Hell House.app" -v
+
+echo "Verifying signature..."
+/usr/bin/codesign --verify --deep --strict --verbose=4 "./build/Hell House.app"
+/usr/bin/codesign --display --verbose=4 --entitlements - "./build/Hell House.app"
