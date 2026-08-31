@@ -72,7 +72,7 @@ jobs:
 
   export-mac:
     name: Mac Export
-    runs-on: macos-latest
+    runs-on: ubuntu-22.04
     container:
       image: barichello/godot-ci:mono-4.7.2
     steps:
