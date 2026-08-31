@@ -72,7 +72,7 @@ jobs:
 
   export-mac:
     name: Mac Export
-    runs-on: ubuntu-22.04
+    runs-on: macos-latest
     container:
       image: barichello/godot-ci:mono-4.7.2
     steps:
@@ -93,7 +93,7 @@ jobs:
       - name: Upload Artifact
         uses: actions/upload-artifact@v4
         with:
-          name: unsigned-mac
+          name: signed-mac
           path: build/mac
   
   sign-mac:
@@ -116,7 +116,7 @@ jobs:
           unzip "Hell House.zip"
       - name: Sign Mac App
         run: |
-          .scripts/sign-macos-app.sh
+#          .scripts/sign-macos-app.sh
           .scripts/notarize-macos-app.sh
           .scripts/package-dmg.sh
         env:
